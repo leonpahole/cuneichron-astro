@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <div class="flex flex-col gap-4">
+    <p>
+      Welcome to Leon's history notes - a repository for my notes as I learn
+      history as an amateur historian.
+    </p>
+
+    <p>
+      I'm organizing my notes based on a <span class="font-bold">period</span> (for
+      example Neolithic, Imperial Antiquity, Long 19th Century, etc.) and <span
+        class="font-bold"
+      >
+        location
+      </span> (Egypt, Mesopotamia, ...). For each period and location I note down
+      important events, people, locations, religion, etc. and attach times to them.
+    </p>
+
+    <p>
+      I built this site to make notes more navigable - in a typical
+      bullet-points style note app, things can quickly become hard to view and
+      revise. In this site, notes will be viewable through multiple
+      perspectives: period based (what happened in this period accross the
+      world?), location based (what happened in Egypt over time?) and map based
+      (show events on the map).
+    </p>
+
+    <p>
+      It's still early days - for now, only a few note exist, and they can only
+      be viewed in a flat bullet point view. I will keep updating the site with
+      new features and notes as I progress through this journey of learning all
+      of world's history.
+    </p>
+
+    <div class="flex gap-4">
+      <a href="/explore" class="underline text-md font-semibold">
+        Explore Notes
+      </a>
+
+      <a href="/news" class="underline text-md font-semibold">News</a>
+    </div>
+  </div>
 </Layout>

@@ -1,0 +1,44 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import {
+  parseMarkdownIntoNote,
+  noteEventTimeToString,
+  type Note,
+} from "../../data/note";
+
+export async function getStaticPaths() {
+  const allNotes = await getCollection("notes");
+
+  const notes = allNotes
+    .map((n) => parseMarkdownIntoNote(n.filePath, n.body))
+    .filter((n): n is Note => n != null);
+
+  return notes.map((note) => ({
+    params: { path: note.path },
+    props: { note: note },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { note } = Astro.props;
+---
+
+<Layout title={`${note.location} - ${note.name}`}>
+  <h2 class="mb-3 font-bold text-xl">{note.location} - {note.name}</h2>
+
+  <p class="mb-2">{note.description}</p>
+
+  <ol class="flex flex-col gap-0.5">
+    {
+      note.events.map((e) => (
+        <li>
+          <span class="font-bold">{noteEventTimeToString(e.time)}</span>:{" "}
+          {e.description}
+        </li>
+      ))
+    }
+  </ol>
+</Layout>
