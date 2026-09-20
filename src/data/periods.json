@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Formation of the universe",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 13800000000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 4500000000
+      }
+    }
+  },
+  {
+    "name": "Early life",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 4500000000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 7000000
+      }
+    }
+  },
+  {
+    "name": "Human origins",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 7000000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 300000
+      }
+    }
+  },
+  {
+    "name": "Paleolithic",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 300000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 10000
+      }
+    }
+  },
+  {
+    "name": "Neolithic",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 10000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 4000
+      }
+    }
+  },
+  {
+    "name": "Early civilizations",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 4000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 2000
+      }
+    }
+  },
+  {
+    "name": "Bronze Age",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 2000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 1200
+      }
+    }
+  },
+  {
+    "name": "Bronze Age Collapse",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 1200
+      },
+      "to": {
+        "period": "BCE",
+        "year": 1000
+      }
+    }
+  },
+  {
+    "name": "Early Iron Age",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 1000
+      },
+      "to": {
+        "period": "BCE",
+        "year": 600
+      }
+    }
+  },
+  {
+    "name": "Classical Antiquity",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 600
+      },
+      "to": {
+        "period": "BCE",
+        "year": 323
+      }
+    }
+  },
+  {
+    "name": "Hellenistic Age",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 323
+      },
+      "to": {
+        "period": "BCE",
+        "year": 30
+      }
+    }
+  },
+  {
+    "name": "Imperial Antiquity",
+    "times": {
+      "from": {
+        "period": "BCE",
+        "year": 30
+      },
+      "to": {
+        "period": "CE",
+        "year": 284
+      }
+    }
+  },
+  {
+    "name": "Late Antiquity",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 284
+      },
+      "to": {
+        "period": "CE",
+        "year": 650
+      }
+    }
+  },
+  {
+    "name": "Early Middle Ages",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 650
+      },
+      "to": {
+        "period": "CE",
+        "year": 1000
+      }
+    }
+  },
+  {
+    "name": "High Middle Ages",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1000
+      },
+      "to": {
+        "period": "CE",
+        "year": 1300
+      }
+    }
+  },
+  {
+    "name": "Late Middle Ages",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1300
+      },
+      "to": {
+        "period": "CE",
+        "year": 1500
+      }
+    }
+  },
+  {
+    "name": "Early Modern Period",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1500
+      },
+      "to": {
+        "period": "CE",
+        "year": 1800
+      }
+    }
+  },
+  {
+    "name": "Long 19th Century",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1800
+      },
+      "to": {
+        "period": "CE",
+        "year": 1914
+      }
+    }
+  },
+  {
+    "name": "World Wars",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1914
+      },
+      "to": {
+        "period": "CE",
+        "year": 1945
+      }
+    }
+  },
+  {
+    "name": "Contemporary World",
+    "times": {
+      "from": {
+        "period": "CE",
+        "year": 1945
+      },
+      "to": {
+        "period": "CE",
+        "year": 2026
+      }
+    }
+  }
+]

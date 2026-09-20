@@ -6,7 +6,7 @@ import { parseMarkdownIntoNote, type Note } from "../data/note";
 const allNotes = await getCollection("notes");
 
 const notes = allNotes
-  .map((n) => parseMarkdownIntoNote(n.filePath, n.body))
+  .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations))
   .filter((n): n is Note => n != null);
 
 const allPeriods = [...new Set(notes.map((n) => n.period))];
@@ -28,7 +28,7 @@ const allPeriods = [...new Set(notes.map((n) => n.period))];
                 <li>
                   <h4>
                     <a href={`note/${n.path}`} class="underline">
-                      {n.location} - {n.name}
+                      {n.name}
                     </a>
                   </h4>
                 </li>

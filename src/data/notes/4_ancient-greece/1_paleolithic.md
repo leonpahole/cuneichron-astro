@@ -1,4 +1,9 @@
-# Greece
+---
+topics: Paleolithic,Ancient Greece
+locations: Greece
+---
+
+# Paleolithic Greece
 
 ## Timeline
 

@@ -1,4 +1,9 @@
-# France
+---
+topics: Paleolithic,France
+locations: France
+---
+
+# Paleolithic France
 
 ## Timeline
 

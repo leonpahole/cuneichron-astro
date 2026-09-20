@@ -51,6 +51,7 @@ interface HistoricalDate {
 export const parseMarkdownIntoNote = (
   filePath: string | undefined,
   mdString: string | undefined,
+  location?: string,
 ): Note | null => {
   if (!filePath || !mdString) {
     return null;
@@ -64,8 +65,7 @@ export const parseMarkdownIntoNote = (
     return null;
   }
 
-  const heading1Text = getTextNodeText(heading1);
-  const [location, name] = heading1Text.split("-").map((s) => s.trim());
+  const name = getTextNodeText(heading1);
 
   const descriptionParagraph = md.children.find(
     (n): n is Paragraph => n.type === "paragraph",
@@ -73,9 +73,9 @@ export const parseMarkdownIntoNote = (
   const period = getPeriodFromFilePath(filePath);
 
   return {
-    location,
-    name: name || period,
-    path: [period, location, name].filter(Boolean).map(slugify).join("/"),
+    location: location ?? "",
+    name,
+    path: getPathFromFilePath(filePath),
     description: descriptionParagraph
       ? getTextNodeText(descriptionParagraph)
       : undefined,
@@ -83,6 +83,17 @@ export const parseMarkdownIntoNote = (
     events: getEvents(md),
   };
 };
+
+const getPathFromFilePath = (filePath: string): string => {
+  const [dir, file] = filePath.split("/").slice(-2);
+  return [stripLeadingNumber(dir), stripLeadingNumber(stripMarkdownExt(file))]
+    .filter(Boolean)
+    .join("/");
+};
+
+const stripLeadingNumber = (str: string): string => str.replace(/^\d+_/, "");
+
+const stripMarkdownExt = (str: string): string => str.replace(/\.md$/, "");
 
 const getEvents = (md: Root): NoteEvent[] => {
   const timelineHeadingIndex = md.children.findIndex(
@@ -189,22 +200,6 @@ function capitalizeFirstLetter(val: string) {
 
 const unslug = (slug: string) =>
   slug.split("-").map(capitalizeFirstLetter).join(" ");
-
-const slugify = (title: string) => {
-  return (
-    title
-      // remove leading & trailing whitespace
-      .trim()
-      // remove special characters
-      .replace(/[^A-Za-z0-9 ]/g, "")
-      // replace spaces
-      .replace(/\s+/g, "-")
-      // remove leading & trailing separtors
-      .replace(/^-+|-+$/g, "")
-      // output lowercase
-      .toLowerCase()
-  );
-};
 
 export const noteEventTimeToString = (time: NoteEventTime): string => {
   if (time.type === "single") {

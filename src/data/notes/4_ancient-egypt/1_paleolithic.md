@@ -1,4 +1,9 @@
-# Egypt
+---
+topics: Paleolithic,Ancient Egypt
+locations: Egypt
+---
+
+# Paleolithic Egypt
 
 Communities developed in a changing Saharan environment, initially relying on seasonal lakes, hunting, herding and gathering. As the Sahara became increasingly arid, populations concentrated along the Nile, where farming and permanent settlement became possible. Increasing wealth, trade and craft specialization contributed to social hierarchy and the emergence of regional centers.
 

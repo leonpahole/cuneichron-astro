@@ -1,4 +1,9 @@
-# Mesopotamia - Uruk Period
+---
+topics: Paleolithic,Ancient Greece
+locations: Mesopotamia
+---
+
+# The Uruk period
 
 Emergence of first true cities and increasingly complex systems of administration, religion and trade. Temples were major economic and religious institutions, while agricultural surplus supported specialized labor and growing social hierarchies. Uruk became the largest and most influential urban center, spreading its cultural practices across much of Mesopotamia and beyond.
 

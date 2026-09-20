@@ -1,0 +1,19 @@
+Rome,Latium
+Latium,Italy
+Etruria,Italy
+Italy,Europe
+
+France,Europe
+
+Greece,Europe
+
+Egypt,Africa
+
+India,Asia
+
+Mesopotamia,Asia
+
+North America,America
+
+Earth,Solar System
+Solar System,Universe

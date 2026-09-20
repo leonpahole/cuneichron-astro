@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
 
   const notes = allNotes
-    .map((n) => parseMarkdownIntoNote(n.filePath, n.body))
+    .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations))
     .filter((n): n is Note => n != null);
 
   return notes.map((note) => ({
@@ -26,8 +26,8 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { note } = Astro.props;
 ---
 
-<Layout title={`${note.location} - ${note.name}`}>
-  <h2 class="mb-3 font-bold text-xl">{note.location} - {note.name}</h2>
+<Layout title={note.name}>
+  <h2 class="mb-3 font-bold text-xl">{note.name}</h2>
 
   <p class="mb-2">{note.description}</p>
 

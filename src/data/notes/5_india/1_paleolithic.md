@@ -1,4 +1,9 @@
-# India
+---
+topics: Paleolithic,Ancient India
+locations: India
+---
+
+# Paleolithic India
 
 ## Timeline
 

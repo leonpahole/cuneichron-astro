@@ -1,4 +1,9 @@
-# Universe - Early Formation
+---
+topics: Astronomy, Formation of the universe
+locations: Universe
+---
+
+# Formation of the universe
 
 Universe formed, matter and stars emerged.
 

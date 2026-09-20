@@ -1,4 +1,9 @@
-# Solar System - Formation
+---
+topics: Astronomy, Formation of the universe
+locations: Solar System
+---
+
+# Formation of the Solar System
 
 ## Timeline
 

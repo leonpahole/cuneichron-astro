@@ -1,4 +1,9 @@
-# Earth - Formation
+---
+topics: Astronomy, Formation of the universe
+locations: Earth
+---
+
+# Formation of the Earth
 
 ## Timeline
 

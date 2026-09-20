@@ -1,4 +1,9 @@
-# Earth - Early Life
+---
+topics: Early life
+locations: Earth
+---
+
+# Early life on Earth
 
 The evolution of life on Earth from the first organisms to the emergence of the earliest human ancestors.
 
