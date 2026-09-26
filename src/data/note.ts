@@ -7,7 +7,9 @@ import type {
   Delete,
   Emphasis,
   Heading,
+  Image,
   ListItem,
+  Link,
   Paragraph,
   PhrasingContent,
   Root,
@@ -17,19 +19,27 @@ import type {
 
 export interface Note {
   location: string;
-  period: string;
+  topic: string;
   name: string;
   path: string;
-  description?: string;
+  fileName: string;
+  descriptions: string[];
   events: NoteEvent[];
+  gallery: GalleryImage[];
 }
 
-interface NoteEvent {
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  source?: { label: string; url: string };
+}
+
+export interface NoteEvent {
   description: string;
   time: NoteEventTime;
 }
 
-type NoteEventTime =
+export type NoteEventTime =
   | {
       type: "range";
       from: HistoricalDate;
@@ -40,7 +50,7 @@ type NoteEventTime =
       date: HistoricalDate;
     };
 
-interface HistoricalDate {
+export interface HistoricalDate {
   period: "BCE" | "CE";
   isCirca: boolean;
   year: number;
@@ -67,20 +77,18 @@ export const parseMarkdownIntoNote = (
 
   const name = getTextNodeText(heading1);
 
-  const descriptionParagraph = md.children.find(
-    (n): n is Paragraph => n.type === "paragraph",
-  );
-  const period = getPeriodFromFilePath(filePath);
+  const topic = getTopicFromFilePath(filePath);
+  const path = getPathFromFilePath(filePath);
 
   return {
     location: location ?? "",
     name,
-    path: getPathFromFilePath(filePath),
-    description: descriptionParagraph
-      ? getTextNodeText(descriptionParagraph)
-      : undefined,
-    period,
+    path,
+    fileName: getFileNameFromFilePath(filePath),
+    descriptions: getDescriptions(md),
+    topic,
     events: getEvents(md),
+    gallery: getGallery(md, path),
   };
 };
 
@@ -89,6 +97,28 @@ const getPathFromFilePath = (filePath: string): string => {
   return [stripLeadingNumber(dir), stripLeadingNumber(stripMarkdownExt(file))]
     .filter(Boolean)
     .join("/");
+};
+
+const getFileNameFromFilePath = (filePath: string): string => {
+  const file = filePath.split("/").pop() ?? "";
+  return stripMarkdownExt(file);
+};
+
+// All body paragraphs that come before the first section heading
+// (Timeline / Gallery). Timeline and gallery content are lists, so every
+// top-level paragraph here belongs to the note's prose body.
+const getDescriptions = (md: Root): string[] => {
+  const sectionStart = md.children.findIndex(
+    (c) =>
+      c.type === "heading" &&
+      /timeline|gallery/i.test(getTextNodeText(c)),
+  );
+  const end = sectionStart === -1 ? md.children.length : sectionStart;
+
+  return md.children
+    .slice(0, end)
+    .filter((n): n is Paragraph => n.type === "paragraph")
+    .map(getTextNodeText);
 };
 
 const stripLeadingNumber = (str: string): string => str.replace(/^\d+_/, "");
@@ -118,17 +148,105 @@ const getEvents = (md: Root): NoteEvent[] => {
   });
 };
 
+const getGallery = (md: Root, notePath: string): GalleryImage[] => {
+  const galleryHeadingIndex = md.children.findIndex(
+    (c) =>
+      c.type === "heading" &&
+      getTextNodeText(c).toLowerCase().includes("gallery"),
+  );
+  if (galleryHeadingIndex === -1) {
+    return [];
+  }
+
+  const listNote = md.children[galleryHeadingIndex + 1];
+  if (!listNote || listNote.type !== "list") {
+    return [];
+  }
+
+  return listNote.children.flatMap((item) => {
+    const images = findImages(item);
+    const source = findSourceLink(item);
+    return images.map((img) => ({
+      src: resolveImageSrc(img.url, notePath),
+      alt: img.alt || "",
+      source: source
+        ? { label: getTextNodeText(source) || "Source", url: source.url }
+        : undefined,
+    }));
+  });
+};
+
+const findImages = (node: object): Image[] => {
+  if ((node as { type?: string }).type === "image") {
+    return [node as Image];
+  }
+
+  const children = (node as { children?: object[] }).children;
+  if (!children) {
+    return [];
+  }
+
+  return children.flatMap(findImages);
+};
+
+const findSourceLink = (node: object): Link | null => {
+  if ((node as { type?: string }).type === "link") {
+    return node as Link;
+  }
+
+  const children = (node as { children?: object[] }).children;
+  if (!children) {
+    return null;
+  }
+
+  for (const child of children) {
+    const found = findSourceLink(child);
+    if (found) {
+      return found;
+    }
+  }
+
+  return null;
+};
+
+const resolveImageSrc = (url: string, notePath: string): string => {
+  // Root-relative and http(s) URLs are used as-is (root-relative paths are
+  // served straight from the `public/` directory). Bare filenames are
+  // resolved into the note's image folder as a fallback.
+  if (url.startsWith("/") || /^https?:\/\//i.test(url)) {
+    return url;
+  }
+
+  return `/images/notes/${notePath}/${url}`;
+};
+
 const parseTimeString = (time: string): NoteEventTime => {
   const period = time.includes("BCE") ? "BCE" : "CE";
   const isCirca = time.includes("~");
 
-  const range = time.replaceAll("~", "").replaceAll("BCE", "").split("-");
+  // A unit such as "billion"/"million" applies to the whole value/range
+  // (e.g. "~2.4–2.1 billion BCE"), so derive the scale once from the string.
+  const scale = time.includes("billion")
+    ? Math.pow(10, 9)
+    : time.includes("million")
+      ? Math.pow(10, 6)
+      : 1;
 
-  if (range.length === 1) {
+  const cleaned = time
+    .replaceAll("~", "")
+    .replaceAll("BCE", "")
+    .replace("billion", "")
+    .replace("million", "")
+    .replaceAll(",", "")
+    .replace("–", "-");
+
+  const [fromStr, toStr] = cleaned.split("-");
+
+  if (!toStr) {
     return {
       type: "single",
       date: {
-        year: parseStringToNumber(range[0]),
+        year: parseStringToNumber(fromStr, scale),
         period,
         isCirca,
       },
@@ -137,12 +255,12 @@ const parseTimeString = (time: string): NoteEventTime => {
     return {
       type: "range",
       from: {
-        year: parseStringToNumber(range[0]),
+        year: parseStringToNumber(fromStr, scale),
         period,
         isCirca,
       },
       to: {
-        year: parseStringToNumber(range[1]),
+        year: parseStringToNumber(toStr, scale),
         period,
         isCirca,
       },
@@ -150,15 +268,9 @@ const parseTimeString = (time: string): NoteEventTime => {
   }
 };
 
-const parseStringToNumber = (str: string): number => {
+const parseStringToNumber = (str: string, scale: number): number => {
   const num = parseFloat(str.replace(",", ""));
-  if (str.includes("billion")) {
-    return num * Math.pow(10, 9);
-  } else if (str.includes("million")) {
-    return num * Math.pow(10, 6);
-  }
-
-  return num;
+  return num * scale;
 };
 
 const getTextNodeText = (
@@ -188,10 +300,10 @@ const getListItemText = (i: ListItem) => {
   return i.children.map((c) => getTextNodeText(c)).join(" ");
 };
 
-const getPeriodFromFilePath = (filePath: string): string => {
+const getTopicFromFilePath = (filePath: string): string => {
   const pathArr = filePath.split("/");
-  const periodName = pathArr[pathArr.length - 2].split("_")[1];
-  return unslug(periodName);
+  const topicName = pathArr[pathArr.length - 2].split("_")[1];
+  return unslug(topicName);
 };
 
 function capitalizeFirstLetter(val: string) {

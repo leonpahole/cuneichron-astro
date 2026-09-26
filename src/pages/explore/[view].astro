@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ExploreView from "../../components/explore/ExploreView.astro";
+import { getNotes, groupNotes, type ExploreView as ExploreViewType } from "../../data/explore";
+
+export async function getStaticPaths() {
+  return [
+    { params: { view: "topic" } },
+    { params: { view: "period" } },
+    { params: { view: "location" } },
+  ];
+}
+
+const { view } = Astro.params as { view: ExploreViewType };
+
+const notes = await getNotes();
+const buckets = groupNotes(view, notes);
+---
+
+<Layout title={`Explore - ${view}`}>
+  <ExploreView view={view} buckets={buckets} />
+</Layout>

@@ -29,7 +29,9 @@ const { note } = Astro.props;
 <Layout title={note.name}>
   <h2 class="mb-3 font-bold text-xl">{note.name}</h2>
 
-  <p class="mb-2">{note.description}</p>
+  {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
+
+  <h3 class="text-lg font-bold mb-2">Timeline</h3>
 
   <ol class="flex flex-col gap-0.5">
     {
@@ -41,4 +43,40 @@ const { note } = Astro.props;
       ))
     }
   </ol>
+
+  {
+    note.gallery.length > 0 && (
+      <section class="mt-4">
+        <h3 class="text-lg font-bold mb-2">Gallery</h3>
+
+        <div class="flex flex-col gap-2">
+          {note.gallery.map((img) => (
+            <figure class="rounded-md border border-gray-300 overflow-hidden max-w-2xl">
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                class="w-full h-auto object-cover"
+              />
+              {(img.alt || img.source) && (
+                <figcaption class="text-xs px-2 py-0.5 flex flex-col gap-0.5">
+                  {img.alt && <span class="font-semibold">{img.alt}</span>}
+                  {img.source && (
+                    <a
+                      href={img.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="underline"
+                    >
+                      {img.source.label}
+                    </a>
+                  )}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
 </Layout>

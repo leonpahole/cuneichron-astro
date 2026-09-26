@@ -1,41 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { parseMarkdownIntoNote, type Note } from "../data/note";
+import ExploreView from "../components/explore/ExploreView.astro";
+import { getNotes, groupNotes } from "../data/explore";
 
-const allNotes = await getCollection("notes");
-
-const notes = allNotes
-  .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations))
-  .filter((n): n is Note => n != null);
-
-const allPeriods = [...new Set(notes.map((n) => n.period))];
+const notes = await getNotes();
+const buckets = groupNotes("topic", notes);
 ---
 
 <Layout title="Explore">
-  <h2 class="text-xl font-bold mb-2">Explore</h2>
-
-  <ol class="flex flex-col gap-2">
-    {
-      allPeriods.map((period) => (
-        <li>
-          <h3 class="text-lg font-bold">{period}</h3>
-
-          <ul>
-            {notes
-              .filter((n) => n.period === period)
-              .map((n) => (
-                <li>
-                  <h4>
-                    <a href={`note/${n.path}`} class="underline">
-                      {n.name}
-                    </a>
-                  </h4>
-                </li>
-              ))}
-          </ul>
-        </li>
-      ))
-    }
-  </ol>
+  <ExploreView view="topic" buckets={buckets} />
 </Layout>

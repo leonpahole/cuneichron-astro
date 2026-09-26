@@ -1,0 +1,60 @@
+---
+import type { Bucket, ExploreView } from "../../data/explore";
+
+const { view, buckets } = Astro.props as {
+  view: ExploreView;
+  buckets: Bucket[];
+};
+
+const views: { key: ExploreView; label: string }[] = [
+  { key: "topic", label: "Topic" },
+  { key: "period", label: "Period" },
+  { key: "location", label: "Location" },
+];
+---
+
+<section class="pb-4">
+  <h2 class="text-xl font-bold mb-2">Explore</h2>
+
+  <nav class="mb-4 flex gap-2">
+    {
+      views.map((v) => (
+        <a
+          href={`/explore/${v.key}`}
+          class:list={[
+            "px-3 py-1 text-sm font-semibold rounded-md underline-offset-4",
+            v.key === view
+              ? "bg-black text-white"
+              : "text-black hover:bg-gray-100",
+          ]}
+        >
+          {v.label}
+        </a>
+      ))
+    }
+  </nav>
+
+  {
+    buckets.length === 0 ? (
+      <p>No notes here yet.</p>
+    ) : (
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {buckets.map((bucket) => (
+          <div class="rounded-md border border-gray-300 p-3">
+            <h3 class="text-lg font-bold mb-2">{bucket.name}</h3>
+
+            <ul class="flex flex-col gap-1">
+              {bucket.notes.map((n) => (
+                <li>
+                  <a href={`/note/${n.path}`} class="underline">
+                    {n.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )
+  }
+</section>
