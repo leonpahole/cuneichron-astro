@@ -5,6 +5,8 @@ import { getCollection } from "astro:content";
 import {
   parseMarkdownIntoNote,
   noteEventTimeToString,
+  getNoteTimeSpan,
+  sortNotesByFileName,
   type Note,
 } from "../../data/note";
 
@@ -15,18 +17,60 @@ export async function getStaticPaths() {
     .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations))
     .filter((n): n is Note => n != null);
 
-  return notes.map((note) => ({
-    params: { path: note.path },
-    props: { note: note },
-  }));
+  return notes.map((note) => {
+    const series = sortNotesByFileName(
+      notes.filter((n) => n.topic === note.topic),
+    );
+    const currentIndex = series.findIndex((n) => n.path === note.path);
+
+    const prev = currentIndex > 0 ? series[currentIndex - 1] : null;
+    const next =
+      currentIndex < series.length - 1 ? series[currentIndex + 1] : null;
+
+    const [noteStart, noteEnd] = getNoteTimeSpan(note);
+    const elsewhere = notes
+      .filter((n) => n.topic !== note.topic)
+      .filter((n) => {
+        const [start, end] = getNoteTimeSpan(n);
+        return start <= noteEnd && end >= noteStart;
+      })
+      .sort((a, b) => getNoteTimeSpan(a)[0] - getNoteTimeSpan(b)[0]);
+
+    return {
+      params: { path: note.path },
+      props: { note, prev, next, series, elsewhere },
+    };
+  });
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { note } = Astro.props;
+const { note, prev, next, series, elsewhere } = Astro.props;
 ---
 
 <Layout title={note.name}>
+  <nav class="flex justify-between gap-2 mb-3">
+    {
+      prev ? (
+        <a href={`/note/${prev.path}`} class="underline">
+          ← {prev.name}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+
+    {
+      next ? (
+        <a href={`/note/${next.path}`} class="underline">
+          {next.name} →
+        </a>
+      ) : (
+        <span />
+      )
+    }
+  </nav>
+
   <h2 class="mb-3 font-bold text-xl">{note.name}</h2>
 
   {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
@@ -79,4 +123,48 @@ const { note } = Astro.props;
       </section>
     )
   }
+
+  <section class="mt-8 flex flex-col sm:flex-row gap-6">
+    <div class="flex-1">
+      <h3 class="text-lg font-bold mb-2">Happening elsewhere at the time</h3>
+
+      {
+        elsewhere.length > 0 ? (
+          <ul class="flex flex-col gap-1">
+            {elsewhere.map((n) => (
+              <li>
+                <a href={`/note/${n.path}`} class="underline">
+                  {n.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-gray-400">Nothing found.</p>
+        )
+      }
+    </div>
+
+    <div class="flex-1">
+      <h3 class="text-lg font-bold mb-2">{note.topic} series</h3>
+
+      <ul class="flex flex-col gap-1">
+        {
+          series.map((n) =>
+            n.path === note.path ? (
+              <li>
+                <span class="font-bold">{n.name}</span>
+              </li>
+            ) : (
+              <li>
+                <a href={`/note/${n.path}`} class="underline">
+                  {n.name}
+                </a>
+              </li>
+            ),
+          )
+        }
+      </ul>
+    </div>
+  </section>
 </Layout>

@@ -313,6 +313,45 @@ function capitalizeFirstLetter(val: string) {
 const unslug = (slug: string) =>
   slug.split("-").map(capitalizeFirstLetter).join(" ");
 
+export const historicalDateToNumber = (date: HistoricalDate): number =>
+  date.period === "BCE" ? -date.year : date.year;
+
+// A note's overall time span in comparable chronological units
+// (BCE negative, CE positive). Notes without events return an empty span.
+export const getNoteTimeSpan = (note: Note): [number, number] => {
+  if (note.events.length === 0) {
+    return [Infinity, -Infinity];
+  }
+
+  let min = Infinity;
+  let max = -Infinity;
+
+  for (const event of note.events) {
+    const points = eventTimePoints(event);
+    min = Math.min(min, ...points);
+    max = Math.max(max, ...points);
+  }
+
+  return [min, max];
+};
+
+const eventTimePoints = (event: NoteEvent): number[] => {
+  if (event.time.type === "single") {
+    return [historicalDateToNumber(event.time.date)];
+  }
+
+  return [
+    historicalDateToNumber(event.time.from),
+    historicalDateToNumber(event.time.to),
+  ];
+};
+
+export const sortNotesByFileName = (notes: Note[]): Note[] => {
+  return [...notes].sort((a, b) =>
+    a.fileName.localeCompare(b.fileName, undefined, { numeric: true }),
+  );
+};
+
 export const noteEventTimeToString = (time: NoteEventTime): string => {
   if (time.type === "single") {
     return historicalDateToString(time.date, "single");
