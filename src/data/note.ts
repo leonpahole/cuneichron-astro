@@ -1,5 +1,6 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
+import type { GeoJsonObject } from "geojson";
 import type {
   BlockContent,
   Break,
@@ -37,6 +38,7 @@ export interface GalleryImage {
 export interface NoteEvent {
   description: string;
   time: NoteEventTime;
+  location?: GeoJsonObject;
 }
 
 export type NoteEventTime =
@@ -144,6 +146,7 @@ const getEvents = (md: Root): NoteEvent[] => {
     return {
       description: description.join(":"),
       time: parseTimeString(time),
+      location: getListItemLocation(c),
     };
   });
 };
@@ -297,7 +300,62 @@ const getTextNodeText = (
 };
 
 const getListItemText = (i: ListItem) => {
-  return i.children.map((c) => getTextNodeText(c)).join(" ");
+  return i.children.map((c) => getEventText(c)).join(" ");
+};
+
+// Text content of a node, omitting `geo:` inline code spans (they contain the
+// JSON location and are not part of the visible description).
+const getEventText = (node: object): string => {
+  const type = (node as { type?: string }).type;
+
+  if (type === "inlineCode") {
+    const value = (node as { value?: string }).value ?? "";
+    return /^\s*geo\s*:/i.test(value) ? "" : value;
+  }
+
+  if ("value" in node) {
+    return (node as { value: unknown }).value as string;
+  }
+
+  const children = (node as { children?: object[] }).children;
+  if (!children) {
+    return "";
+  }
+
+  return children.map(getEventText).filter(Boolean).join(" ");
+};
+
+// A bullet may carry an optional GeoJSON location as an inline code span such
+// as `geo:{"type":"Point","coordinates":[resolved,lat]}`. The first one that
+// parses is used.
+const getListItemLocation = (item: object): GeoJsonObject | undefined => {
+  for (const value of findGeoJsonCodeValues(item)) {
+    const match = value.match(/^\s*geo\s*:\s*/i);
+    if (!match) {
+      continue;
+    }
+
+    try {
+      return JSON.parse(value.slice(match[0].length)) as GeoJsonObject;
+    } catch {
+      continue;
+    }
+  }
+
+  return undefined;
+};
+
+const findGeoJsonCodeValues = (node: object): string[] => {
+  if ((node as { type?: string }).type === "inlineCode") {
+    return [(node as { value?: string }).value ?? ""];
+  }
+
+  const children = (node as { children?: object[] }).children;
+  if (!children) {
+    return [];
+  }
+
+  return children.flatMap(findGeoJsonCodeValues);
 };
 
 const getTopicFromFilePath = (filePath: string): string => {

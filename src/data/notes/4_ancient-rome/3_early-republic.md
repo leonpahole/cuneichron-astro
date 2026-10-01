@@ -51,3 +51,7 @@ Most Romans were farmers, with land concentrated among wealthy elites; tensions 
 - ~380s BCE: Debt became a major source of plebeian unrest as indebted Romans faced imprisonment and enslavement by creditors, and plebeians demanded greater access to land.
 - ~367 BCE: The Licinio-Sextian reforms restored the consulship and allowed a plebeian to hold one of the two consulships, Lucius Sectius becoming the first plebeian consul. Other reforms included restrictions on landholding and measures addressing debt.
 - ~367 BCE: Death of Camillus marked the end of an era of Roman recovery after the Gallic sack.
+
+## Gallery
+
+- ![Italy in 400BC](/images/notes/ancient-rome/early-republic/italy.png) [via Wikipedia](https://en.wikipedia.org/wiki/Samnium)
