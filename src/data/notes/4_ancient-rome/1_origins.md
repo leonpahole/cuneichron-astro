@@ -11,11 +11,16 @@ Soldiers equipped themselves; the richest provided horses. A 100-man Senate advi
 
 ## Timeline
 
+### Legends of foundation
+
 - ~12th century BCE: Aeneas arrived in Latium, inherited the kingdom, and established the Tiber as the boundary with the Etruscans.
 - ~12th–8th century BCE: Aeneas' son Ascanius founded Alba Longa; generations later, Numitor was exiled by Amulius, while his daughter Rhea Silvia gave birth to Romulus and Remus, who were abandoned by the river and adopted by a she-wolf.
 - ~8th century BCE: Romulus and Remus discovered their ancestry, killed Amulius, and restored Numitor to the throne.
 - ~8th century BCE: Romulus and Remus chose the place where they had been abandoned to found a new city; Remus was killed in the dispute.
 - 753 BCE: Romulus traditionally founded Rome and became its first king.
+
+### Romulus's institutions
+
 - ~8th century BCE: Romulus established a Senate of 100, an army of ~3,000 infantry and 300 cavalry, and seized women from neighboring communities.
 - ~8th century BCE: After repelling attacks, conflict with the Sabines ended in peace and political union under two kings, three tribes, and a Senate expanded by 100 Sabines.
 - ~8th century BCE: Romulus established the Comitia Curiata, with 30 collective votes from three tribes divided into ten curiae; the army doubled to ~6,000.

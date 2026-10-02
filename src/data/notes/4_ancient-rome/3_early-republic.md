@@ -11,12 +11,17 @@ Most Romans were farmers, with land concentrated among wealthy elites; tensions 
 
 ## Timeline
 
+### Founding of the Republic
+
 - 509 BCE: Brutus and Collatinus became the first consuls; Brutus required Romans to swear never again to allow a king to rule Rome.
 - 509 BCE: Collatinus resigned because of his Tarquin family connection and was replaced by Publius Valerius Publicola.
 - 509 BCE: A royalist conspiracy, including Brutus' sons, was exposed; Brutus allowed his sons to be executed for treason.
 - 509 BCE: Rome defeated an army from Veii attempting to restore Tarquin; Brutus was killed in battle.
 - ~509 BCE: Publicola introduced the right to appeal magistrates' decisions to the people's assemblies and made it legal to kill anyone attempting to make himself king.
 - 509 BCE: Horatius Pulvillus became consul, completing the Republic's first year.
+
+### Early wars and the Conflict of the Orders
+
 - ~508 BCE: Rome was attacked by Lars Porsena of Clusium, who may have captured Rome before withdrawing; later Roman tradition portrayed the invasion as a heroic Roman victory.
 - ~496 BCE: Rome defeated a Latin coalition at the Battle of Lake Regillus, restoring Roman dominance over Latium.
 - ~494 BCE: The plebeians seceded from Rome over debt and political grievances, establishing a camp on the Sacred Mount.
@@ -36,6 +41,9 @@ Most Romans were farmers, with land concentrated among wealthy elites; tensions 
 - 444 BCE: Military tribunes with consular power were introduced as an alternative to the consulship, allowing plebeians to hold executive power while the consulship remained restricted.
 - ~443 BCE: The office of censor was created to administer the census and became an important patrician-controlled magistracy.
 - 439 BCE: During a famine, the wealthy plebeian Malius distributed grain to the population and later conspired to make himself king; Cincinnatus was appointed dictator and suppressed the conspiracy.
+
+### The war with Veii
+
 - ~435–425 BCE: Rome fought to retain control of Fidenae, an important settlement on the Tiber, amid renewed conflict with Veii.
 - ~425 BCE: Rome recaptured Fidenae, strengthening its position for the coming conflict with Veii.
 - ~400 BCE: Rome began a major war against Veii, driven by competition over trade, salt, and fertile land.
@@ -43,6 +51,9 @@ Most Romans were farmers, with land concentrated among wealthy elites; tensions 
 - ~396 BCE: Marcus Furius Camillus was appointed dictator and led the final campaign against Veii, capturing and sacking it. After killing or enslaving everyone, Romans began settling it, taking advantage of fertile soil to end the famine.
 - ~396 BCE: Rome became a major economic power in central Italy, benefiting from fertile land and control of the salt trade.
 - ~395–394 BCE: Camillus went into voluntary exile after political conflict over his handling of Veii's spoils.
+
+### The Gallic Sack and recovery
+
 - ~390 BCE: The Senones, a Gallic tribe led by Brennus, invaded central Italy and defeated the Roman army at the Allia River.
 - ~390 BCE: The Senones occupied and sacked Rome, while the Romans held out in the fortified Capitoline citadel. In the end Rome paid the Gauls a large ransom to withdraw.
 - ~390 BCE: Much of city was destroyed by fire, prompting debate over whether the city should be abandoned. It was decided to rebuild rather than relocate to Veii, Camillus returning and standing firm behind it.

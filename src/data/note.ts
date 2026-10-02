@@ -26,6 +26,7 @@ export interface Note {
   fileName: string;
   descriptions: string[];
   events: NoteEvent[];
+  timeline: TimelineSection[];
   gallery: GalleryImage[];
 }
 
@@ -33,6 +34,11 @@ export interface GalleryImage {
   src: string;
   alt: string;
   source?: { label: string; url: string };
+}
+
+export interface TimelineSection {
+  title?: string;
+  events: NoteEvent[];
 }
 
 export interface NoteEvent {
@@ -81,6 +87,7 @@ export const parseMarkdownIntoNote = (
 
   const topic = getTopicFromFilePath(filePath);
   const path = getPathFromFilePath(filePath);
+  const timeline = getTimelineSections(md);
 
   return {
     location: location ?? "",
@@ -89,7 +96,8 @@ export const parseMarkdownIntoNote = (
     fileName: getFileNameFromFilePath(filePath),
     descriptions: getDescriptions(md),
     topic,
-    events: getEvents(md),
+    events: timeline.flatMap((section) => section.events),
+    timeline,
     gallery: getGallery(md, path),
   };
 };
@@ -127,28 +135,57 @@ const stripLeadingNumber = (str: string): string => str.replace(/^\d+_/, "");
 
 const stripMarkdownExt = (str: string): string => str.replace(/\.md$/, "");
 
-const getEvents = (md: Root): NoteEvent[] => {
+const getTimelineSections = (md: Root): TimelineSection[] => {
   const timelineHeadingIndex = md.children.findIndex(
     (c) =>
       c.type === "heading" &&
       getTextNodeText(c).toLowerCase().includes("timeline"),
   );
-
-  const listNote = md.children[timelineHeadingIndex + 1];
-  if (listNote.type !== "list") {
+  if (timelineHeadingIndex === -1) {
     return [];
   }
 
-  return listNote.children.map((c) => {
-    const text = getListItemText(c);
-    const [time, ...description] = text.split(":");
+  const sections: TimelineSection[] = [];
+  let current: TimelineSection = { events: [] };
+  sections.push(current);
 
-    return {
-      description: description.join(":"),
-      time: parseTimeString(time),
-      location: getListItemLocation(c),
-    };
-  });
+  for (let i = timelineHeadingIndex + 1; i < md.children.length; i++) {
+    const node = md.children[i];
+
+    if (node.type === "heading") {
+      // A depth-2 heading (e.g. `## Gallery`) ends the timeline.
+      if (node.depth === 2) {
+        break;
+      }
+      // A deeper heading starts a new timeline subsection.
+      const title = getTextNodeText(node);
+      current = { title, events: [] };
+      sections.push(current);
+      continue;
+    }
+
+    if (node.type === "list") {
+      for (const item of node.children) {
+        current.events.push(parseEvent(item));
+      }
+      continue;
+    }
+
+    // Ignore other nodes (loose text/paragraphs) within the timeline.
+  }
+
+  return sections.filter((section) => section.events.length > 0);
+};
+
+const parseEvent = (item: ListItem): NoteEvent => {
+  const text = getListItemText(item);
+  const [time, ...description] = text.split(":");
+
+  return {
+    description: description.join(":"),
+    time: parseTimeString(time),
+    location: getListItemLocation(item),
+  };
 };
 
 const getGallery = (md: Root, notePath: string): GalleryImage[] => {

@@ -16,10 +16,15 @@ Anthropoids - all monkeys, apes, and humans.
 
 ## Timeline
 
+### Early primates
+
 - ~66–56 million BCE: First primates appear - small, tree-dwelling mammals adapted to forest environments.
 - ~56 million BCE: PETM causes rapid global warming, expanding tropical and subtropical forests.
 - ~55 million BCE: Archicebus achilles lives in central China - tiny (~20–30 g), tree-dwelling and probably insectivorous; an early relative near the split between tarsiers and anthropoids.
 - ~45–35 million BCE: Primates diversify into the major lineages leading to modern monkeys, apes and humans.
+
+### Rise of the apes
+
 - ~25–23 million BCE: Earliest known apes appear in Africa; unlike most monkeys, they lack tails and develop more flexible shoulders and increasingly ape-like body plans.
 - ~21–14 million BCE: Early apes such as Proconsul, Ekembo, Afropithecus and Nacholapithecus diversify in Africa, becoming larger and increasingly specialized for climbing, while developing more robust jaws and teeth.
 - ~16–14 million BCE: During a warm period, apes expand from Africa into Europe and Asia, where numerous ape species evolve.
@@ -28,6 +33,9 @@ Anthropoids - all monkeys, apes, and humans.
 - ~14–8 million BCE: African ape fossils become unusually scarce compared with Europe and Asia, although this may partly reflect gaps in the fossil record.
 - ~13–9 million BCE: European apes such as Pierolapithecus and Rudapithecus thrive in forest environments; some develop body plans and locomotor adaptations resembling those of later great apes.
 - ~10–8 million BCE: Cooling and increasing seasonality reduce European forests, contributing to the disappearance of many European apes and shifting the center of great-ape evolution back to Africa.
+
+### Divergence and the human lineage
+
 - ~10–8 million BCE: Gorilla (Africa) lineage diverges from the lineage leading to chimpanzees and humans.
 - ~7–5 million BCE: Human lineage diverges from the lineage leading to chimpanzees and bonobos (Africa).
 

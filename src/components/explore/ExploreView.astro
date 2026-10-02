@@ -1,5 +1,6 @@
 ---
 import type { Bucket, ExploreView } from "../../data/explore";
+import NoteMap from "../NoteMap";
 
 const { view, buckets } = Astro.props as {
   view: ExploreView;
@@ -11,6 +12,14 @@ const views: { key: ExploreView; label: string }[] = [
   { key: "period", label: "Period" },
   { key: "location", label: "Location" },
 ];
+
+// A note can appear in several buckets (e.g. a note spanning multiple
+// periods or locations), so de-duplicate by path before collecting the
+// events that will be plotted on the map.
+const events = [
+  ...new Map(buckets.flatMap((b) => b.notes).map((n) => [n.path, n])).values(),
+].flatMap((n) => n.events);
+const hasMap = events.some((e) => e.location != null);
 ---
 
 <section class="pb-4">
@@ -56,5 +65,15 @@ const views: { key: ExploreView; label: string }[] = [
         ))}
       </div>
     )
+  }
+  {
+    /*
+    hasMap && (
+      <NoteMap
+        events={events}
+        client:only="react"
+      />
+    )
+    */
   }
 </section>

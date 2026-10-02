@@ -9,6 +9,7 @@ import {
   sortNotesByFileName,
   type Note,
 } from "../../data/note";
+import NoteMap from "../../components/NoteMap";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
@@ -46,6 +47,7 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { note, prev, next, series, elsewhere } = Astro.props;
+const hasMap = note.events.some((event) => event.location != null);
 ---
 
 <Layout title={note.name}>
@@ -71,27 +73,36 @@ const { note, prev, next, series, elsewhere } = Astro.props;
     }
   </nav>
 
-  <h2 class="mb-3 font-bold text-xl">{note.name}</h2>
+  <h2 class="mb-3 font-bold text-3xl">{note.name}</h2>
 
   {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
 
-  <h3 class="text-lg font-bold mb-2">Timeline</h3>
+  <h3 class="text-2xl font-bold mb-2">Timeline</h3>
 
-  <ol class="flex flex-col gap-0.5">
-    {
-      note.events.map((e) => (
-        <li>
-          <span class="font-bold">{noteEventTimeToString(e.time)}</span>:{" "}
-          {e.description}
-        </li>
-      ))
-    }
-  </ol>
+  {
+    note.timeline.map((section) => (
+      <div>
+        {section.title && (
+          <h4 class="font-semibold text-xl mb-2">{section.title}</h4>
+        )}
+        <ol class="flex flex-col gap-0.5 mb-4">
+          {section.events.map((e) => (
+            <li>
+              <span class="font-bold">{noteEventTimeToString(e.time)}</span>:{" "}
+              {e.description}
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))
+  }
+
+  {/*hasMap && <NoteMap events={note.events} client:only="react" />*/}
 
   {
     note.gallery.length > 0 && (
       <section class="mt-4">
-        <h3 class="text-lg font-bold mb-2">Gallery</h3>
+        <h3 class="text-2xl font-bold mb-2">Gallery</h3>
 
         <div class="flex flex-col gap-2">
           {note.gallery.map((img) => (
@@ -126,7 +137,7 @@ const { note, prev, next, series, elsewhere } = Astro.props;
 
   <section class="mt-8 flex flex-col sm:flex-row gap-6">
     <div class="flex-1">
-      <h3 class="text-lg font-bold mb-2">Happening elsewhere at the time</h3>
+      <h3 class="text-xl font-bold mb-2">Happening elsewhere at the time</h3>
 
       {
         elsewhere.length > 0 ? (
@@ -146,7 +157,7 @@ const { note, prev, next, series, elsewhere } = Astro.props;
     </div>
 
     <div class="flex-1">
-      <h3 class="text-lg font-bold mb-2">{note.topic} series</h3>
+      <h3 class="text-xl font-bold mb-2">{note.topic} series</h3>
 
       <ul class="flex flex-col gap-1">
         {

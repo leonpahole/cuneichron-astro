@@ -29,10 +29,16 @@ export default function NoteMap({ events }: Props) {
     const map = L.map(container, { scrollWheelZoom: false });
     mapRef.current = map;
 
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
     const bounds = L.latLngBounds([]);
 
     locatedEvents.forEach((event) => {
-      const layer = L.geoJSON(event.location as L.GeoJSONObject, {
+      const layer = L.geoJSON(event.location, {
         pointToLayer: (_, latlng) =>
           L.circleMarker(latlng, {
             radius: 6,
@@ -74,12 +80,12 @@ export default function NoteMap({ events }: Props) {
   }
 
   return (
-    <section class="mt-4">
-      <h3 class="text-lg font-bold mb-2">Map</h3>
+    <section className="mt-4">
+      <h3 className="text-2xl font-bold mb-2">Map</h3>
 
       <div
         ref={containerRef}
-        class="h-96 w-full rounded-md border border-gray-300"
+        className="h-96 w-full rounded-md border border-gray-300"
       />
     </section>
   );
