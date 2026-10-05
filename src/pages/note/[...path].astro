@@ -97,7 +97,7 @@ const hasMap = note.events.some((event) => event.location != null);
     ))
   }
 
-  {/*hasMap && <NoteMap events={note.events} client:only="react" />*/}
+  {hasMap && <NoteMap events={note.events} client:only="react" />}
 
   {
     note.gallery.length > 0 && (

@@ -75,6 +75,7 @@ export default function NoteMap({ events }: Props) {
     };
   }, [locatedEvents]);
 
+  console.log("located", locatedEvents);
   if (locatedEvents.length === 0) {
     return null;
   }

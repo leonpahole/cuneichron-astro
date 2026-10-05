@@ -66,14 +66,5 @@ const hasMap = events.some((e) => e.location != null);
       </div>
     )
   }
-  {
-    /*
-    hasMap && (
-      <NoteMap
-        events={events}
-        client:only="react"
-      />
-    )
-    */
-  }
+  {hasMap && <NoteMap events={events} client:only="react" />}
 </section>

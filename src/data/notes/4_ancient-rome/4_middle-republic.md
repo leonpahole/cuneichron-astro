@@ -58,6 +58,38 @@ Phalanx was replaced with maniple. The infantry was divided into smaller maneuve
 - 275 BCE: Pyrrhus returned to Italy and was defeated at Beneventum, withdrawing to Epirus.
 - 272 BCE: Rome captured Tarentum, completing its conquest of Magna Graecia. `geo:{"type":"Point","coordinates":[17.24,40.47]}`
 
+### First Punic war
+
+- 289 BCE: After the death of Agathocles, the Mamertines seized Messana.
+- 278 BCE: Mamertines joined Pyrrhus's campaign in Sicily against Carthage.
+- ~276 BCE: The Mamertines turned against Pyrrhus.
+- ~275–265 BCE: Hiero II rose to power in Syracuse.
+- 265 BCE: Mamertines requested Carthaginian protection against Hiero II, then Romans to expel Carthaginians.
+- 264 BCE: Rome accepted the Mamertines' appeal and sent troops to Sicily, occupying Messana.
+- 264 BCE: Carthage sends an army and allies with Syracuse; Rome defeats Syracuse and forces Hiero II to become its ally.
+- 262 BCE: Rome besieged and sacked Agrigentum, gaining control of much of southern Sicily.
+- 261 BCE: To penetrate Carthaginian strongholds in the west, Rome built its first large fleet, adapting Carthaginian ship designs.
+- 260 BCE: First Roman naval disaster; ships under Scipio Asina are captured by Carthaginians.
+- 260 BCE: Rome defeated the Carthaginian fleet at the Battle of Mylae using the corvus.
+- ~260–256 BCE: The war settled into prolonged, indecisive fighting on land and sea.
+- ~260–257 BCE: Carthage uses Sardinia and Corsica as bases to harass the Italian coast.
+- 256 BCE: Rome defeated Carthage at Ecnmous and invaded North Africa.
+- 255 BCE: Rome defeated at Tunis by Carthaginians reorganized under Xanthippus, invasion abandoned.
+- ~255 BCE: The Roman fleet suffered a catastrophic storm while returning from North Africa.
+- 249 BCE: Rome attempted a surprise attack on the Carthaginian fleet at Drepana but was defeated.
+- ~248–241 BCE: Carthaginian general Hamilcar Barca waged a guerrilla war in western Sicily.
+- 241 BCE: Rome defeated the Carthaginian fleet near Sicily; war ended with Carthage surrendering Sicily to Rome and agreeing to pay indemnities.
+  w
+
+### Between Punic wars
+
+- 241 BCE: A Gallic tribe rebelled against Roman expansion in northern Italy but was defeated.
+- 236 BCE: A coalition of Gallic tribes marched south against Rome but dissolved before engaging the Roman army.
+- 228 BCE: Rome defeated the Illyrians after their piracy and established a protectorate in southern Illyria.
+- 228 BCE: Rome established diplomatic relations with Greeks and was accepted as a political equal, partly to counter growing Macedon.
+- 226 BCE: A large Gallic coalition invaded northern Italy, threatening Rome.
+- ~225 BCE: Rome defeated the invading Gauls and cleared Gallic forces from Italy south of the Alps.
+
 ## Gallery
 
 - ![Roman expansion map](/images/notes/ancient-rome/middle-republic/expansion.png) [via Wikipedia](https://en.wikipedia.org/wiki/Samnite_Wars)
