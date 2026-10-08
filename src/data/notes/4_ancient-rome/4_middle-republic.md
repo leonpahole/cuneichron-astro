@@ -79,7 +79,6 @@ Phalanx was replaced with maniple. The infantry was divided into smaller maneuve
 - 249 BCE: Rome attempted a surprise attack on the Carthaginian fleet at Drepana but was defeated.
 - ~248–241 BCE: Carthaginian general Hamilcar Barca waged a guerrilla war in western Sicily.
 - 241 BCE: Rome defeated the Carthaginian fleet near Sicily; war ended with Carthage surrendering Sicily to Rome and agreeing to pay indemnities.
-  w
 
 ### Between Punic wars
 
@@ -89,6 +88,52 @@ Phalanx was replaced with maniple. The infantry was divided into smaller maneuve
 - 228 BCE: Rome established diplomatic relations with Greeks and was accepted as a political equal, partly to counter growing Macedon.
 - 226 BCE: A large Gallic coalition invaded northern Italy, threatening Rome.
 - ~225 BCE: Rome defeated the invading Gauls and cleared Gallic forces from Italy south of the Alps.
+- 219 BCE: Rome demanded Hannibal ends siege of Saguntum, Carthage rejected; after Saguntum fell, Rome prepared for war.
+
+### Second Punic war
+
+- 218 BCE: Rome declared war on Carthage after Carthage refused Rome’s demand to withdraw Hannibal from Saguntum.
+- 218 BCE: Hannibal launched his invasion of Italy from New Carthage, crossing from Spain through Gaul with 50k men.
+- 218 BCE: Hannibal crossed the Alps with his army and war elephants, suffering heavy losses (25k men survived).
+- 218 BCE: Hannibal defeats Romans at Ticinus and Trebia through baits, superior Numidian cavalry and tactics.
+- 218 BCE: Hannibal gained support and reinforcements from Gallic groups in northern Italy after his victories.
+- 217 BCE: Hannibal crossed the flooded marshes of Etruria, bypassing Roman-controlled roads.
+- 217 BCE: Battle of Lake Trasimene - Rome's major defeat after Hannibal ambushed Flaminius's army in the narrow terrain.
+- 217 BCE: Hannibal's strategy focused also on encouraging Rome's allies to defect.
+- 217 BCE: Quintus Fabius Maximus was appointed dictator and adopted strategy of avoiding battle and refusing baits.
+- 217 BCE: Hannibal escaped a Roman trap in Campania by sending oxen carrying torches toward a guarded pass.
+- 217 BCE: Marcus Minucius appointed co-dictator alongside Fabius, undermining dictatorship as an office.
+- 217 BCE: Minucius attacked and was nearly destroyed; Fabius rescued his army; Minucius accepted Fabius's authority.
+- 216 BCE: Battle of Cannae - Hannibal decisively defeated the much larger Roman army through a double-envelopment maneuver.
+- 216 BCE: Roman Senate assumed greater control, sidelining popular assemblies and pursuing a more consistent military strategy.
+- 216 BCE: Rome raised new legions by changing the minimum/maximum enlistment age and enrolling slaves.
+- 216 BCE: After Hiero II died his teenage successor Hieronymus allied with Carthage and began attacking Roman forces in Sicily.
+- 215 BCE: Hieronymus was assassinated during a campaign, Carthaginian generals take control over the city.
+- 215–212 BCE: The Scipio brothers prevented Carthaginian forces in Spain from reinforcing Hannibal in Italy.
+- 211 BCE: Scipios defeated in separate engagements in Spain, ending five years of Roman campaigning there.
+- 214–212 BCE: Marcus Claudius Marcellus besieged Syracuse, whose defenses were strengthened by Archimedes' inventions.
+- 212 BCE: Rome captured and sacked Syracuse, exploiting a local festival and the defection of pro-Roman nobles.
+- 212 BCE: Rome regained control of most of Sicily, securing an important source of grain.
+- 215–205 BCE: First Macedonian War — Philip V allied with Hannibal, but Rome supported Greek allies to keep Macedon occupied through raids.
+- 216 BCE: Capua defected to Hannibal, becoming the most important Italian city to join the Carthaginian cause.
+- 212 BCE: Hannibal captured Tarentum, but the Roman garrison kept control of the coastal citadel, preventing Hannibal from gaining a secure port.
+- 212–211 BCE: Rome besieged Capua rather than directly confronting Hannibal, shifting the strategic initiative toward the Romans.
+- 211 BCE: Hannibal marched to within ~3km of Rome to force Rome to abandon siege of Capua, but Rome refused and Hannibal withdrew.
+- 211 BCE: Capua surrendered to Rome.
+- ~211–207 BCE: Rome gradually recovered cities that had defected to Hannibal, and vice-versa.
+- 210 BCE: Publius Cornelius Scipio volunteered command of Roman forces in Spain.
+- 210 BCE: Scipio captured New Carthage in a surprise assault, releasing Spanish hostages to strengthen alliances.
+- 208 BCE: Scipio defeated Hasdrubal in a battle in central Spain, but Hasdrubal escaped left Spain for Italy.
+- 206 BCE: Scipio defeated the newly sent Carthaginian army in Spain in Ilipa, Rome now dominant in Spain.
+- 207 BCE: Hasdrubal crossed the Alps, hoping to join Hannibal and create a combined army.
+- 207 BCE: Battle of the Metaurus - the two consuls secretly combined their armies and defeated Hasdrubal before he could join Hannibal; Hasdrubal was killed in the battle.
+- 205 BCE: Scipio authorized to invade North Africa after pitching it to the senate.
+- 205–204 BCE: Scipio prepared his invasion force in Sicily and established an alliance with the exiled Numidian prince Massinissa, gaining a crucial source of cavalry.
+- 203 BCE: Scipio invaded North Africa with 35,000 troops.
+- 203 BCE: Scipio defeated two large Carthaginian armies at two separate battle, leaving Carthage without an effective field army.
+- 202 BCE: Carthage recalled Hannibal from Italy.
+- 202 BCE: Battle of Zama - Scipio defeated Hannibal. The war ends with Rome victorious.
+- 202 BCE: Carthage accepted harsh peace terms, surrendering its overseas territories, its ability to wage war independently, and much of its political independence; Massinissa received an expanded Numidian kingdom.
 
 ## Gallery
 
