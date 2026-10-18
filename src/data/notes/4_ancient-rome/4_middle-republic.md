@@ -9,7 +9,7 @@ Rome emerged as the dominant power in central Italy, while the political integra
 
 Phalanx was replaced with maniple. The infantry was divided into smaller maneuverable units arranged in three lines. It was combined with light infantry (for beginning skirmish) and cavalry (on sides). Allies had to provide forces, especially cavalry. Soldiers fought with thrown spears before closing with swords. Focus was also on discipline (rewards and punishments), logistics, infrastrucutre (Appian way), fortified camps, and careful planning. The legion consisted of 10 maniples of 120 young, 10 maniples of 120 experienced, and 10 half strength maniples (60) of veterans + 1200 light infantry and 300 cavalry (4500 men in total).
 
-At the end of this period, Rome’s overseas territories included Sicily, parts of Spain, Africa, and Greece, marking the emergence of a more extensive provincial empire. After 146 BC, with major external rivals defeated, Roman political competition increasingly focused on internal struggles.
+At the end of this period, Rome’s overseas territories included Sicily, parts of Spain, Africa, and Greece, marking the emergence of a more extensive provincial empire. The conquests brought enormous wealth, slaves, and political influence to the Republic, but the benefits were distributed unevenly. Competition among aristocratic families intensified, while changes in landownership and military recruitment placed increasing pressure on traditional republican institutions.
 
 ## Timeline
 
@@ -137,7 +137,7 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 202 BCE: Battle of Zama - Scipio defeated Hannibal. The war ends with Rome victorious.
 - 202 BCE: Carthage accepted harsh peace terms, surrendering its overseas territories, its ability to wage war independently, and much of its political independence; Massinissa received an expanded Numidian kingdom.
 
-## Wars in the east
+### Wars in the east
 
 - 201 BCE: Pergamum and Rhodes appealed to Rome for help against Philip V of Macedon, whose expansion threatened their territories-
 - 200 BCE: Rome issued Philip V an ultimatum to stop his expansion; after he rejected it, Rome began the Second Macedonian War.
@@ -166,7 +166,7 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 167 BCE: Roman forces sacked settlements across Epirus and enslaved a large part of the population as collective punishment following the war, despite Epirus not having been a central participant in Perseus’s conflict.
 - 167 BCE: Rome brought Greek hostages to Italy, including the historian Polybius, who later wrote an influential history of Rome and helped explain Roman institutions and expansion to Greek readers.
 
-## Mopping up
+### Mopping up
 
 - 149 BCE: Andriscus led a revolt to reunite Macedon; after initial Roman defeat, Quintus Caecilius Metellus defeated him and made Macedon a province.
 - 146 BCE: The Achaean League rebelled against Roman authority; Rome defeated them and destroyed Corinth.
