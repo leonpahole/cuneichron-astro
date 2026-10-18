@@ -30,3 +30,16 @@ The term “Punic,” derived from the Latin word for Phoenician, was used by Ro
 - ~221–219 BCE: Hannibal expanded Carthaginian territory in Spain, bringing him increasingly into conflict with Rome's ally Saguntum.
 - 219 BCE: Hannibal besieged and captured Saguntum after an eight-month siege, precipitating the Second Punic War.
 - 218-201 BCE: Second Punic war.
+- 201 BCE: Carthage lost its overseas territories, surrendered its fleet, accepted warfare restrictions, and agreed to pay an indemnity.
+- ~195 BCE: Hannibal went into exile (court of Antiochus III) after political opponents accused him of preparing to renew the war with Rome.
+- ~183 BCE: Hannibal died in exile at Bithynia, reportedly taking poison to avoid capture by Roman agents.
+- ~200–160 BCE: Carthage recovered economically, developing trade and agriculture while remaining politically subordinate to Rome.
+- ~200–150 BCE: Massinissa (king of Numidia and Roman ally), repeatedly seized Carthaginian territory; Rome did failed to protect them.
+- 151 BCE: Carthage raised an army to defend its territory against Numidia, breaking its treaty restrictions on warfare; the campaign ended in defeat.
+- 149 BCE: Rome declared war on Carthage (Third Punic War), and demanded that the Carthaginians abandon their city and relocate inland.
+- 149–146 BCE: Carthage resisted the siege despite disease, shortages, and increasing isolation.
+- 146 BCE: Rome under Scipio Aemilianus destroyed Carthage; many killed or enslaved, the survivors dispersed. End of the independent Carthaginian state.
+
+## Gallery
+
+- ![Carthage on a map](/images/notes/phoenicians/carthage/carthage_map.png) [via Britannica](https://www.britannica.com/place/Carthage-ancient-city-Tunisia)
