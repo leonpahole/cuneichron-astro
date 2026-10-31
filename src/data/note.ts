@@ -46,7 +46,9 @@ export interface GalleryImage {
 export interface TimelineSection {
   title?: string;
   events: NoteEvent[];
+  images: GalleryImage[];
   people?: Person[];
+  dateRange?: [HistoricalDate, HistoricalDate];
 }
 
 export interface NoteEvent {
@@ -98,7 +100,7 @@ export const parseMarkdownIntoNote = (
 
   const topic = getTopicFromFilePath(filePath);
   const path = getPathFromFilePath(filePath);
-  const timeline = getTimelineSections(md);
+  const timeline = getTimelineSections(md, path);
   const people = getPeople(md);
 
   return {
@@ -110,7 +112,7 @@ export const parseMarkdownIntoNote = (
     topic,
     events: timeline.flatMap((section) => section.events),
     timeline,
-    gallery: getGallery(md, path),
+    gallery: [...timeline.flatMap((section) => section.images), ...getGallery(md, path)],
     people,
   };
 };
@@ -188,7 +190,7 @@ const stripLeadingNumber = (str: string): string => str.replace(/^\d+_/, "");
 
 const stripMarkdownExt = (str: string): string => str.replace(/\.md$/, "");
 
-const getTimelineSections = (md: Root): TimelineSection[] => {
+const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
   const timelineHeadingIndex = md.children.findIndex(
     (c) =>
       c.type === "heading" &&
@@ -200,7 +202,7 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
   if (startIndex === -1) return [];
 
   const sections: TimelineSection[] = [];
-  let current: TimelineSection = { events: [] };
+  let current: TimelineSection = { events: [], images: [] };
   sections.push(current);
 
   for (let i = startIndex + 1; i < md.children.length; i++) {
@@ -212,7 +214,7 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
         break;
       }
       // A deeper heading starts a new timeline subsection.
-      current = { title: getTextNodeText(node), events: [], people: getTaggedPeople(node) };
+      current = { title: getTextNodeText(node), events: [], images: [], people: getTaggedPeople(node) };
       sections.push(current);
       continue;
     }
@@ -224,10 +226,25 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
       continue;
     }
 
+    if (node.type === "paragraph") {
+      current.images.push(...getGalleryImagesFromNode(node, notePath));
+    }
+
     // Ignore other nodes (loose text/paragraphs) within the timeline.
   }
 
-  return sections.filter((section) => section.events.length > 0);
+  return sections
+    .filter((section) => section.events.length > 0)
+    .map((section) => ({ ...section, dateRange: getEventDateRange(section.events) }));
+};
+
+const getEventDateRange = (events: NoteEvent[]): [HistoricalDate, HistoricalDate] | undefined => {
+  const dates = events.flatMap((event) => event.time.type === "single"
+    ? [event.time.date]
+    : [event.time.from, event.time.to]);
+  if (dates.length === 0) return undefined;
+  const sorted = [...dates].sort((a, b) => historicalDateToNumber(a) - historicalDateToNumber(b));
+  return [sorted[0], sorted[sorted.length - 1]];
 };
 
 const parseEvent = (item: ListItem, sectionPeople: Person[] = []): NoteEvent => {
@@ -258,17 +275,17 @@ const getGallery = (md: Root, notePath: string): GalleryImage[] => {
     return [];
   }
 
-  return listNote.children.flatMap((item) => {
-    const images = findImages(item);
-    const source = findSourceLink(item);
-    return images.map((img) => ({
-      src: resolveImageSrc(img.url, notePath),
-      alt: img.alt || "",
-      source: source
-        ? { label: getTextNodeText(source) || "Source", url: source.url }
-        : undefined,
-    }));
-  });
+  return listNote.children.flatMap((item) => getGalleryImagesFromNode(item, notePath));
+};
+
+const getGalleryImagesFromNode = (node: object, notePath: string): GalleryImage[] => {
+  const images = findImages(node);
+  const source = findSourceLink(node);
+  return images.map((img) => ({
+    src: resolveImageSrc(img.url, notePath),
+    alt: img.alt || "",
+    source: source ? { label: getTextNodeText(source) || "Source", url: source.url } : undefined,
+  }));
 };
 
 const findImages = (node: object): Image[] => {
@@ -443,7 +460,9 @@ const getEventText = (node: object): string => {
     return "";
   }
 
-  return children.map(getEventText).filter(Boolean).join(" ");
+  // Inline Markdown nodes already carry their own spacing in adjacent text
+  // nodes. Adding spaces here separates punctuation after links and emphasis.
+  return children.map(getEventText).join("");
 };
 
 // A bullet may carry an optional GeoJSON location as an inline code span such
@@ -545,7 +564,7 @@ export const noteEventTimeToString = (time: NoteEventTime): string => {
 
   const from = historicalDateToString(time.from, "from");
   const to = historicalDateToString(time.to, "to");
-  return `${from}${time.from.year !== time.to.year ? ` ${formatNumber(time.from.year)}` : ""}–${to}`;
+  return `${from}–${to}`;
 };
 
 const historicalDateToString = (
@@ -562,7 +581,8 @@ const historicalDateToString = (
   if (type === "single") {
     return `${date.isCirca ? "~" : ""}${datePrefix(date)}${dateStr} ${period}`;
   }
-  return `${date.isCirca ? "~" : ""}${datePrefix(date)}${type === "to" || date.month ? `${dateStr} ` : ""}${type === "to" ? period : ""}`.trimEnd();
+  const suffix = type === "to" ? ` ${period}` : "";
+  return `${date.isCirca ? "~" : ""}${datePrefix(date)}${dateStr}${suffix}`;
 };
 
 const datePrefix = (date: HistoricalDate): string => {

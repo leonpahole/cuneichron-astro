@@ -192,6 +192,8 @@ Individual generals were increasingly given more authority, reflecting the Repub
 - 52 BCE: [person]Caesar[/person] captured Avaricum after a prolonged siege, massacring much of its population, but subsequently suffered a significant defeat at Gergovia.
 - 52 BCE: [person]Caesar[/person] besieged [person]Vercingetorix[/person] at Alesia, constructing two rings of fortifications to contain the defenders and repel a Gallic relief army. [person]Vercingetorix[/person] surrendered.
 
+![Map of the Gallic Wars](/images/notes/ancient-rome/late-republic/gallic-wars.webp) [Wikipedia](https://en.wikipedia.org/wiki/Gallic_Wars)
+
 ### Set up to civil war
 
 - 58 BCE: Tribune [person]Clodius[/person] forced [person]Cicero[/person] into exile, introduced free grain distributions and annexed Cyprus, arranging for [person]Cato the Younger[/person] to oversee it, removing him from Rome.
@@ -205,7 +207,7 @@ Individual generals were increasingly given more authority, reflecting the Repub
 - ~52–50 BCE: [person]Pompey[/person] aligned himself with [person]Caesar[/person]'s opponents and disputed over [person]Caesar[/person]'s command, potential prosecution, and his right to seek another consulship.
 - 50 BCE: [person]Caesar[/person] proposed relinquishing his military command if [person]Pompey[/person] did likewise, but negotiations failed.
 
-### Civil war (49–45 BCE)
+### Civil wars
 
 - January 49 BCE: [person]Caesar[/person] refused the Senate demand to surrender military command.
 - January 49 BCE: Tribunes including [person]Mark Antony[/person] opposed the senate and flet to [person]Caesar[/person]'s camp.
@@ -216,3 +218,7 @@ Individual generals were increasingly given more authority, reflecting the Repub
 - Summer 49 BCE: [person]Caesar[/person] forced surrender of [person]Pompey[/person]'s legions in Hispania and some joined him istead.
 - December 49 BCE: [person]Caesar[/person] briefly assumed the dictatorship to organize elections that secured his consulship.
 - January 48 BCE: [person]Caesar[/person] crossed the Adriatic during winter, surprising [person]Pompey[/person]'s forces. However, the Pompeian fleet prevented his remaining troops from immediately following.
+
+## Gallery
+
+- ![Map of Caesar's civil war, 63–44 BCE](/images/notes/ancient-rome/late-republic/map-63-44-bc.webp) [Wikipedia](https://en.wikipedia.org/wiki/Caesar%27s_civil_war)

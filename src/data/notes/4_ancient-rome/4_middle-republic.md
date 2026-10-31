@@ -111,8 +111,8 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 216 BCE: Rome raised new legions by changing the minimum/maximum enlistment age and enrolling slaves.
 - 216 BCE: After [person]Hiero II[/person] died his teenage successor [person]Hieronymus[/person] allied with Carthage and began attacking Roman forces in Sicily.
 - 215 BCE: [person]Hieronymus[/person] was assassinated during a campaign, Carthaginian generals take control over the city.
-- 215–212 BCE: The [person]Scipio[/person] brothers prevented Carthaginian forces in Spain from reinforcing [person]Hannibal[/person] in Italy.
-- 211 BCE: Scipios defeated in separate engagements in Spain, ending five years of Roman campaigning there.
+- 215–212 BCE: [person]Publius Cornelius Scipio[/person] and [person]Gnaeus Cornelius Scipio Calvus[/person] prevented Carthaginian forces in Spain from reinforcing [person]Hannibal[/person] in Italy.
+- 211 BCE: [person]Publius Cornelius Scipio[/person] and [person]Gnaeus Cornelius Scipio Calvus[/person] were defeated in separate engagements in Spain, ending five years of Roman campaigning there.
 - 214–212 BCE: [person]Marcus Claudius Marcellus[/person] besieged Syracuse, whose defenses were strengthened by [person]Archimedes[/person]' inventions.
 - 212 BCE: Rome captured and sacked Syracuse, exploiting a local festival and the defection of pro-Roman nobles.
 - 212 BCE: Rome regained control of most of Sicily, securing an important source of grain.
@@ -123,18 +123,18 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 211 BCE: [person]Hannibal[/person] marched to within ~3km of Rome to force Rome to abandon siege of Capua, but Rome refused and [person]Hannibal[/person] withdrew.
 - 211 BCE: Capua surrendered to Rome.
 - ~211–207 BCE: Rome gradually recovered cities that had defected to [person]Hannibal[/person], and vice-versa.
-- 210 BCE: [person]Publius Cornelius Scipio[/person] volunteered command of Roman forces in Spain.
-- 210 BCE: [person]Scipio[/person] captured New Carthage in a surprise assault, releasing Spanish hostages to strengthen alliances.
-- 208 BCE: [person]Scipio[/person] defeated [person]Hasdrubal[/person] in a battle in central Spain, but [person]Hasdrubal[/person] escaped left Spain for Italy.
-- 206 BCE: [person]Scipio[/person] defeated the newly sent Carthaginian army in Spain in Ilipa, Rome now dominant in Spain.
+- 210 BCE: [person]Scipio Africanus[/person] volunteered command of Roman forces in Spain.
+- 210 BCE: [person]Scipio Africanus[/person] captured New Carthage in a surprise assault, releasing Spanish hostages to strengthen alliances.
+- 208 BCE: [person]Scipio Africanus[/person] defeated [person]Hasdrubal[/person] in a battle in central Spain, but [person]Hasdrubal[/person] escaped left Spain for Italy.
+- 206 BCE: [person]Scipio Africanus[/person] defeated the newly sent Carthaginian army in Spain in Ilipa, Rome now dominant in Spain.
 - 207 BCE: [person]Hasdrubal[/person] crossed the Alps, hoping to join [person]Hannibal[/person] and create a combined army.
 - 207 BCE: Battle of the Metaurus - the two consuls secretly combined their armies and defeated [person]Hasdrubal[/person] before he could join [person]Hannibal[/person]; [person]Hasdrubal[/person] was killed in the battle.
-- 205 BCE: [person]Scipio[/person] authorized to invade North Africa after pitching it to the senate.
-- 205–204 BCE: [person]Scipio[/person] prepared his invasion force in Sicily and established an alliance with the exiled Numidian prince [person]Massinissa[/person], gaining a crucial source of cavalry.
-- 203 BCE: [person]Scipio[/person] invaded North Africa with 35,000 troops.
-- 203 BCE: [person]Scipio[/person] defeated two large Carthaginian armies at two separate battle, leaving Carthage without an effective field army.
+- 205 BCE: [person]Scipio Africanus[/person] was authorized to invade North Africa after pitching it to the senate.
+- 205–204 BCE: [person]Scipio Africanus[/person] prepared his invasion force in Sicily and established an alliance with the exiled Numidian prince [person]Massinissa[/person], gaining a crucial source of cavalry.
+- 203 BCE: [person]Scipio Africanus[/person] invaded North Africa with 35,000 troops.
+- 203 BCE: [person]Scipio Africanus[/person] defeated two large Carthaginian armies at two separate battle, leaving Carthage without an effective field army.
 - 202 BCE: Carthage recalled [person]Hannibal[/person] from Italy.
-- 202 BCE: Battle of Zama - [person]Scipio[/person] defeated [person]Hannibal[/person]. The war ends with Rome victorious.
+- 202 BCE: Battle of Zama - [person]Scipio Africanus[/person] defeated [person]Hannibal[/person]. The war ends with Rome victorious.
 - 202 BCE: Carthage accepted harsh peace terms, surrendering its overseas territories, its ability to wage war independently, and much of its political independence; [person]Massinissa[/person] received an expanded Numidian kingdom.
 
 ### Wars in the east
@@ -151,7 +151,7 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 192 BCE: [person]Antiochus III[/person] landed in Greece with a Seleucid force of about 10,000 troops but failed to secure broad Greek support.
 - 192 BCE: Rome sent two legions to Greece, where they were joined by the Achaean League against Antiochus and his allies.
 - 191 BCE: Battle of Thermopylae - Roman forces defeated [person]Antiochus III[/person]’s army.
-- 190 BCE: Roman forces under [person]Scipio[/person] brothers crossed the Hellespont into Asia Minor.
+- 190 BCE: Roman forces under [person]Scipio Africanus[/person] and his brother [person]Lucius Cornelius Scipio Asiaticus[/person] crossed the Hellespont into Asia Minor.
 - 190 BCE: [person]Hannibal[/person] defeated by the Rhodian fleet.
 - 190 BCE: Battle of Magnesia - Roman and allied forces defeated [person]Antiochus III[/person]’s much larger army.
 - 188 BCE: Treaty of Apamea - [person]Antiochus III[/person] accepted a large indemnity, surrendered territory in Asia Minor, provided hostages, and agreed to keep his forces north of the Taurus Mountains.

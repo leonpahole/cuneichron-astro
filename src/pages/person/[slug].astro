@@ -20,12 +20,14 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { slug, name, notes } = Astro.props;
 const description = descriptions[slug as keyof typeof descriptions]?.description;
+const personTags = descriptions[slug as keyof typeof descriptions]?.tags ?? [];
+const category = descriptions[slug as keyof typeof descriptions]?.category;
 ---
 
 <Layout title={name}>
-  <a href="/" class="underline">← Timeline</a>
-  <h2 class="mt-3 mb-2 font-bold text-3xl">{name}</h2>
+  <h2 class="mb-2 font-bold text-3xl">{name}</h2>
   {description && <p class="mb-6 max-w-3xl">{description}</p>}
+  {(category || personTags.length > 0) && <div class="mb-5 flex flex-wrap gap-2">{category && <span class="rounded border border-gray-300 px-2 py-0.5 text-sm">{category}</span>}{personTags.map((tag) => <span class="rounded border border-gray-300 px-2 py-0.5 text-sm">{tag}</span>)}</div>}
   {notes.sort((a, b) => a.fileName.localeCompare(b.fileName, undefined, { numeric: true })).map((note) => <section class="mb-6">
     <h3 class="font-bold text-2xl mb-2"><a class="underline" href={`/note/${note.path}`}>{note.topic}: {note.name}</a></h3>
     {note.timeline.map((section) => {

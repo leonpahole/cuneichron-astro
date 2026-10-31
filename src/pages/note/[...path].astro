@@ -11,6 +11,7 @@ import {
   type Note,
 } from "../../data/note";
 import NoteMap from "../../components/NoteMap";
+import peopleDirectory from "../../data/people.json";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
@@ -49,6 +50,25 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { note, prev, next, series, elsewhere } = Astro.props;
 const hasMap = note.events.some((event) => event.location != null);
+const sectionId = (title: string) => title.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const sectionDateLabel = (section: (typeof note.timeline)[number]) => section.dateRange
+  ? `(${noteEventTimeToString({ type: "range", from: section.dateRange[0], to: section.dateRange[1] }).trim()})`
+  : "";
+const firstAppearance = new Map<string, number>();
+for (const event of note.events) {
+  const eventStart = event.time.type === "single"
+    ? event.time.date
+    : event.time.from;
+  const date = eventStart.period === "BCE" ? -eventStart.year : eventStart.year;
+  for (const person of event.people) {
+    firstAppearance.set(person.slug, Math.min(firstAppearance.get(person.slug) ?? Infinity, date));
+  }
+}
+const peopleByCategory = note.people.reduce((groups, person) => {
+  const category = peopleDirectory[person.slug as keyof typeof peopleDirectory]?.category ?? "Other";
+  groups.set(category, [...(groups.get(category) ?? []), person]);
+  return groups;
+}, new Map<string, typeof note.people>());
 ---
 
 <Layout title={note.name}>
@@ -78,7 +98,9 @@ const hasMap = note.events.some((event) => event.location != null);
 
   {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
 
-  {note.people.length > 0 && <section class="mb-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><ul class="flex flex-wrap gap-x-3">{note.people.map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{person.name}</a></li>)}</ul></section>}
+  {note.timeline.some((section) => section.title) && <nav class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">In this note</h2><ul class="list-disc pl-6">{note.timeline.filter((section) => section.title).map((section) => <li><a class="underline" href={`#${sectionId(section.title!)}`}>{section.title}{sectionDateLabel(section) && <span class="ml-1">{sectionDateLabel(section)}</span>}</a></li>)}</ul></nav>}
+
+  {note.people.length > 0 && <section class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><div class="flex flex-col gap-3">{[...peopleByCategory].sort(([a], [b]) => a.localeCompare(b)).map(([category, people]) => <div><h3 class="font-semibold mb-1">{category}</h3><ul class="flex flex-wrap gap-x-3 gap-y-1">{[...people].sort((a, b) => (firstAppearance.get(a.slug) ?? Infinity) - (firstAppearance.get(b.slug) ?? Infinity) || a.name.localeCompare(b.name)).map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{person.name}</a></li>)}</ul></div>)}</div></section>}
 
   <h3 class="text-2xl font-bold mb-2">Timeline</h3>
 
@@ -86,7 +108,7 @@ const hasMap = note.events.some((event) => event.location != null);
     note.timeline.map((section) => (
       <div>
         {section.title && (
-          <h4 class="font-semibold text-xl mb-2">{section.title}</h4>
+          <h4 id={sectionId(section.title)} class="font-semibold text-xl mb-2">{section.title}{sectionDateLabel(section) && <span class="ml-2 text-base font-normal text-gray-500">{sectionDateLabel(section)}</span>}</h4>
         )}
         <ol class="flex flex-col gap-0.5 mb-4">
           {section.events.map((e) => (
@@ -96,6 +118,7 @@ const hasMap = note.events.some((event) => event.location != null);
             </li>
           ))}
         </ol>
+        {section.images.length > 0 && <div class="flex flex-col gap-2 mb-4">{section.images.map((img) => <figure class="rounded-md border border-gray-300 overflow-hidden max-w-2xl"><img src={img.src} alt={img.alt} loading="lazy" class="w-full h-auto object-cover" />{(img.alt || img.source) && <figcaption class="text-xs px-2 py-0.5 flex flex-col gap-0.5">{img.alt && <span class="font-semibold">{img.alt}</span>}{img.source && <a href={img.source.url} target="_blank" rel="noopener noreferrer" class="underline">{img.source.label}</a>}</figcaption>}</figure>)}</div>}
       </div>
     ))
   }

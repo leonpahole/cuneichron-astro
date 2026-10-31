@@ -1,271 +1,362 @@
 {
   "agathocles": {
-    "name": "Agathocles"
+    "name": "Agathocles",
+    "category": "Ruler"
   },
   "hamilcar-barca": {
-    "name": "Hamilcar Barca"
+    "name": "Hamilcar Barca",
+    "category": "Military leader"
   },
   "hamilcar": {
-    "name": "Hamilcar"
+    "name": "Hamilcar",
+    "category": "Military leader"
   },
   "hasdrubal": {
-    "name": "Hasdrubal"
+    "name": "Hasdrubal",
+    "category": "Military leader"
   },
   "hannibal": {
-    "name": "Hannibal"
+    "name": "Hannibal",
+    "category": "Military leader"
   },
   "antiochus-iii": {
-    "name": "Antiochus III"
+    "name": "Antiochus III",
+    "category": "Ruler"
   },
   "massinissa": {
-    "name": "Massinissa"
+    "name": "Massinissa",
+    "category": "Ruler"
   },
   "scipio-aemilianus": {
-    "name": "Scipio Aemilianus"
+    "name": "Scipio Aemilianus",
+    "category": "Military leader"
   },
   "pyrrhus": {
-    "name": "Pyrrhus"
+    "name": "Pyrrhus",
+    "category": "Military leader"
   },
   "hiero-ii": {
-    "name": "Hiero II"
+    "name": "Hiero II",
+    "category": "Ruler"
   },
   "scipio-asina": {
-    "name": "Scipio Asina"
+    "name": "Scipio Asina",
+    "category": "Military leader"
   },
   "xanthippus": {
-    "name": "Xanthippus"
+    "name": "Xanthippus",
+    "category": "Military leader"
   },
   "flaminius": {
-    "name": "Flaminius"
+    "name": "Flaminius",
+    "category": "Military leader"
   },
   "quintus-fabius-maximus": {
-    "name": "Quintus Fabius Maximus"
+    "name": "Quintus Fabius Maximus",
+    "category": "Military leader"
   },
   "marcus-minucius": {
-    "name": "Marcus Minucius"
+    "name": "Marcus Minucius",
+    "category": "Military leader"
   },
   "fabius": {
-    "name": "Fabius"
+    "name": "Fabius",
+    "category": "Military leader"
   },
   "minucius": {
-    "name": "Minucius"
+    "name": "Minucius",
+    "category": "Military leader"
   },
   "hieronymus": {
-    "name": "Hieronymus"
-  },
-  "scipio": {
-    "name": "Scipio"
+    "name": "Hieronymus",
+    "category": "Ruler"
   },
   "marcus-claudius-marcellus": {
-    "name": "Marcus Claudius Marcellus"
+    "name": "Marcus Claudius Marcellus",
+    "category": "Military leader"
   },
   "archimedes": {
-    "name": "Archimedes"
+    "name": "Archimedes",
+    "category": "Scholar"
   },
   "philip-v": {
-    "name": "Philip V"
-  },
-  "publius-cornelius-scipio": {
-    "name": "Publius Cornelius Scipio"
+    "name": "Philip V",
+    "category": "Ruler"
   },
   "titus-quinctius-flamininus": {
-    "name": "Titus Quinctius Flamininus"
+    "name": "Titus Quinctius Flamininus",
+    "category": "Military leader"
   },
   "flamininus": {
-    "name": "Flamininus"
+    "name": "Flamininus",
+    "category": "Military leader"
   },
   "scipio-africanus": {
-    "name": "Scipio Africanus"
+    "name": "Scipio Africanus",
+    "category": "Military leader"
   },
   "perseus": {
-    "name": "Perseus"
+    "name": "Perseus",
+    "category": "Ruler"
   },
   "demetrius": {
-    "name": "Demetrius"
+    "name": "Demetrius",
+    "category": "Ruler"
   },
   "lucius-aemilius-paullus": {
-    "name": "Lucius Aemilius Paullus"
+    "name": "Lucius Aemilius Paullus",
+    "category": "Military leader"
   },
   "paullus": {
-    "name": "Paullus"
+    "name": "Paullus",
+    "category": "Military leader"
   },
   "polybius": {
-    "name": "Polybius"
+    "name": "Polybius",
+    "category": "Scholar"
   },
   "andriscus": {
     "name": "Andriscus"
   },
   "quintus-caecilius-metellus": {
-    "name": "Quintus Caecilius Metellus"
+    "name": "Quintus Caecilius Metellus",
+    "category": "Military leader"
   },
   "romulus": {
-    "name": "Romulus"
+    "name": "Romulus",
+    "category": "Legendary figure"
   },
   "numa-pompilius": {
-    "name": "Numa Pompilius"
+    "name": "Numa Pompilius",
+    "category": "Ruler"
   },
   "tullus-hostilius": {
-    "name": "Tullus Hostilius"
+    "name": "Tullus Hostilius",
+    "category": "Ruler"
   },
   "ancus-marcius": {
-    "name": "Ancus Marcius"
+    "name": "Ancus Marcius",
+    "category": "Ruler"
   },
   "tarquinius-priscus": {
-    "name": "Tarquinius Priscus"
+    "name": "Tarquinius Priscus",
+    "category": "Ruler"
   },
   "servius-tullius": {
-    "name": "Servius Tullius"
+    "name": "Servius Tullius",
+    "category": "Ruler"
   },
   "tarquinius-superbus": {
-    "name": "Tarquinius Superbus"
+    "name": "Tarquinius Superbus",
+    "category": "Ruler"
   },
   "sextus-tarquinius": {
-    "name": "Sextus Tarquinius"
+    "name": "Sextus Tarquinius",
+    "category": "Legendary figure"
   },
   "lucretia": {
-    "name": "Lucretia"
+    "name": "Lucretia",
+    "category": "Legendary figure"
   },
   "lucius-junius-brutus": {
-    "name": "Lucius Junius Brutus"
+    "name": "Lucius Junius Brutus",
+    "category": "Politician"
   },
   "lucius-tarquinius-collatinus": {
-    "name": "Lucius Tarquinius Collatinus"
+    "name": "Lucius Tarquinius Collatinus",
+    "category": "Politician"
   },
   "brutus": {
-    "name": "Brutus"
+    "name": "Brutus",
+    "category": "Politician"
   },
   "collatinus": {
-    "name": "Collatinus"
+    "name": "Collatinus",
+    "category": "Politician"
   },
   "publius-valerius-publicola": {
-    "name": "Publius Valerius Publicola"
+    "name": "Publius Valerius Publicola",
+    "category": "Politician"
   },
   "publicola": {
-    "name": "Publicola"
+    "name": "Publicola",
+    "category": "Politician"
   },
   "horatius-pulvillus": {
-    "name": "Horatius Pulvillus"
+    "name": "Horatius Pulvillus",
+    "category": "Politician"
   },
   "lars-porsena": {
-    "name": "Lars Porsena"
+    "name": "Lars Porsena",
+    "category": "Military leader"
   },
   "cincinnatus": {
-    "name": "Cincinnatus"
+    "name": "Cincinnatus",
+    "category": "Politician"
   },
   "marcus-furius-camillus": {
-    "name": "Marcus Furius Camillus"
+    "name": "Marcus Furius Camillus",
+    "category": "Military leader"
   },
   "camillus": {
-    "name": "Camillus"
+    "name": "Camillus",
+    "category": "Military leader"
   },
   "brennus": {
-    "name": "Brennus"
+    "name": "Brennus",
+    "category": "Military leader"
   },
   "aeneas": {
-    "name": "Aeneas"
+    "name": "Aeneas",
+    "category": "Legendary figure"
   },
   "ascanius": {
-    "name": "Ascanius"
+    "name": "Ascanius",
+    "category": "Legendary figure"
   },
   "numitor": {
-    "name": "Numitor"
+    "name": "Numitor",
+    "category": "Legendary figure"
   },
   "amulius": {
-    "name": "Amulius"
+    "name": "Amulius",
+    "category": "Legendary figure"
   },
   "rhea-silvia": {
-    "name": "Rhea Silvia"
+    "name": "Rhea Silvia",
+    "category": "Legendary figure"
   },
   "remus": {
-    "name": "Remus"
+    "name": "Remus",
+    "category": "Legendary figure"
   },
   "cornelia": {
     "name": "Cornelia"
   },
   "marcus-octavius": {
-    "name": "Marcus Octavius"
+    "name": "Marcus Octavius",
+    "category": "Politician"
   },
   "attalus-iii": {
-    "name": "Attalus III"
+    "name": "Attalus III",
+    "category": "Ruler"
   },
   "tiberius-gracchus": {
-    "name": "Tiberius Gracchus"
+    "name": "Tiberius Gracchus",
+    "category": "Politician"
   },
   "gaius-gracchus": {
-    "name": "Gaius Gracchus"
+    "name": "Gaius Gracchus",
+    "category": "Politician"
   },
   "marcus-licinius-crassus": {
-    "name": "Marcus Licinius Crassus"
+    "name": "Marcus Licinius Crassus",
+    "category": "Politician"
   },
   "julia": {
     "name": "Julia"
   },
   "marius": {
-    "name": "Marius"
+    "name": "Marius",
+    "category": "Military leader"
   },
   "sulla": {
-    "name": "Sulla"
+    "name": "Sulla",
+    "category": "Military leader"
   },
   "pompey-the-great": {
-    "name": "Pompey the Great"
+    "name": "Pompey the Great",
+    "category": "Military leader"
   },
   "caesar": {
     "name": "Caesar",
-    "description": "Roman general and statesman whose campaigns in Gaul and conflict with the Senate helped bring the Roman Republic to an end."
+    "description": "Roman general and statesman whose campaigns in Gaul and conflict with the Senate helped bring the Roman Republic to an end.",
+    "category": "Military leader"
   },
   "mithridates-vi": {
-    "name": "Mithridates VI"
+    "name": "Mithridates VI",
+    "category": "Ruler"
   },
   "pompey": {
-    "name": "Pompey"
+    "name": "Pompey",
+    "category": "Military leader"
   },
   "crassus": {
-    "name": "Crassus"
+    "name": "Crassus",
+    "category": "Military leader"
   },
   "cicero": {
-    "name": "Cicero"
+    "name": "Cicero",
+    "category": "Politician"
   },
   "sertorius": {
-    "name": "Sertorius"
+    "name": "Sertorius",
+    "category": "Military leader"
   },
   "spartacus": {
-    "name": "Spartacus"
+    "name": "Spartacus",
+    "category": "Military leader"
   },
   "crixus": {
-    "name": "Crixus"
+    "name": "Crixus",
+    "category": "Military leader"
   },
   "nicomedes-iv": {
-    "name": "Nicomedes IV"
+    "name": "Nicomedes IV",
+    "category": "Ruler"
   },
   "lucullus": {
-    "name": "Lucullus"
+    "name": "Lucullus",
+    "category": "Military leader"
   },
   "tigranes-ii": {
-    "name": "Tigranes II"
+    "name": "Tigranes II",
+    "category": "Ruler"
   },
   "catiline": {
-    "name": "Catiline"
+    "name": "Catiline",
+    "category": "Politician"
   },
   "cato-the-younger": {
-    "name": "Cato the Younger"
+    "name": "Cato the Younger",
+    "category": "Politician"
   },
   "clodius": {
-    "name": "Clodius"
+    "name": "Clodius",
+    "category": "Politician"
   },
   "ariovistus": {
-    "name": "Ariovistus"
+    "name": "Ariovistus",
+    "category": "Military leader"
   },
   "vercingetorix": {
     "name": "Vercingetorix",
-    "description": "Arvernian chieftain who united a coalition of Gallic peoples against Julius Caesar during the Gallic Wars."
+    "description": "Arvernian chieftain who united a coalition of Gallic peoples against Julius Caesar during the Gallic Wars.",
+    "category": "Military leader"
   },
   "mitochondrial-eve": {
-    "name": "mitochondrial Eve"
+    "name": "mitochondrial Eve",
+    "category": "Prehistoric individual"
   },
   "lucy": {
-    "name": "Lucy"
+    "name": "Lucy",
+    "category": "Prehistoric individual"
   },
   "mark-antony": {
-    "name": "Mark Antony"
+    "name": "Mark Antony",
+    "category": "Military leader"
+  },
+  "publius-cornelius-scipio": {
+    "name": "Publius Cornelius Scipio",
+    "description": "Roman commander in Spain during the Second Punic War and father of Scipio Africanus.",
+    "category": "Military leader"
+  },
+  "gnaeus-cornelius-scipio-calvus": {
+    "name": "Gnaeus Cornelius Scipio Calvus",
+    "category": "Military leader"
+  },
+  "lucius-cornelius-scipio-asiaticus": {
+    "name": "Lucius Cornelius Scipio Asiaticus",
+    "category": "Military leader"
   }
 }
