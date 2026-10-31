@@ -28,6 +28,13 @@ export interface Note {
   events: NoteEvent[];
   timeline: TimelineSection[];
   gallery: GalleryImage[];
+  people: Person[];
+}
+
+export interface Person {
+  name: string;
+  slug: string;
+  description?: string;
 }
 
 export interface GalleryImage {
@@ -39,12 +46,14 @@ export interface GalleryImage {
 export interface TimelineSection {
   title?: string;
   events: NoteEvent[];
+  people?: Person[];
 }
 
 export interface NoteEvent {
   description: string;
   time: NoteEventTime;
   location?: GeoJsonObject;
+  people: Person[];
 }
 
 export type NoteEventTime =
@@ -64,6 +73,7 @@ export interface HistoricalDate {
   year: number;
   month?: number;
   day?: number;
+  season?: string;
 }
 
 export const parseMarkdownIntoNote = (
@@ -75,7 +85,8 @@ export const parseMarkdownIntoNote = (
     return null;
   }
 
-  const md = unified().use(remarkParse).parse(mdString);
+  const source = mdString.replace(/\[person\]([^\[]+?)\[\/person\]/gi, (_, name: string) => `[${name}](/person/${slugifyPerson(name)})`);
+  const md = unified().use(remarkParse).parse(source);
   const heading1 = md.children.find(
     (n): n is Heading => n.type === "heading" && n.depth === 1,
   );
@@ -88,6 +99,7 @@ export const parseMarkdownIntoNote = (
   const topic = getTopicFromFilePath(filePath);
   const path = getPathFromFilePath(filePath);
   const timeline = getTimelineSections(md);
+  const people = getPeople(md);
 
   return {
     location: location ?? "",
@@ -99,8 +111,49 @@ export const parseMarkdownIntoNote = (
     events: timeline.flatMap((section) => section.events),
     timeline,
     gallery: getGallery(md, path),
+    people,
   };
 };
+
+const getPeople = (md: Root): Person[] => {
+  const people = new Map<string, Person>();
+  for (const node of md.children) {
+    for (const person of getTaggedPeople(node)) people.set(person.slug, person);
+  }
+  return [...people.values()].sort((a, b) => a.name.localeCompare(b.name));
+};
+
+const peopleFromInlineTags = (text: string): Person[] => {
+  const found: Person[] = [];
+  for (const match of text.matchAll(/\[person\]([^\[]+?)\[\/person\]/gi)) {
+    const name = match[1].trim();
+    if (name) found.push(makePerson(name));
+  }
+  return found;
+};
+
+const getTaggedPeople = (node: object): Person[] => {
+  if ((node as { type?: string }).type === "link") {
+    const link = node as Link;
+    const person = parsePersonLink(link.url, getTextNodeText(link));
+    if (person) return [person];
+  }
+  return ((node as { children?: object[] }).children ?? []).flatMap(getTaggedPeople);
+};
+
+const parsePersonLink = (url: string, name: string): Person | null => {
+  const match = url.match(/^\/person\/([^/]+)$/);
+  return match ? { name, slug: match[1] } : null;
+};
+
+export const splitPersonLinks = (text: string) =>
+  text.split(/(\[[^\]]+\]\(\/person\/[^)]+\))/g).map((part) => {
+    const match = part.match(/^\[([^\]]+)\]\((\/person\/[^)]+)\)$/);
+    return match ? { text: match[1], href: match[2] } : { text: part };
+  });
+
+export const makePerson = (name: string): Person => ({ name, slug: slugifyPerson(name) });
+export const slugifyPerson = (name: string): string => name.toLowerCase().trim().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
 
 const getPathFromFilePath = (filePath: string): string => {
   const [dir, file] = filePath.split("/").slice(-2);
@@ -141,15 +194,16 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
       c.type === "heading" &&
       getTextNodeText(c).toLowerCase().includes("timeline"),
   );
-  if (timelineHeadingIndex === -1) {
-    return [];
-  }
+  const startIndex = timelineHeadingIndex === -1
+    ? md.children.findIndex((c) => c.type === "heading" && c.depth >= 3)
+    : timelineHeadingIndex;
+  if (startIndex === -1) return [];
 
   const sections: TimelineSection[] = [];
   let current: TimelineSection = { events: [] };
   sections.push(current);
 
-  for (let i = timelineHeadingIndex + 1; i < md.children.length; i++) {
+  for (let i = startIndex + 1; i < md.children.length; i++) {
     const node = md.children[i];
 
     if (node.type === "heading") {
@@ -158,15 +212,14 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
         break;
       }
       // A deeper heading starts a new timeline subsection.
-      const title = getTextNodeText(node);
-      current = { title, events: [] };
+      current = { title: getTextNodeText(node), events: [], people: getTaggedPeople(node) };
       sections.push(current);
       continue;
     }
 
     if (node.type === "list") {
       for (const item of node.children) {
-        current.events.push(parseEvent(item));
+        current.events.push(parseEvent(item, current.people ?? []));
       }
       continue;
     }
@@ -177,14 +230,16 @@ const getTimelineSections = (md: Root): TimelineSection[] => {
   return sections.filter((section) => section.events.length > 0);
 };
 
-const parseEvent = (item: ListItem): NoteEvent => {
+const parseEvent = (item: ListItem, sectionPeople: Person[] = []): NoteEvent => {
   const text = getListItemText(item);
   const [time, ...description] = text.split(":");
+  const people = [...new Map([...sectionPeople, ...getTaggedPeople(item)].map((p) => [p.slug, p])).values()];
 
   return {
     description: description.join(":"),
     time: parseTimeString(time),
     location: getListItemLocation(item),
+    people,
   };
 };
 
@@ -263,6 +318,28 @@ const resolveImageSrc = (url: string, notePath: string): string => {
 const parseTimeString = (time: string): NoteEventTime => {
   const period = time.includes("BCE") ? "BCE" : "CE";
   const isCirca = time.includes("~");
+
+  const months = "January|February|March|April|May|June|July|August|September|October|November|December";
+  const monthNumber = (name: string) => new Date(`${name} 1, 2000`).getMonth() + 1;
+  const monthRange = time.match(new RegExp(`^\\s*~?(${months})\\s*[–-]\\s*(${months})\\s+(\\d+)\\s*(BCE|CE)\\s*$`, "i"));
+  if (monthRange) {
+    const year = Number(monthRange[3]);
+    return {
+      type: "range",
+      from: { year, period, isCirca, month: monthNumber(monthRange[1]) },
+      to: { year, period, isCirca, month: monthNumber(monthRange[2]) },
+    };
+  }
+
+  const namedDate = time.match(new RegExp(`^\\s*~?(?:(\\d{1,2})\\s+)?(${months})\\s+(\\d+)\\s*(BCE|CE)\\s*$`, "i"));
+  if (namedDate) {
+    return { type: "single", date: { year: Number(namedDate[3]), period, isCirca, month: monthNumber(namedDate[2]), day: namedDate[1] ? Number(namedDate[1]) : undefined } };
+  }
+  const seasonDate = time.match(/^\s*~?(Spring|Summer|Autumn|Fall|Winter)\s+(\d+)\s*(BCE|CE)\s*$/i);
+  if (seasonDate) {
+    const season = seasonDate[1][0].toUpperCase() + seasonDate[1].slice(1).toLowerCase();
+    return { type: "single", date: { year: Number(seasonDate[2]), period, isCirca, season } };
+  }
 
   // A unit such as "billion"/"million" applies to the whole value/range
   // (e.g. "~2.4–2.1 billion BCE"), so derive the scale once from the string.
@@ -345,6 +422,13 @@ const getListItemText = (i: ListItem) => {
 const getEventText = (node: object): string => {
   const type = (node as { type?: string }).type;
 
+  if (type === "link") {
+    const link = node as Link;
+    const label = (link.children ?? []).map(getEventText).join("");
+    const person = parsePersonLink(link.url, label);
+    return person ? `[${label}](/person/${person.slug})` : label;
+  }
+
   if (type === "inlineCode") {
     const value = (node as { value?: string }).value ?? "";
     return /^\s*geo\s*:/i.test(value) ? "" : value;
@@ -409,7 +493,9 @@ const unslug = (slug: string) =>
   slug.split("-").map(capitalizeFirstLetter).join(" ");
 
 export const historicalDateToNumber = (date: HistoricalDate): number =>
-  date.period === "BCE" ? -date.year : date.year;
+  (date.period === "BCE" ? -date.year : date.year) + ((date.month ?? seasonMonth(date.season) ?? 1) - 1) / 12;
+
+const seasonMonth = (season?: string): number | undefined => ({ Spring: 3, Summer: 6, Autumn: 9, Fall: 9, Winter: 12 } as Record<string, number>)[season ?? ""];
 
 // A note's overall time span in comparable chronological units
 // (BCE negative, CE positive). Notes without events return an empty span.
@@ -452,7 +538,14 @@ export const noteEventTimeToString = (time: NoteEventTime): string => {
     return historicalDateToString(time.date, "single");
   }
 
-  return `${historicalDateToString(time.from, "from")}-${historicalDateToString(time.to, "to")}`;
+  if (time.from.year === time.to.year && (time.from.month || time.from.season) && (time.to.month || time.to.season)) {
+    const circa = time.from.isCirca || time.to.isCirca ? "~" : "";
+    return `${circa}${datePrefix(time.from).trimEnd()}–${datePrefix(time.to).trimEnd()} ${formatNumber(time.to.year)} ${time.to.period}`;
+  }
+
+  const from = historicalDateToString(time.from, "from");
+  const to = historicalDateToString(time.to, "to");
+  return `${from}${time.from.year !== time.to.year ? ` ${formatNumber(time.from.year)}` : ""}–${to}`;
 };
 
 const historicalDateToString = (
@@ -467,12 +560,14 @@ const historicalDateToString = (
   }
 
   if (type === "single") {
-    return `${date.isCirca ? "~" : ""}${dateStr} ${period}`;
-  } else if (type === "from") {
-    return `${date.isCirca ? "~" : ""}${dateStr}`;
-  } else {
-    return `${dateStr} ${period}`;
+    return `${date.isCirca ? "~" : ""}${datePrefix(date)}${dateStr} ${period}`;
   }
+  return `${date.isCirca ? "~" : ""}${datePrefix(date)}${type === "to" || date.month ? `${dateStr} ` : ""}${type === "to" ? period : ""}`.trimEnd();
+};
+
+const datePrefix = (date: HistoricalDate): string => {
+  const month = date.month ? new Intl.DateTimeFormat("en", { month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2000, date.month - 1, 1))) : "";
+  return date.season ? `${date.season} ` : date.day && month ? `${date.day} ${month} ` : month ? `${month} ` : "";
 };
 
 const formatNumber = (n: number) => {

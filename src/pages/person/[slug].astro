@@ -1,0 +1,39 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { parseMarkdownIntoNote, noteEventTimeToString, splitPersonLinks, type Note } from "../../data/note";
+import descriptions from "../../data/people.json";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("notes");
+  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations)).filter((note): note is Note => note != null);
+  const persons = new Map<string, { name: string; notes: Note[] }>();
+  for (const note of notes) for (const event of note.events) for (const person of event.people) {
+    const existing = persons.get(person.slug) ?? { name: person.name, notes: [] };
+    if (!existing.notes.some((item) => item.path === note.path)) existing.notes.push(note);
+    persons.set(person.slug, existing);
+  }
+  return [...persons].map(([slug, person]) => ({ params: { slug }, props: { slug, ...person } }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { slug, name, notes } = Astro.props;
+const description = descriptions[slug as keyof typeof descriptions]?.description;
+---
+
+<Layout title={name}>
+  <a href="/" class="underline">← Timeline</a>
+  <h2 class="mt-3 mb-2 font-bold text-3xl">{name}</h2>
+  {description && <p class="mb-6 max-w-3xl">{description}</p>}
+  {notes.sort((a, b) => a.fileName.localeCompare(b.fileName, undefined, { numeric: true })).map((note) => <section class="mb-6">
+    <h3 class="font-bold text-2xl mb-2"><a class="underline" href={`/note/${note.path}`}>{note.topic}: {note.name}</a></h3>
+    {note.timeline.map((section) => {
+      const events = section.events.filter((event) => event.people.some((person) => person.slug === slug));
+      return events.length > 0 && <div class="mb-3">
+        {section.title && <h4 class="font-semibold text-lg">{section.title}</h4>}
+        <ol class="list-decimal pl-6">{events.map((event) => <li><strong>{noteEventTimeToString(event.time)}:</strong> {splitPersonLinks(event.description).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}</li>)}</ol>
+      </div>;
+    })}
+  </section>)}
+</Layout>

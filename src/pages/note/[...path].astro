@@ -7,6 +7,7 @@ import {
   noteEventTimeToString,
   getNoteTimeSpan,
   sortNotesByFileName,
+  splitPersonLinks,
   type Note,
 } from "../../data/note";
 import NoteMap from "../../components/NoteMap";
@@ -77,6 +78,8 @@ const hasMap = note.events.some((event) => event.location != null);
 
   {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
 
+  {note.people.length > 0 && <section class="mb-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><ul class="flex flex-wrap gap-x-3">{note.people.map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{person.name}</a></li>)}</ul></section>}
+
   <h3 class="text-2xl font-bold mb-2">Timeline</h3>
 
   {
@@ -89,7 +92,7 @@ const hasMap = note.events.some((event) => event.location != null);
           {section.events.map((e) => (
             <li>
               <span class="font-bold">{noteEventTimeToString(e.time)}</span>:{" "}
-              {e.description}
+              {splitPersonLinks(e.description).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}
             </li>
           ))}
         </ol>

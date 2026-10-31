@@ -1,0 +1,271 @@
+{
+  "agathocles": {
+    "name": "Agathocles"
+  },
+  "hamilcar-barca": {
+    "name": "Hamilcar Barca"
+  },
+  "hamilcar": {
+    "name": "Hamilcar"
+  },
+  "hasdrubal": {
+    "name": "Hasdrubal"
+  },
+  "hannibal": {
+    "name": "Hannibal"
+  },
+  "antiochus-iii": {
+    "name": "Antiochus III"
+  },
+  "massinissa": {
+    "name": "Massinissa"
+  },
+  "scipio-aemilianus": {
+    "name": "Scipio Aemilianus"
+  },
+  "pyrrhus": {
+    "name": "Pyrrhus"
+  },
+  "hiero-ii": {
+    "name": "Hiero II"
+  },
+  "scipio-asina": {
+    "name": "Scipio Asina"
+  },
+  "xanthippus": {
+    "name": "Xanthippus"
+  },
+  "flaminius": {
+    "name": "Flaminius"
+  },
+  "quintus-fabius-maximus": {
+    "name": "Quintus Fabius Maximus"
+  },
+  "marcus-minucius": {
+    "name": "Marcus Minucius"
+  },
+  "fabius": {
+    "name": "Fabius"
+  },
+  "minucius": {
+    "name": "Minucius"
+  },
+  "hieronymus": {
+    "name": "Hieronymus"
+  },
+  "scipio": {
+    "name": "Scipio"
+  },
+  "marcus-claudius-marcellus": {
+    "name": "Marcus Claudius Marcellus"
+  },
+  "archimedes": {
+    "name": "Archimedes"
+  },
+  "philip-v": {
+    "name": "Philip V"
+  },
+  "publius-cornelius-scipio": {
+    "name": "Publius Cornelius Scipio"
+  },
+  "titus-quinctius-flamininus": {
+    "name": "Titus Quinctius Flamininus"
+  },
+  "flamininus": {
+    "name": "Flamininus"
+  },
+  "scipio-africanus": {
+    "name": "Scipio Africanus"
+  },
+  "perseus": {
+    "name": "Perseus"
+  },
+  "demetrius": {
+    "name": "Demetrius"
+  },
+  "lucius-aemilius-paullus": {
+    "name": "Lucius Aemilius Paullus"
+  },
+  "paullus": {
+    "name": "Paullus"
+  },
+  "polybius": {
+    "name": "Polybius"
+  },
+  "andriscus": {
+    "name": "Andriscus"
+  },
+  "quintus-caecilius-metellus": {
+    "name": "Quintus Caecilius Metellus"
+  },
+  "romulus": {
+    "name": "Romulus"
+  },
+  "numa-pompilius": {
+    "name": "Numa Pompilius"
+  },
+  "tullus-hostilius": {
+    "name": "Tullus Hostilius"
+  },
+  "ancus-marcius": {
+    "name": "Ancus Marcius"
+  },
+  "tarquinius-priscus": {
+    "name": "Tarquinius Priscus"
+  },
+  "servius-tullius": {
+    "name": "Servius Tullius"
+  },
+  "tarquinius-superbus": {
+    "name": "Tarquinius Superbus"
+  },
+  "sextus-tarquinius": {
+    "name": "Sextus Tarquinius"
+  },
+  "lucretia": {
+    "name": "Lucretia"
+  },
+  "lucius-junius-brutus": {
+    "name": "Lucius Junius Brutus"
+  },
+  "lucius-tarquinius-collatinus": {
+    "name": "Lucius Tarquinius Collatinus"
+  },
+  "brutus": {
+    "name": "Brutus"
+  },
+  "collatinus": {
+    "name": "Collatinus"
+  },
+  "publius-valerius-publicola": {
+    "name": "Publius Valerius Publicola"
+  },
+  "publicola": {
+    "name": "Publicola"
+  },
+  "horatius-pulvillus": {
+    "name": "Horatius Pulvillus"
+  },
+  "lars-porsena": {
+    "name": "Lars Porsena"
+  },
+  "cincinnatus": {
+    "name": "Cincinnatus"
+  },
+  "marcus-furius-camillus": {
+    "name": "Marcus Furius Camillus"
+  },
+  "camillus": {
+    "name": "Camillus"
+  },
+  "brennus": {
+    "name": "Brennus"
+  },
+  "aeneas": {
+    "name": "Aeneas"
+  },
+  "ascanius": {
+    "name": "Ascanius"
+  },
+  "numitor": {
+    "name": "Numitor"
+  },
+  "amulius": {
+    "name": "Amulius"
+  },
+  "rhea-silvia": {
+    "name": "Rhea Silvia"
+  },
+  "remus": {
+    "name": "Remus"
+  },
+  "cornelia": {
+    "name": "Cornelia"
+  },
+  "marcus-octavius": {
+    "name": "Marcus Octavius"
+  },
+  "attalus-iii": {
+    "name": "Attalus III"
+  },
+  "tiberius-gracchus": {
+    "name": "Tiberius Gracchus"
+  },
+  "gaius-gracchus": {
+    "name": "Gaius Gracchus"
+  },
+  "marcus-licinius-crassus": {
+    "name": "Marcus Licinius Crassus"
+  },
+  "julia": {
+    "name": "Julia"
+  },
+  "marius": {
+    "name": "Marius"
+  },
+  "sulla": {
+    "name": "Sulla"
+  },
+  "pompey-the-great": {
+    "name": "Pompey the Great"
+  },
+  "caesar": {
+    "name": "Caesar",
+    "description": "Roman general and statesman whose campaigns in Gaul and conflict with the Senate helped bring the Roman Republic to an end."
+  },
+  "mithridates-vi": {
+    "name": "Mithridates VI"
+  },
+  "pompey": {
+    "name": "Pompey"
+  },
+  "crassus": {
+    "name": "Crassus"
+  },
+  "cicero": {
+    "name": "Cicero"
+  },
+  "sertorius": {
+    "name": "Sertorius"
+  },
+  "spartacus": {
+    "name": "Spartacus"
+  },
+  "crixus": {
+    "name": "Crixus"
+  },
+  "nicomedes-iv": {
+    "name": "Nicomedes IV"
+  },
+  "lucullus": {
+    "name": "Lucullus"
+  },
+  "tigranes-ii": {
+    "name": "Tigranes II"
+  },
+  "catiline": {
+    "name": "Catiline"
+  },
+  "cato-the-younger": {
+    "name": "Cato the Younger"
+  },
+  "clodius": {
+    "name": "Clodius"
+  },
+  "ariovistus": {
+    "name": "Ariovistus"
+  },
+  "vercingetorix": {
+    "name": "Vercingetorix",
+    "description": "Arvernian chieftain who united a coalition of Gallic peoples against Julius Caesar during the Gallic Wars."
+  },
+  "mitochondrial-eve": {
+    "name": "mitochondrial Eve"
+  },
+  "lucy": {
+    "name": "Lucy"
+  },
+  "mark-antony": {
+    "name": "Mark Antony"
+  }
+}

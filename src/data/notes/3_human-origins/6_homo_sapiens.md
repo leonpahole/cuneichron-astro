@@ -12,7 +12,7 @@ Homo sapiens evolved in Africa and eventually became the only surviving human sp
 ### Origins in Africa
 
 - ~300–200 thousand BCE: Evolved in Africa from earlier Homo populations, mix of modern and archaic features.
-- ~200 thousand BCE: The common maternal ancestor of all living humans (mitochondrial Eve) lives in Africa.
+- ~200 thousand BCE: The common maternal ancestor of all living humans ([person]mitochondrial Eve[/person]) lives in Africa.
 - ~100–50 thousand BCE: Increasingly complex symbolic behavior, long-distance exchange, specialized tools, personal ornaments and hunting strategies.
 - ~100–50 thousand BCE: "Cultural evolution", allowing response to environmental changes faster than genetic evolution alone.
 
