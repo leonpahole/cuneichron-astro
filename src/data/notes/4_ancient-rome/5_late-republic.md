@@ -199,5 +199,11 @@ Tensions between the ruling elite and poorer citizens intensified. Because arist
 - October 48 BCE: [person]Caesar[/person] arrived in Alexandria and intervened in the dynastic struggle between [person]Cleopatra VII[/person] and her brother [person]Ptolemy XIII[/person].
 - 48–47 BCE: Alexandrian War - [person]Ptolemy XIII[/person]'s supporters fought [person]Caesar[/person] in Alexandria, leading to urban fighting and naval engagements.
 - ~March 47 BCE: Battle of the Nile - [person]Caesar[/person] defeated [person]Ptolemy XIII[/person] and, rather than annexing Egypt, restored [person]Cleopatra VII[/person] under Roman protection.
+- 47 BCE: Caesar defeated Pharnaces II of Pontus at Zela, ending his rebellion (veni, vidi, vici).
+- 47 BCE: Caesar returned to Rome and removed Mark Antony from control of the city following unrest and his controversial behavior.
+- 47 BCE: Caesar's veteran legions mutinied over unpaid rewards and delayed discharge. He persuaded them to resume service by promising eventual retirement.
+- 6 April 46 BCE: Battle of Thapsus - Caesar decisively defeated remaining senatorial forces in North Africa. Cato the Younger committed suicide at Utica.
+- 46 BCE: Caesar celebrated four triumphs in Rome (Gaul, Egypt, Pontus, and Africa). Vercingetorix was executed during the celebrations.
+- ~46–44 BCE: Caesar's reforms: reducing the number of citizens receiving free grain, establishing overseas colonies for veterans and poorer citizens, extending citizenship to selected provincial communities, expanding the senate and admitting provincials into it, public works and urban improvements, and Julian calendar (365 days + leap year every 4 years).
 
 ![Map of Caesar's civil war](/images/notes/ancient-rome/late-republic/map-63-44-bc.webp) [Wikipedia](https://en.wikipedia.org/wiki/Caesar%27s_civil_war)
