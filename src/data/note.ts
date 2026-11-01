@@ -45,6 +45,7 @@ export interface GalleryImage {
 
 export interface TimelineSection {
   title?: string;
+  titleSegments?: { text: string; person?: Person }[];
   events: NoteEvent[];
   images: GalleryImage[];
   people?: Person[];
@@ -87,7 +88,7 @@ export const parseMarkdownIntoNote = (
     return null;
   }
 
-  const source = mdString.replace(/\[person\]([^\[]+?)\[\/person\]/gi, (_, name: string) => `[${name}](/person/${slugifyPerson(name)})`);
+  const source = mdString.replace(/\[person(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/person\]/giu, (_, id: string | undefined, name: string) => `[${name}](/person/${slugifyPerson(id ?? name)})`);
   const md = unified().use(remarkParse).parse(source);
   const heading1 = md.children.find(
     (n): n is Heading => n.type === "heading" && n.depth === 1,
@@ -112,7 +113,7 @@ export const parseMarkdownIntoNote = (
     topic,
     events: timeline.flatMap((section) => section.events),
     timeline,
-    gallery: [...timeline.flatMap((section) => section.images), ...getGallery(md, path)],
+    gallery: getGallery(md, path),
     people,
   };
 };
@@ -123,15 +124,6 @@ const getPeople = (md: Root): Person[] => {
     for (const person of getTaggedPeople(node)) people.set(person.slug, person);
   }
   return [...people.values()].sort((a, b) => a.name.localeCompare(b.name));
-};
-
-const peopleFromInlineTags = (text: string): Person[] => {
-  const found: Person[] = [];
-  for (const match of text.matchAll(/\[person\]([^\[]+?)\[\/person\]/gi)) {
-    const name = match[1].trim();
-    if (name) found.push(makePerson(name));
-  }
-  return found;
 };
 
 const getTaggedPeople = (node: object): Person[] => {
@@ -198,14 +190,14 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
   );
   const startIndex = timelineHeadingIndex === -1
     ? md.children.findIndex((c) => c.type === "heading" && c.depth >= 3)
-    : timelineHeadingIndex;
+    : timelineHeadingIndex + 1;
   if (startIndex === -1) return [];
 
   const sections: TimelineSection[] = [];
   let current: TimelineSection = { events: [], images: [] };
   sections.push(current);
 
-  for (let i = startIndex + 1; i < md.children.length; i++) {
+  for (let i = startIndex; i < md.children.length; i++) {
     const node = md.children[i];
 
     if (node.type === "heading") {
@@ -214,7 +206,15 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
         break;
       }
       // A deeper heading starts a new timeline subsection.
-      current = { title: getTextNodeText(node), events: [], images: [], people: getTaggedPeople(node) };
+      const titleSegments = getHeadingTitleSegments(node);
+      const headingPeople = getTaggedPeople(node);
+      current = {
+        title: titleSegments.map((segment) => segment.text).join("").trim(),
+        titleSegments,
+        events: [],
+        images: [],
+        people: headingPeople,
+      };
       sections.push(current);
       continue;
     }
@@ -237,6 +237,14 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
     .filter((section) => section.events.length > 0)
     .map((section) => ({ ...section, dateRange: getEventDateRange(section.events) }));
 };
+
+const getHeadingTitleSegments = (heading: Heading): { text: string; person?: Person }[] =>
+  heading.children.flatMap((child) => {
+    const text = getTextNodeText(child);
+    if (!text) return [];
+    const person = child.type === "link" ? parsePersonLink(child.url, text) ?? undefined : undefined;
+    return [{ text, person }];
+  });
 
 const getEventDateRange = (events: NoteEvent[]): [HistoricalDate, HistoricalDate] | undefined => {
   const dates = events.flatMap((event) => event.time.type === "single"

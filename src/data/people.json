@@ -230,8 +230,13 @@
     "name": "Remus",
     "category": "Legendary figure"
   },
-  "cornelia": {
-    "name": "Cornelia"
+  "cornelia-gracchi": {
+    "name": "Cornelia (mother of the Gracchi)",
+    "category": "Roman noblewoman"
+  },
+  "cornelia-cinnae": {
+    "name": "Cornelia (daughter of Cinna)",
+    "category": "Roman noblewoman"
   },
   "marcus-octavius": {
     "name": "Marcus Octavius",
@@ -358,5 +363,13 @@
   "lucius-cornelius-scipio-asiaticus": {
     "name": "Lucius Cornelius Scipio Asiaticus",
     "category": "Military leader"
+  },
+  "ptolemy-xiii": {
+    "name": "Ptolemy XIII",
+    "category": "Ruler"
+  },
+  "cleopatra-vii": {
+    "name": "Cleopatra VII",
+    "category": "Ruler"
   }
 }

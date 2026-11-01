@@ -100,7 +100,7 @@ const peopleByCategory = note.people.reduce((groups, person) => {
 
   {note.timeline.some((section) => section.title) && <nav class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">In this note</h2><ul class="list-disc pl-6">{note.timeline.filter((section) => section.title).map((section) => <li><a class="underline" href={`#${sectionId(section.title!)}`}>{section.title}{sectionDateLabel(section) && <span class="ml-1">{sectionDateLabel(section)}</span>}</a></li>)}</ul></nav>}
 
-  {note.people.length > 0 && <section class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><div class="flex flex-col gap-3">{[...peopleByCategory].sort(([a], [b]) => a.localeCompare(b)).map(([category, people]) => <div><h3 class="font-semibold mb-1">{category}</h3><ul class="flex flex-wrap gap-x-3 gap-y-1">{[...people].sort((a, b) => (firstAppearance.get(a.slug) ?? Infinity) - (firstAppearance.get(b.slug) ?? Infinity) || a.name.localeCompare(b.name)).map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{person.name}</a></li>)}</ul></div>)}</div></section>}
+  {note.people.length > 0 && <section class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><div class="flex flex-col gap-3">{[...peopleByCategory].sort(([a], [b]) => a.localeCompare(b)).map(([category, people]) => <div><h3 class="font-semibold mb-1">{category}</h3><ul class="flex flex-wrap gap-x-3 gap-y-1">{[...people].sort((a, b) => (firstAppearance.get(a.slug) ?? Infinity) - (firstAppearance.get(b.slug) ?? Infinity) || a.name.localeCompare(b.name)).map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{peopleDirectory[person.slug as keyof typeof peopleDirectory]?.name ?? person.name}</a></li>)}</ul></div>)}</div></section>}
 
   <h3 class="text-2xl font-bold mb-2">Timeline</h3>
 
@@ -108,7 +108,7 @@ const peopleByCategory = note.people.reduce((groups, person) => {
     note.timeline.map((section) => (
       <div>
         {section.title && (
-          <h4 id={sectionId(section.title)} class="font-semibold text-xl mb-2">{section.title}{sectionDateLabel(section) && <span class="ml-2 text-base font-normal text-gray-500">{sectionDateLabel(section)}</span>}</h4>
+          <h4 id={sectionId(section.title)} class="font-semibold text-xl mb-2">{section.titleSegments?.map((part) => part.person ? <a class="underline" href={`/person/${part.person.slug}`}>{part.text}</a> : part.text) ?? section.title}{sectionDateLabel(section) && <span class="ml-2 text-base font-normal text-gray-500">{sectionDateLabel(section)}</span>}</h4>
         )}
         <ol class="flex flex-col gap-0.5 mb-4">
           {section.events.map((e) => (

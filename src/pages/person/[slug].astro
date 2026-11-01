@@ -18,8 +18,9 @@ export async function getStaticPaths() {
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-const { slug, name, notes } = Astro.props;
+const { slug, name: taggedName, notes } = Astro.props;
 const description = descriptions[slug as keyof typeof descriptions]?.description;
+const name = descriptions[slug as keyof typeof descriptions]?.name ?? taggedName;
 const personTags = descriptions[slug as keyof typeof descriptions]?.tags ?? [];
 const category = descriptions[slug as keyof typeof descriptions]?.category;
 ---
