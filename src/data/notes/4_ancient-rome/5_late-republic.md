@@ -205,5 +205,19 @@ Tensions between the ruling elite and poorer citizens intensified. Because arist
 - 6 April 46 BCE: Battle of Thapsus - Caesar decisively defeated remaining senatorial forces in North Africa. Cato the Younger committed suicide at Utica.
 - 46 BCE: Caesar celebrated four triumphs in Rome (Gaul, Egypt, Pontus, and Africa). Vercingetorix was executed during the celebrations.
 - ~46–44 BCE: Caesar's reforms: reducing the number of citizens receiving free grain, establishing overseas colonies for veterans and poorer citizens, extending citizenship to selected provincial communities, expanding the senate and admitting provincials into it, public works and urban improvements, and Julian calendar (365 days + leap year every 4 years).
+- Autumn 46 BCE: Caesar launched a campaign against the sons of Pompey who had assembled a new army in Hispania.
+- 17 March 45 BCE: Battle of Munda - Caesar narrowly defeated the Pompeian forces, ending organized military resistance to his rule.
+
+### Caesar's dictatorship and assassination (46–44 BCE)
+
+- 46 BCE: Cleopatra VII visited Rome with her son Caesarion, strengthening diplomatic relations between Rome and Egypt.
+- 45 BCE: Caesar celebrated a triumph over his victory in Hispania, provoking criticism for celebrating the defeat of fellow Romans.
+- ~45–44 BCE: Caesar intensified fears of monarchy by wearing triumphal regalia and receiving exceptional public recognition.
+- 45 BCE: Caesar appointed loyal supporters as replacement consuls and increasingly controlled political institutions.
+- Early 44 BCE: Caesar was appointed dictator for life.
+- February 44 BCE: Mark Antony publicly offered Caesar a diadem, which Caesar rejected.
+- Early 44 BCE: Caesar prepared a military expedition against Parthia.
+- Early 44 BCE: A conspiracy of ~60 senators, including Brutus and Cassius formed to assassinate Caesar and prevent the establishment of monarchy.
+- 15 March 44 BCE: Julius Caesar was assassinated during a Senate meeting; assasins proclaimed Rome liberated but it triggered a new political crisis.
 
 ![Map of Caesar's civil war](/images/notes/ancient-rome/late-republic/map-63-44-bc.webp) [Wikipedia](https://en.wikipedia.org/wiki/Caesar%27s_civil_war)
