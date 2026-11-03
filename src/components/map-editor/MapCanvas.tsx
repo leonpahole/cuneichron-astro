@@ -27,6 +27,10 @@ export default function MapCanvas({ entries, selectedLine, placementLine, onSele
     if (!containerRef.current) return;
     const map = L.map(containerRef.current, { scrollWheelZoom: true }).setView([41.9, 12.5], 4);
     mapRef.current = map;
+    const streets = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    });
     const imagery = L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
       maxZoom: 19,
       attribution: 'Imagery &copy; <a href="https://www.esri.com/">Esri</a>, Maxar, Earthstar Geographics, and the GIS User Community',
@@ -37,6 +41,7 @@ export default function MapCanvas({ entries, selectedLine, placementLine, onSele
     });
     const satellite = L.layerGroup([imagery, placeLabels]);
     satellite.addTo(map);
+    L.control.layers({ Satellite: satellite, Regular: streets }, undefined, { position: "topright" }).addTo(map);
     const layers = L.featureGroup().addTo(map);
     layersRef.current = layers;
     const resize = () => map.invalidateSize();
