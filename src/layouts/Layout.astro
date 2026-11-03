@@ -5,6 +5,7 @@ import { Font } from "astro:assets";
 
 interface Props {
   title: string;
+  fullWidth?: boolean;
 }
 ---
 
@@ -19,9 +20,9 @@ interface Props {
     <Font cssVariable="--font-sans" />
   </head>
   <body class="font-sans">
-    <div class="max-w-7xl px-6 mx-auto">
+    <div class={Astro.props.fullWidth ? "flex h-dvh w-full flex-col overflow-hidden px-4" : "max-w-7xl px-6 mx-auto"}>
       <NavBar />
-      <main class="pb-8 text-lg">
+      <main class={Astro.props.fullWidth ? "min-h-0 flex-1 overflow-hidden pb-2 text-lg" : "pb-8 text-lg"}>
         <slot />
       </main>
     </div>
