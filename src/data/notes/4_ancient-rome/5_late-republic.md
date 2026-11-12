@@ -208,6 +208,8 @@ Tensions between the ruling elite and poorer citizens intensified. Because arist
 - Autumn 46 BCE: Caesar launched a campaign against the sons of Pompey who had assembled a new army in Hispania.
 - 17 March 45 BCE: Battle of Munda - Caesar narrowly defeated the Pompeian forces, ending organized military resistance to his rule.
 
+![Map of Caesar's civil war](/images/notes/ancient-rome/late-republic/map-63-44-bc.webp) [Wikipedia](https://en.wikipedia.org/wiki/Caesar%27s_civil_war)
+
 ### Caesar's dictatorship and assassination (46–44 BCE)
 
 - 46 BCE: Cleopatra VII visited Rome with her son Caesarion, strengthening diplomatic relations between Rome and Egypt.
@@ -220,4 +222,57 @@ Tensions between the ruling elite and poorer citizens intensified. Because arist
 - Early 44 BCE: A conspiracy of ~60 senators, including Brutus and Cassius formed to assassinate Caesar and prevent the establishment of monarchy.
 - 15 March 44 BCE: Julius Caesar was assassinated during a Senate meeting; assasins proclaimed Rome liberated but it triggered a new political crisis.
 
-![Map of Caesar's civil war](/images/notes/ancient-rome/late-republic/map-63-44-bc.webp) [Wikipedia](https://en.wikipedia.org/wiki/Caesar%27s_civil_war)
+### Octavian
+
+- 15 March 44 BCE: Mark Antony (consul) emerged as the leading Caesarian politician. The conspirators failed to establish a stable replacement government.
+- March 44 BCE: Caesar's will named his 18-year-old great-nephew Gaius Octavius as his heir, giving him Caesar's name and most of his fortune.
+- March 44 BCE: Antony and the Senate reached a compromise granting amnesty to Caesar's assassins while preserving Caesar's legislation.
+- March 44 BCE: Caesar's public funeral provoked unrest against his assassins, contributing to their departure from Rome.
+- Spring 44 BCE: Octavius returned from Apollonia, accepted Caesar's inheritance and adoption, and began building support among Caesar's veterans.
+- Summer–autumn 44 BCE: Rivalry intensified between Antony and Octavian over Caesar's political legacy and the loyalty of his veteran legions.
+- September 44 BCE: Cicero began delivering his Philippics, a series of speeches attacking Antony and defending Republican institutions, increasingly supporting Octavian.
+- 44 BCE: Antony secured legislation transferring the governorship of Cisalpine Gaul to himself, challenging its existing governor, Decimus Junius Brutus.
+- November 44 BCE: Two legions transferred from Macedonia defected from Antony to Octavian, strengthening Octavian's military position.
+- Late 44 BCE: Antony marched north to take control of Cisalpine Gaul from Decimus Brutus.
+- January 43 BCE: The Senate granted Octavian military authority, allowing him to join the consuls gainst Antony.
+- 14–21 April 43 BCE: Battles of Forum Gallorum and Mutina - consular armies defeat Antony and he retreats; both consuls die, leaving Octavian in command.
+- Summer 43 BCE: Antony joined forces with Lepidus in Gaul, while Decimus Brutus was abandoned by his troops and subsequently executed.
+- 19 August 43 BCE: Octavian marched on Rome with his army and secured election as consul.
+
+### Second triumvirate
+
+- November 43 BCE: Antony, Octavian and Lepidus formed the Second Triumvirate, a legally established government for five years.
+- Late 43 BCE: Triumvirs revived proscriptions, killing opponents and confiscating their property to finance their armies; and taxed Italian peoples.
+- 7 December 43 BCE: Cicero was executed during the proscriptions.
+- 3 October 42 BCE: First Battle of Philippi - Antony captured Cassius's camp while Brutus's forces overran Octavian's camp. Cassius committed suicide.
+- 23 October 42 BCE: Second Battle of Philippi - Antony and Octavian defeated Brutus, who committed suicide.
+- Late 42 BCE: Antony took control of the eastern provinces, Octavian west, Lepidus increasingly marginalized.
+- ~42–41 BCE: Octavian confiscated land across Italy to settle ~40,000 veterans, provoking unrest among dispossessed landowners and dissatisfied soldiers.
+- ~42–39 BCE: Sextus Pompey (son of Pompey), controlled Sicily and disrupted grain supplies to Italy, causing unrest.
+- 41 BCE: Antony met Cleopatra VII in Cilicia, forming a political and romantic alliance that secured Egyptian support for his eastern ambitions.
+- 41–40 BCE: Antony's brother and wife rebelled against Octavian, exploiting resentment; Octavian defeated them.
+- 40–38 BCE: Parthian forces invaded Roman Syria and Judea, but Antony's general defeated them killing the Parthian prince Pacorus.
+- 40 BCE: Octavian seized control of Gaul and its legions, provoking Antony. Their soldiers resisted another civil war. Treaty of Brundisium reaffirmed the triumvirate, dividing territories between Octavian (west), Antony (east), and Lepidus (Africa). Antony married Octavian's sister Octavia.
+- 39 BCE: Pact of Misenum recognized Sextus Pompey's control of Sicily, Sardinia, and Corsica in exchange for lifting his blockade and allowing political exiles to return.
+- 38 BCE: Octavian married Livia Drusilla, whose descendants would become central to the Julio-Claudian dynasty.
+- 38 BCE: Octavian renewed war against Sextus Pompey but suffered disastrous naval defeats near Sicily.
+- 37 BCE: Treaty of Tarentum renewed the triumvirate for another five years; Antony provided ships for Octavian's campaign against Sextus in exchange for promised legions for his Parthian expedition, which Octavian failed to deliver.
+- ~37 BCE: Antony reorganized Rome's eastern client kingdoms, appointing loyal rulers to strengthen Roman influence.
+- 36 BCE: Agrippa defeated Sextus's fleet, securing Sicily for Octavian. Sextus escaped but was captured and executed in 35 BCE.
+- 36 BCE: Lepidus attempted to claim Sicily, but his soldiers defected to Octavian, who stripped him of political power.
+- 36 BCE: Antony invaded the Parthian kingdom of Media Atropatene through Armenia with a large army, but lost his siege equipment to enemy cavalry and was forced to retreat, suffering heavy casualties from attacks, hunger, and harsh weather.
+- 35–33 BCE: Octavian campaigned in Illyricum, subduing rebellious communities and strengthening his military reputation.
+- 34 BCE: Antony invaded Armenia as revenge for withdrawal of their support, and put it under Roman control.
+- 34 BCE: Donations of Alexandria: Antony distributed royal titles and claims over east territories to their children, while Caesarion was proclaimed Caesar's legitimate son and co-ruler of Egypt, threatening Octavian's political legitimacy.
+- ~34–32 BCE: Octavian intensified propaganda against Antony, portraying his relationship with Cleopatra and adoption of eastern royal customs as a betrayal of Roman traditions, while Antony accused Octavian of illegitimate rule.
+- 33 BCE: The Second Triumvirate's renewed term expired, leaving Antony and Octavian openly competing.
+- 32 BCE: Two consuls and numerous senators loyal to Antony fled Rome after Octavian confronted the Senate with armed supporters.
+- 32 BCE: Octavian seized Antony's will from the Vestal Virgins and publicized his wish to be buried in Alexandria, to discredit him. Rome subsequently declared war on Cleopatra's Egypt rather than directly on Antony.
+- 32–31 BCE: Antony and Cleopatra assembled their forces in western Greece, establishing a naval base in the Ambracian Gulf near Actium. Agrippa and Octavian disrupted their supply routes.
+- 2 September 31 BCE: Battle of Actium: Octavian's fleet, commanded largely by Agrippa, defeated the forces of Antony and Cleopatra off western Greece. Antony and Cleopatra escaped to Egypt, while most of their remaining fleet surrendered.
+- September 31 BCE: Antony's remaining land forces surrendered to Octavian.
+- ~31–30 BCE: Octavian faced renewed unrest among veterans demanding promised land and rewards, temporarily returning to Italy to secure their loyalty.
+- 30 BCE: Octavian invaded Egypt from the east and west, encountering limited resistance as Antony's remaining allies and soldiers increasingly defected.
+- 1 August 30 BCE: Antony's remaining forces surrendered near Alexandria. Believing Cleopatra had died, Antony attempted suicide and died shortly afterward.
+- August 30 BCE: Cleopatra VII died, probably by suicide, after Egypt fell to Octavian.
+- 30 BCE: Octavian annexed Egypt, ending the Ptolemaic Kingdom. He pardoned some former enemies and eliminating threats (like Caesarion).
