@@ -1,0 +1,119 @@
+{
+  "rome": {
+    "name": "Rome",
+    "description": "The city on the Tiber that became the center of Roman political and military power.",
+    "coordinates": [12.4964, 41.9028]
+  },
+  "palatine-hill": {
+    "name": "Palatine Hill",
+    "description": "One of Rome’s central hills, associated in Roman tradition with the city’s foundation.",
+    "coordinates": [12.488, 41.889]
+  },
+  "alba-longa": {
+    "name": "Alba Longa",
+    "description": "A legendary Latin city southeast of Rome, traditionally linked to Rome’s founding story. Its exact location is uncertain.",
+    "coordinates": [12.651, 41.748]
+  },
+  "lavinium": {
+    "name": "Lavinium",
+    "description": "An ancient Latin settlement near the coast, associated in Roman tradition with Aeneas.",
+    "coordinates": [12.502, 41.654]
+  },
+  "ostia": {
+    "name": "Ostia",
+    "description": "Rome’s ancient port at the mouth of the Tiber.",
+    "coordinates": [12.292, 41.755]
+  },
+  "circus-maximus": {
+    "name": "Circus Maximus",
+    "description": "Rome’s major chariot-racing venue, in the valley between the Palatine and Aventine hills.",
+    "coordinates": [12.488, 41.886]
+  },
+  "forum-romanum": {
+    "name": "Forum Romanum",
+    "description": "The civic and ceremonial center of ancient Rome.",
+    "coordinates": [12.485, 41.893]
+  },
+  "etruria": {
+    "name": "Etruria",
+    "description": "The region of central Italy associated with the Etruscan civilization."
+  },
+  "universe": {
+    "name": "Universe",
+    "description": "The totality of space, time, matter, and energy."
+  },
+  "solar-system": {
+    "name": "Solar System",
+    "description": "The Sun and the celestial bodies bound to it by gravity."
+  },
+  "earth": {
+    "name": "Earth",
+    "description": "The planet where life and human history developed."
+  },
+  "africa": {
+    "name": "Africa",
+    "description": "The continent where the earliest known hominins and Homo sapiens evolved."
+  },
+  "eurasia": {
+    "name": "Eurasia",
+    "description": "The connected landmass of Europe and Asia."
+  },
+  "oceania": {
+    "name": "Oceania",
+    "description": "The Pacific region that includes Australia and the islands of the Pacific."
+  },
+  "americas": {
+    "name": "Americas",
+    "description": "The continents of North and South America."
+  },
+  "north-america": {
+    "name": "North America",
+    "description": "The northern continent of the Americas."
+  },
+  "mesopotamia": {
+    "name": "Mesopotamia",
+    "description": "The historical region between the Tigris and Euphrates rivers."
+  },
+  "egypt": {
+    "name": "Egypt",
+    "description": "A country in northeast Africa, shaped by the Nile and its delta."
+  },
+  "greece": {
+    "name": "Greece",
+    "description": "The southeastern European region where ancient Greek communities developed."
+  },
+  "tunisia": {
+    "name": "Tunisia",
+    "description": "The North African country that contains the ancient site of Carthage."
+  },
+  "france": {
+    "name": "France",
+    "description": "A country in western Europe."
+  },
+  "india": {
+    "name": "India",
+    "description": "A country in South Asia, home to some of the earliest human settlements outside Africa."
+  },
+  "italy": {
+    "name": "Italy",
+    "description": "The Mediterranean peninsula that became the core of Roman expansion."
+  },
+  "latium": {
+    "name": "Latium",
+    "description": "The region of central Italy inhabited by Latin communities, including Rome."
+  },
+  "tiber-river": {
+    "name": "Tiber River",
+    "description": "The river running through Rome and connecting the city with the Tyrrhenian coast."
+  },
+  "quirinal-hill": {
+    "name": "Quirinal Hill",
+    "description": "The northernmost of Rome’s traditional seven hills, associated in legend with the Sabines.",
+    "coordinates": [12.489, 41.899]
+  },
+  "carthage": {
+    "name": "Carthage",
+    "description": "The Phoenician-founded city in North Africa that became Rome’s principal rival in the western Mediterranean.",
+    "coordinates": [10.323, 36.853]
+  }
+}

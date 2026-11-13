@@ -59,3 +59,18 @@ locations: Rome, Italy
 - 14 CE: Tiberius succeeded Augustus as princeps. The Senate deified Augustus.
 
 ### Tiberius
+
+- ~14–23 CE: Generally pursued a cautious foreign policy, avoiding major wars and emphasizing fiscal restraint and provincial administration.
+- 14 CE: Legions in Pannonia and along the Rhine mutinied, demanding better benefits. Drusus the Younger (son of Tiberius) suppressed the Pannonian mutiny, Germanicus (nephew of Tiberius) supressed the Rhine one and rejected soldiers' suggestions that he challenge Tiberius.
+- 15 CE: Lucius Aelius Sejanus became sole prefect of the Praetorian Guard.
+- 15–16 CE: Germanicus led punitive campaigns across the Rhine against Germanic tribes, seeking revenge for Teutoburg Forest. He defeated forces led by Arminius several times but failed to establish lasting control over Germania.
+- 17 CE: Out of fear of his popularity, Tiberius recalled Germanicus, threw him a triumph and appointed him authority over eastern provinces.
+- 17–19 CE: Germanicus worked in eastern provinces to stabilize relations with client kingdoms, encountering opposition from Piso, governor of Syria.
+- 19 CE: Germanicus visited Egypt without Tiberius's permission, violating restrictions on senatorial access.
+- 10 October 19 CE: Germanicus died at Antioch following an illness. Suspicions of poisoning implicated Piso and, indirectly, Tiberius. Piso faced trial and died by suicide before the proceedings concluded, deepening public suspicion of Tiberius.
+- ~15–23 CE: Sejanus became sole prefect of the Praetorian Guard, and concentrated them near Rome, strenghtening its political influence.
+- 23 CE: Drusus died unexpectedly, possibly by poisoning from Sejanus and Drusus's wife Livilla.
+- ~23–27 CE: Tiberius increasingly relied on Sejanus to manage affairs, while he eventually withdrew from Rome.
+- 25-31 CE: Sejanus built power as Livia (mother of Tiberius) died, persecuting Agrippina and her sons and using accusations of treason to eliminate opponents and becoming consul. He was denied marrying Livilla, hoping to strengthen his position within the dynasty.
+- 18 October 31 CE: Tiberius turned against Sejanus, arranging his arrest and execution. His downfall triggered prosecutions of his associates.
+- 33 CE: Agrippina and her son died in captivity, eliminating two prominent members of Germanicus's family from the imperial succession.

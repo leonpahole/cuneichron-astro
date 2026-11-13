@@ -1,0 +1,54 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { noteEventTimeToString, parseMarkdownIntoNote, sortNotesByFileName, splitNoteLinks, type Location, type Note } from "../../data/note";
+import NoteMap from "../../components/NoteMap";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("notes");
+  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations)).filter((note): note is Note => note != null);
+  const locations = new Map<string, Location>();
+  for (const note of notes) for (const location of note.locations) locations.set(location.slug, location);
+
+  return [...locations.values()].filter((location) =>
+    notes.some((note) => note.locations.some((item) => item.slug === location.slug)),
+  ).map((location) => ({
+    params: { slug: location.slug },
+    props: {
+      location,
+      notes: sortNotesByFileName(notes.filter((note) => note.locations.some((item) => item.slug === location.slug))),
+    },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { location, notes } = Astro.props as Props;
+const notesWithAppearances = notes.map((note) => ({
+  note,
+  events: note.events.filter((event) => event.locations.some((item) => item.slug === location.slug)),
+})).filter(({ events }) => events.length > 0);
+const matchingEvents = notesWithAppearances.flatMap(({ events }) => events);
+---
+
+<Layout title={location.name}>
+  <h2 class="mb-2 font-bold text-3xl">{location.name}</h2>
+  {location.description && <p class="mb-5 max-w-3xl">{location.description}</p>}
+
+  {(location.coordinates || location.geojson) && <NoteMap events={matchingEvents} places={[location]} client:only="react" />}
+
+  <h3 class="mb-3 mt-6 text-2xl font-bold">Appearances in the notes</h3>
+  {notesWithAppearances.map(({ note }) => {
+    const matchingSections = note.timeline.map((section) => ({
+      section,
+      events: section.events.filter((event) => event.locations.some((item) => item.slug === location.slug)),
+    })).filter(({ events }) => events.length > 0);
+    return <section class="mb-6">
+      <h4 class="mb-2 text-xl font-semibold"><a class="underline" href={`/note/${note.path}`}>{note.topic}: {note.name}</a></h4>
+      {matchingSections.map(({ section, events }) => <div class="mb-3">
+            {section.title && <h5 class="font-semibold">{section.title}</h5>}
+            <ol class="list-decimal pl-6">{events.map((event) => <li><strong>{noteEventTimeToString(event.time)}:</strong> {splitNoteLinks(event.description).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}</li>)}</ol>
+          </div>)}
+    </section>;
+  })}
+</Layout>

@@ -7,7 +7,7 @@ import {
   noteEventTimeToString,
   getNoteTimeSpan,
   sortNotesByFileName,
-  splitPersonLinks,
+  splitNoteLinks,
   type Note,
 } from "../../data/note";
 import NoteMap from "../../components/NoteMap";
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { note, prev, next, series, elsewhere } = Astro.props;
-const hasMap = note.events.some((event) => event.location != null);
+const hasMap = note.locations.some((location) => location.coordinates) || note.events.some((event) => event.location != null || event.locations.some((location) => location.coordinates));
 const sectionId = (title: string) => title.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const sectionDateLabel = (section: (typeof note.timeline)[number]) => section.dateRange
   ? `(${noteEventTimeToString({ type: "range", from: section.dateRange[0], to: section.dateRange[1] }).trim()})`
@@ -96,11 +96,13 @@ const peopleByCategory = note.people.reduce((groups, person) => {
 
   <h2 class="mb-3 font-bold text-3xl">{note.name}</h2>
 
-  {note.descriptions.map((d) => <p class="mb-2">{d}</p>)}
+  {note.descriptions.map((d) => <p class="mb-2">{splitNoteLinks(d).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}</p>)}
 
   {note.timeline.some((section) => section.title) && <nav class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">In this note</h2><ul class="list-disc pl-6">{note.timeline.filter((section) => section.title).map((section) => <li><a class="underline" href={`#${sectionId(section.title!)}`}>{section.title}{sectionDateLabel(section) && <span class="ml-1">{sectionDateLabel(section)}</span>}</a></li>)}</ul></nav>}
 
   {note.people.length > 0 && <section class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">People involved</h2><div class="flex flex-col gap-3">{[...peopleByCategory].sort(([a], [b]) => a.localeCompare(b)).map(([category, people]) => <div><h3 class="font-semibold mb-1">{category}</h3><ul class="flex flex-wrap gap-x-3 gap-y-1">{[...people].sort((a, b) => (firstAppearance.get(a.slug) ?? Infinity) - (firstAppearance.get(b.slug) ?? Infinity) || a.name.localeCompare(b.name)).map((person) => <li><a class="underline" href={`/person/${person.slug}`}>{peopleDirectory[person.slug as keyof typeof peopleDirectory]?.name ?? person.name}</a></li>)}</ul></div>)}</div></section>}
+
+  {note.locations.length > 0 && <section class="my-5 rounded border border-gray-300 p-4"><h2 class="font-bold text-2xl mb-2">Locations</h2><ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{note.locations.map((location) => <li class="min-w-0 break-words"><a class="underline" href={`/location/${location.slug}`}>{location.name}</a>{location.description && <p class="mt-1 text-sm text-gray-600">{location.description}</p>}</li>)}</ul></section>}
 
   <h3 class="text-2xl font-bold mb-2">Timeline</h3>
 
@@ -108,13 +110,13 @@ const peopleByCategory = note.people.reduce((groups, person) => {
     note.timeline.map((section) => (
       <div>
         {section.title && (
-          <h4 id={sectionId(section.title)} class="font-semibold text-xl mb-2">{section.titleSegments?.map((part) => part.person ? <a class="underline" href={`/person/${part.person.slug}`}>{part.text}</a> : part.text) ?? section.title}{sectionDateLabel(section) && <span class="ml-2 text-base font-normal text-gray-500">{sectionDateLabel(section)}</span>}</h4>
+          <h4 id={sectionId(section.title)} class="font-semibold text-xl mb-2">{section.titleSegments?.map((part) => part.person ? <a class="underline" href={`/person/${part.person.slug}`}>{part.text}</a> : part.location ? <a class="underline" href={`/location/${part.location.slug}`}>{part.text}</a> : part.text) ?? section.title}{sectionDateLabel(section) && <span class="ml-2 text-base font-normal text-gray-500">{sectionDateLabel(section)}</span>}</h4>
         )}
         <ol class="flex flex-col gap-0.5 mb-4">
           {section.events.map((e) => (
             <li>
               <span class="font-bold">{noteEventTimeToString(e.time)}</span>:{" "}
-              {splitPersonLinks(e.description).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}
+              {splitNoteLinks(e.description).map((part) => part.href ? <a class="underline" href={part.href}>{part.text}</a> : part.text)}
             </li>
           ))}
         </ol>
@@ -123,7 +125,7 @@ const peopleByCategory = note.people.reduce((groups, person) => {
     ))
   }
 
-  {hasMap && <NoteMap events={note.events} client:only="react" />}
+  {hasMap && <NoteMap events={note.events} places={note.locations} client:only="react" />}
 
   {
     note.gallery.length > 0 && (

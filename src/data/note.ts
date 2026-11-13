@@ -1,6 +1,7 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import type { GeoJsonObject } from "geojson";
+import locationProfiles from "./locations.json";
 import type {
   BlockContent,
   Break,
@@ -20,6 +21,7 @@ import type {
 
 export interface Note {
   location: string;
+  locations: Location[];
   topic: string;
   name: string;
   path: string;
@@ -37,6 +39,14 @@ export interface Person {
   description?: string;
 }
 
+export interface Location {
+  name: string;
+  slug: string;
+  description?: string;
+  coordinates?: [longitude: number, latitude: number];
+  geojson?: GeoJsonObject;
+}
+
 export interface GalleryImage {
   src: string;
   alt: string;
@@ -45,10 +55,11 @@ export interface GalleryImage {
 
 export interface TimelineSection {
   title?: string;
-  titleSegments?: { text: string; person?: Person }[];
+  titleSegments?: { text: string; person?: Person; location?: Location }[];
   events: NoteEvent[];
   images: GalleryImage[];
   people?: Person[];
+  locations?: Location[];
   dateRange?: [HistoricalDate, HistoricalDate];
 }
 
@@ -57,6 +68,7 @@ export interface NoteEvent {
   time: NoteEventTime;
   location?: GeoJsonObject;
   people: Person[];
+  locations: Location[];
 }
 
 export type NoteEventTime =
@@ -88,7 +100,9 @@ export const parseMarkdownIntoNote = (
     return null;
   }
 
-  const source = mdString.replace(/\[person(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/person\]/giu, (_, id: string | undefined, name: string) => `[${name}](/person/${slugifyPerson(id ?? name)})`);
+  const source = mdString
+    .replace(/\[person(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/person\]/giu, (_, id: string | undefined, name: string) => `[${name}](/person/${slugifyPerson(id ?? name)})`)
+    .replace(/\[location(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/location\]/giu, (_, id: string | undefined, name: string) => `[${name}](/location/${slugifyLocation(id ?? name)})`);
   const md = unified().use(remarkParse).parse(source);
   const heading1 = md.children.find(
     (n): n is Heading => n.type === "heading" && n.depth === 1,
@@ -103,9 +117,11 @@ export const parseMarkdownIntoNote = (
   const path = getPathFromFilePath(filePath);
   const timeline = getTimelineSections(md, path);
   const people = getPeople(md);
+  const locations = getLocations(md, location);
 
   return {
-    location: location ?? "",
+    location: locations.map((item) => item.name).join(", "),
+    locations,
     name,
     path,
     fileName: getFileNameFromFilePath(filePath),
@@ -135,9 +151,35 @@ const getTaggedPeople = (node: object): Person[] => {
   return ((node as { children?: object[] }).children ?? []).flatMap(getTaggedPeople);
 };
 
+const getLocations = (md: Root, legacyLocations = ""): Location[] => {
+  const locations = new Map<string, Location>();
+  for (const node of md.children) {
+    for (const location of getTaggedLocations(node)) locations.set(location.slug, location);
+  }
+  for (const name of legacyLocations.split(",").map((value) => value.trim()).filter(Boolean)) {
+    const location = makeLocation(name);
+    if (!locations.has(location.slug)) locations.set(location.slug, location);
+  }
+  return [...locations.values()];
+};
+
+const getTaggedLocations = (node: object): Location[] => {
+  if ((node as { type?: string }).type === "link") {
+    const link = node as Link;
+    const location = parseLocationLink(link.url, getTextNodeText(link));
+    if (location) return [location];
+  }
+  return ((node as { children?: object[] }).children ?? []).flatMap(getTaggedLocations);
+};
+
 const parsePersonLink = (url: string, name: string): Person | null => {
   const match = url.match(/^\/person\/([^/]+)$/);
   return match ? { name, slug: match[1] } : null;
+};
+
+const parseLocationLink = (url: string, name: string): Location | null => {
+  const match = url.match(/^\/location\/([^/]+)$/);
+  return match ? makeLocation(name, match[1]) : null;
 };
 
 export const splitPersonLinks = (text: string) =>
@@ -146,8 +188,27 @@ export const splitPersonLinks = (text: string) =>
     return match ? { text: match[1], href: match[2] } : { text: part };
   });
 
+export const splitNoteLinks = (text: string) =>
+  text.split(/(\[[^\]]+\]\(\/(?:person|location)\/[^)]+\))/g).map((part) => {
+    const match = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
+    return match ? { text: match[1], href: match[2] } : { text: part };
+  });
+
 export const makePerson = (name: string): Person => ({ name, slug: slugifyPerson(name) });
 export const slugifyPerson = (name: string): string => name.toLowerCase().trim().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+export const slugifyLocation = (name: string): string => name.toLowerCase().trim().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+
+export const makeLocation = (name: string, explicitSlug?: string): Location => {
+  const slug = explicitSlug ?? slugifyLocation(name);
+  const profile = locationProfiles[slug as keyof typeof locationProfiles];
+  return {
+    name: profile?.name ?? name,
+    slug,
+    description: profile?.description,
+    coordinates: profile?.coordinates as [number, number] | undefined,
+    geojson: profile?.geojson as GeoJsonObject | undefined,
+  };
+};
 
 const getPathFromFilePath = (filePath: string): string => {
   const [dir, file] = filePath.split("/").slice(-2);
@@ -175,7 +236,7 @@ const getDescriptions = (md: Root): string[] => {
   return md.children
     .slice(0, end)
     .filter((n): n is Paragraph => n.type === "paragraph")
-    .map(getTextNodeText);
+    .map((node) => getEventText(node));
 };
 
 const stripLeadingNumber = (str: string): string => str.replace(/^\d+_/, "");
@@ -208,12 +269,14 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
       // A deeper heading starts a new timeline subsection.
       const titleSegments = getHeadingTitleSegments(node);
       const headingPeople = getTaggedPeople(node);
+      const headingLocations = getTaggedLocations(node);
       current = {
         title: titleSegments.map((segment) => segment.text).join("").trim(),
         titleSegments,
         events: [],
         images: [],
         people: headingPeople,
+        locations: headingLocations,
       };
       sections.push(current);
       continue;
@@ -221,7 +284,7 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
 
     if (node.type === "list") {
       for (const item of node.children) {
-        current.events.push(parseEvent(item, current.people ?? []));
+        current.events.push(parseEvent(item, current.people ?? [], current.locations ?? []));
       }
       continue;
     }
@@ -238,12 +301,13 @@ const getTimelineSections = (md: Root, notePath: string): TimelineSection[] => {
     .map((section) => ({ ...section, dateRange: getEventDateRange(section.events) }));
 };
 
-const getHeadingTitleSegments = (heading: Heading): { text: string; person?: Person }[] =>
+const getHeadingTitleSegments = (heading: Heading): { text: string; person?: Person; location?: Location }[] =>
   heading.children.flatMap((child) => {
     const text = getTextNodeText(child);
     if (!text) return [];
     const person = child.type === "link" ? parsePersonLink(child.url, text) ?? undefined : undefined;
-    return [{ text, person }];
+    const location = child.type === "link" ? parseLocationLink(child.url, text) ?? undefined : undefined;
+    return [{ text, person, location }];
   });
 
 const getEventDateRange = (events: NoteEvent[]): [HistoricalDate, HistoricalDate] | undefined => {
@@ -255,16 +319,18 @@ const getEventDateRange = (events: NoteEvent[]): [HistoricalDate, HistoricalDate
   return [sorted[0], sorted[sorted.length - 1]];
 };
 
-const parseEvent = (item: ListItem, sectionPeople: Person[] = []): NoteEvent => {
+const parseEvent = (item: ListItem, sectionPeople: Person[] = [], sectionLocations: Location[] = []): NoteEvent => {
   const text = getListItemText(item);
   const [time, ...description] = text.split(":");
   const people = [...new Map([...sectionPeople, ...getTaggedPeople(item)].map((p) => [p.slug, p])).values()];
+  const locations = [...new Map([...sectionLocations, ...getTaggedLocations(item)].map((location) => [location.slug, location])).values()];
 
   return {
     description: description.join(":"),
     time: parseTimeString(time),
     location: getListItemLocation(item),
     people,
+    locations,
   };
 };
 
@@ -451,7 +517,9 @@ const getEventText = (node: object): string => {
     const link = node as Link;
     const label = (link.children ?? []).map(getEventText).join("");
     const person = parsePersonLink(link.url, label);
-    return person ? `[${label}](/person/${person.slug})` : label;
+    if (person) return `[${label}](/person/${person.slug})`;
+    const location = parseLocationLink(link.url, label);
+    return location ? `[${label}](/location/${location.slug})` : label;
   }
 
   if (type === "inlineCode") {

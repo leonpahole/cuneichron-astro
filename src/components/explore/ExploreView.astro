@@ -1,6 +1,7 @@
 ---
 import type { Bucket, ExploreView } from "../../data/explore";
 import NoteMap from "../NoteMap";
+import { slugifyLocation } from "../../data/note";
 
 const { view, buckets } = Astro.props as {
   view: ExploreView;
@@ -50,7 +51,7 @@ const hasMap = events.some((e) => e.location != null);
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {buckets.map((bucket) => (
           <div class="rounded-md border border-gray-300 p-3">
-            <h3 class="text-xl  font-bold mb-2">{bucket.name}</h3>
+            <h3 class="text-xl font-bold mb-2">{view === "location" ? <a class="underline" href={`/location/${slugifyLocation(bucket.name)}`}>{bucket.name}</a> : bucket.name}</h3>
 
             <ul class="flex flex-col gap-1">
               {bucket.notes.map((n) => (
