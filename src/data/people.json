@@ -261,6 +261,10 @@
   "julia": {
     "name": "Julia"
   },
+  "augustus": {
+    "name": "Augustus",
+    "category": "Emperor"
+  },
   "marius": {
     "name": "Marius",
     "category": "Military leader"

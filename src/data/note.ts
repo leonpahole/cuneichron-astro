@@ -47,6 +47,13 @@ export interface Location {
   geojson?: GeoJsonObject;
 }
 
+export type EntityReference = string | {
+  name: string;
+  id?: string;
+  slug?: string;
+  aliases?: string[];
+};
+
 export interface GalleryImage {
   src: string;
   alt: string;
@@ -94,13 +101,16 @@ export interface HistoricalDate {
 export const parseMarkdownIntoNote = (
   filePath: string | undefined,
   mdString: string | undefined,
-  location?: string,
+  location?: EntityReference | EntityReference[],
+  peopleReferences?: EntityReference[] | EntityReference,
 ): Note | null => {
   if (!filePath || !mdString) {
     return null;
   }
 
-  const source = mdString
+  const locationReferences = normalizeReferences(location);
+  const peopleToTag = normalizeReferences(peopleReferences);
+  const source = autoTagEntities(mdString, peopleToTag, locationReferences)
     .replace(/\[person(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/person\]/giu, (_, id: string | undefined, name: string) => `[${name}](/person/${slugifyPerson(id ?? name)})`)
     .replace(/\[location(?::([\p{L}\p{N}-]+))?\]([^\[]+?)\[\/location\]/giu, (_, id: string | undefined, name: string) => `[${name}](/location/${slugifyLocation(id ?? name)})`);
   const md = unified().use(remarkParse).parse(source);
@@ -151,13 +161,14 @@ const getTaggedPeople = (node: object): Person[] => {
   return ((node as { children?: object[] }).children ?? []).flatMap(getTaggedPeople);
 };
 
-const getLocations = (md: Root, legacyLocations = ""): Location[] => {
+const getLocations = (md: Root, legacyLocations: EntityReference | EntityReference[] = ""): Location[] => {
   const locations = new Map<string, Location>();
   for (const node of md.children) {
     for (const location of getTaggedLocations(node)) locations.set(location.slug, location);
   }
-  for (const name of legacyLocations.split(",").map((value) => value.trim()).filter(Boolean)) {
-    const location = makeLocation(name);
+  const references = normalizeReferences(legacyLocations);
+  for (const reference of references) {
+    const location = makeLocation(reference.name, reference.id ?? reference.slug);
     if (!locations.has(location.slug)) locations.set(location.slug, location);
   }
   return [...locations.values()];
@@ -208,6 +219,55 @@ export const makeLocation = (name: string, explicitSlug?: string): Location => {
     coordinates: profile?.coordinates as [number, number] | undefined,
     geojson: profile?.geojson as GeoJsonObject | undefined,
   };
+};
+
+const normalizeReferences = (value?: EntityReference[] | EntityReference): Exclude<EntityReference, string>[] => {
+  if (value == null) return [];
+  const values = Array.isArray(value) ? value : [value];
+  return values.flatMap((item) => {
+    if (typeof item === "string") return item.split(",").map((name) => name.trim()).filter(Boolean).map((name) => ({ name }));
+    return item && typeof item.name === "string" ? [item] : [];
+  });
+};
+
+const autoTagEntities = (source: string, people: Exclude<EntityReference, string>[], locations: Exclude<EntityReference, string>[]): string => {
+  const aliases = new Map<string, { kind: "person" | "location"; id: string }[]>();
+  const add = (alias: string, entity: { kind: "person" | "location"; id: string }) => {
+    const key = alias.trim().toLocaleLowerCase();
+    if (!key) return;
+    aliases.set(key, [...(aliases.get(key) ?? []), entity]);
+  };
+  people.forEach((person) => {
+    const id = person.id ?? person.slug ?? slugifyPerson(person.name);
+    [person.name, ...(person.aliases ?? [])].forEach((alias) => add(alias, { kind: "person", id }));
+  });
+  locations.forEach((location) => {
+    const id = location.id ?? location.slug ?? slugifyLocation(location.name);
+    [location.name, ...(location.aliases ?? [])].forEach((alias) => add(alias, { kind: "location", id }));
+  });
+
+  const uniqueAliases = [...aliases].flatMap(([alias, matches]) => {
+    const unique = [...new Map(matches.map((match) => [`${match.kind}:${match.id}`, match])).values()];
+    return unique.length === 1 ? [{ alias, ...unique[0] }] : [];
+  }).sort((a, b) => b.alias.length - a.alias.length);
+  if (uniqueAliases.length === 0) return source;
+
+  // Don't rewrite existing tags, Markdown links, or inline code.
+  const protectedParts: string[] = [];
+  const masked = source.replace(/\[person(?::[\p{L}\p{N}-]+)?\][\s\S]*?\[\/person\]|\[location(?::[\p{L}\p{N}-]+)?\][\s\S]*?\[\/location\]|\[[^\]]*\]\([^)]*\)|(`+)[\s\S]*?\1/giu, (part) => {
+    const token = `CUNEIPROTECTED${protectedParts.length}TOKEN`;
+    protectedParts.push(part);
+    return token;
+  });
+  const alternatives = uniqueAliases.map(({ alias }) => alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+  const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${alternatives})(?=$|[^\\p{L}\\p{N}])`, "giu");
+  const tagged = masked.replace(pattern, (match, prefix: string, found: string) => {
+    const entity = uniqueAliases.find(({ alias }) => alias.toLocaleLowerCase() === found.toLocaleLowerCase());
+    if (!entity) return match;
+    const tag = entity.kind === "person" ? "person" : "location";
+    return `${prefix}[${tag}:${entity.id}]${found}[/${tag}]`;
+  });
+  return tagged.replace(/CUNEIPROTECTED(\d+)TOKEN/g, (_, index: string) => protectedParts[Number(index)] ?? "");
 };
 
 const getPathFromFilePath = (filePath: string): string => {

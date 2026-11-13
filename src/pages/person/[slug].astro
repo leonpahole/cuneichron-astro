@@ -7,7 +7,7 @@ import descriptions from "../../data/people.json";
 
 export async function getStaticPaths() {
   const entries = await getCollection("notes");
-  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations)).filter((note): note is Note => note != null);
+  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations, entry.data.people)).filter((note): note is Note => note != null);
   const persons = new Map<string, { name: string; notes: Note[] }>();
   for (const note of notes) for (const event of note.events) for (const person of event.people) {
     const existing = persons.get(person.slug) ?? { name: person.name, notes: [] };

@@ -36,7 +36,7 @@ export const getNotes = async (): Promise<Note[]> => {
   const allNotes = await getCollection("notes");
 
   return allNotes
-    .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations))
+    .map((n) => parseMarkdownIntoNote(n.filePath, n.body, n.data.locations, n.data.people))
     .filter((n): n is Note => n != null);
 };
 

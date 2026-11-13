@@ -1,6 +1,31 @@
 ---
 topics: Roman Empire
 locations: Rome, Italy
+people:
+  - name: Augustus
+    id: augustus
+    aliases: [Octavian]
+  - name: Marcus Agrippa
+    id: marcus-agrippa
+    aliases: [Agrippa]
+  - Virgil
+  - Aeneas
+  - Julia
+  - name: Julia the Younger
+    id: julia-the-younger
+  - Marcellus
+  - Tiberius
+  - Vipsania
+  - Gaius Caesar
+  - Lucius Caesar
+  - Agrippa Postumus
+  - Germanicus
+  - Arminius
+  - Maecenas
+  - Sejanus
+  - Livilla
+  - Livia
+  - Agrippina
 ---
 
 # Early Roman Empire

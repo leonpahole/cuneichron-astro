@@ -7,7 +7,7 @@ import NoteMap from "../../components/NoteMap";
 
 export async function getStaticPaths() {
   const entries = await getCollection("notes");
-  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations)).filter((note): note is Note => note != null);
+  const notes = entries.map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations, entry.data.people)).filter((note): note is Note => note != null);
   const locations = new Map<string, Location>();
   for (const note of notes) for (const location of note.locations) locations.set(location.slug, location);
 
