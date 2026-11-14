@@ -13,164 +13,132 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 
 ## Timeline
 
-### First Samnite War
+### First Samnite war
 
-- 343–341 BCE: Rome became involved in conflict between Campania and Samnites, semi-nomads from central Apennines (Samnium) who came from the hills in 300s BC.
-- 342 BCE: Plebeian reforms required at least one of the consuls to be a plebeian and ten-year period between same offices.
-- ~341 BCE: The war ended with Rome gaining the upper hand but without decisively defeating the Samnites.
-- ~341 BCE: A mutiny by Roman soldiers in Campania was peacefully resolved by Corvus, who secured amnesty for the soldiers.
+- 343–341 BCE: Samnites (semi-nomads from central Appenines) came down from the hills and encroached on Campania; Rome got involved and won but without decisive victory. A post-war mutiny by Roman soldiers was peacefully resolved by Corvus.
+- 342 BCE: Plebeian reforms: at least one consul is plebeian and ten-year period between same offices.
 
 ### Latin War
 
-- 340 BCE: The war began because Latin League demanded full Roman citizenship and one of the consuls be from Latins.
-- ~340–338 BCE: Rome with help of Samnites defeated Latin communities individually, subduing Latium, abolishing Latin league, and granting different degrees of citizenship depending on their conduct.
-- ~338 BCE: Roman colonies were established on land taken from communities that had resisted Rome.
+- 340-338 BCE: Latin League demanded full Roman citizenship and a Latin consul. With Samnite help, Rome defeated individual Latin communities, abolished Latin league, established colonies and granted forms of citizenship depending on conduct.
 
 ### Second Samnite War
 
-- 327 BCE: The war began after Rome intervened in Naples at the request of its Greek nobility and expelled a Samnite garrison.
-- ~321 BCE: Major Roman defeat at Caudine Forks after the Samnites trapped their army in a mountain pass, Rome accepts harsh peace terms.
-- ~321–316 BCE: Fighting between Rome and the Samnites paused.
-- 315 BCE: Major Roman defeat at Lautulae; Campania and other allies threatened to defect.
-- 312 BCE: Appius Claudius began construction of Appian Way (Rome - Capua), improving movement of troops and supplies into south, and aqueduct to improve Rome's water supply.
-- ~312 BCE: Phalanx replaced with the more flexible maniple system due to struggles in the Samnite Wars.
-- 311 BCE: The Etruscans entered the war against Rome, opening a second major front.
-- 308 BCE: The Etruscans made peace with Rome after their defeat at Lake Vadimo.
-- 304 BCE: The war ended with Samnite defeat; Rome founded 13 colonies in Samnium and established garrisons.
-- ~304 BCE: Roman citizenship was extended in varying forms to communities across Italy; defeated peoples were integrated and required to provide soldiers.
+- 327 BCE: Rome intervened in Naples, expelling its Samnite garrison.
+- ~321 BCE: Samnites trapped and defeated a Roman army at Caudine Forks, leading to a five-year pause in fighting.
+- 315 BCE: Rome suffered another major defeat at Lautulae, threatening its alliances.
+- 312 BCE: Appius Claudius began construction of the Appian Way (Rome–Capua) to improve military transport and Rome's first aqueduct to supply fresh water.
+- ~312 BCE: Phalanx replaced with the more flexible maniple system due to struggles in the wars.
+- 311–308 BCE: Etruscans joined the war against Rome but were eventually defeated.
+- 304 BCE: War ended in Roman victory, strengthening Rome's control over Samnium.
+- ~304 BCE: Rome expanded its system of citizenship and military obligations among Italian communities.
 
 ### Third Samnite War
 
-- 298 BCE: The war began after the Samnites resisted further Roman expansion and settlement in Samnium.
-- ~297 BCE: The Samnites withdrew and joined forces with the Etruscans against Rome.
-- 295 BCE: Umbrians and Gallic tribes from the Po Valley joined the anti-Roman coalition.
-- 295 BCE: Rome defeated the coalition at the Battle of Sentinum.
-- 293 BCE: Rome defeated the Samnites at Aquilonia.
+- 298-295 BCE: Samnites resisted further Roman settlement in Samnium; they joined forces with Etruscans, Umbrians and Gallic tribes from the Po valley.
+- 295-293 BCE: Rome defeated the coalition at the Battle of Sentinum (295 BCE) and Samnites at Aquilonia (293 BCE).
 - 290 BCE: The war ended, leaving Rome dominant across the Italian peninsula.
 
 ### Pyrrhic wars
 
 - 282 BCE: Rome declared war on Tarentum (Magna Grecia) after a dispute with fleets.
-- 280 BCE: [person]Pyrrhus[/person] invaded Italy with an army including war elephants (Rome's first battle against them), defeating them at Heraclea.
-- 279 BCE: [person]Pyrrhus[/person] defeated Rome at the Battle of Asculum, but suffered heavy losses (“Pyrrhic victory”).
-- 278 BCE: [person]Pyrrhus[/person] left Italy for Sicily to drive the Carthaginians from the island.
-- 278–276 BCE: [person]Pyrrhus[/person] drove Carthaginian forces back but failing to capture their remaining stronghold.
-- 275 BCE: [person]Pyrrhus[/person] returned to Italy and was defeated at Beneventum, withdrawing to Epirus.
+- 280 BCE: Pyrrhus came to help Tarentum, invading Italy with an army including war elephants (Rome's first battle against them), defeating them at Heraclea.
+- 279 BCE: Pyrrhus defeated Rome at the Battle of Asculum, but suffered heavy losses (“Pyrrhic victory”).
+- 278-276 BCE: Pyrrhus left for Sicily to drive the Carthaginians off the island, achieving victories but failing to capture one remaining stronghold.
+- 275 BCE: Pyrrhus returned to Italy and was defeated at Beneventum, withdrawing to Epirus.
 - 272 BCE: Rome captured Tarentum, completing its conquest of Magna Graecia.
 
 ### First Punic war
 
-- 289 BCE: After the death of [person]Agathocles[/person] of Syracuse, the Mamertines seized Messana.
-- 278 BCE: Mamertines joined [person]Pyrrhus[/person]'s campaign in Sicily against Carthage.
-- ~276 BCE: The Mamertines turned against [person]Pyrrhus[/person].
-- ~275–265 BCE: [person]Hiero II[/person] rose to power in Syracuse.
-- 265 BCE: Mamertines requested Carthaginian protection against [person]Hiero II[/person], then Romans to expel Carthaginians.
-- 264 BCE: Rome accepted the Mamertines' appeal and sent troops to Sicily, occupying Messana and starting the war.
-- 264 BCE: Carthage sent an army and allied with Syracuse; Rome defeated Syracuse and forced [person]Hiero II[/person] to become its ally.
-- 262 BCE: Rome besieged and sacked Agrigentum, gaining control of much of southern Sicily.
-- 261 BCE: To penetrate Carthaginian strongholds in the west, Rome built its first large fleet, adapting Carthaginian ship designs.
-- 260 BCE: First Roman naval disaster; ships under [person]Scipio Asina[/person] were captured by Carthaginians.
-- 260 BCE: Rome defeated the Carthaginian fleet at the Battle of Mylae using the corvus.
-- ~260–256 BCE: The war settled into prolonged, indecisive fighting on land and sea. Carthage harrassed Italian coast from Sardinia and Corsica.
-- 256 BCE: Rome defeated Carthage at Ecnmous and invaded North Africa.
-- 255 BCE: Rome defeated at Tunis by Carthage reorganized under [person]Xanthippus[/person], invasion abandoned. Roman fleet suffered a catastrophic storm while returning.
-- 249 BCE: Rome attempted a surprise attack on the Carthaginian fleet at Drepana but was defeated.
-- ~248–241 BCE: Carthaginian general [person]Hamilcar Barca[/person] waged a guerrilla war in western Sicily.
-- 241 BCE: Rome defeated the Carthaginian fleet near Sicily; war ended with Carthage surrendering Sicily to Rome and agreeing to pay indemnities.
+- 289–264 BCE: The Mamertines seized Messana after Agathocles' death, later clashing with Syracuse (Hiero II). They sought protection from Carthage, then appealed to Rome.
+- 264 BCE: War began after Rome intervened in Messana against Carthage and Syracuse. Hiero II subsequently became a Roman ally.
+- 262 BCE: Rome captured Agrigentum, strengthening its position in Sicily.
+- ~261 BCE: Rome built a large war fleet to challenge Carthaginian naval dominance, adapting Carthaginian designs.
+- 260 BCE: After an initial naval defeat, Rome won its first major naval victory at Mylae using the corvus.
+- ~260–256 BCE: The war settled into indecisive fighting on land and sea. Carthage harrassed Italian coast from Sardinia and Corsica.
+- 256 BCE: Rome defeated the Carthaginian fleet at Ecnomus and invaded North Africa.
+- 255 BCE: Carthage under Xanthippus defeated the Roman invasion at Tunis; a storm subsequently destroyed much of Rome's returning fleet.
+- 249 BCE: Carthage defeated a Roman fleet at Drepana, while Hamilcar Barca later sustained resistance in western Sicily.
+- 241 BCE: Rome won a decisive naval victory at the Aegates Islands, forcing Carthage to surrender Sicily and pay an indemnity.
 
 ### Between Punic wars
 
 - 241 BCE: A Gallic tribe rebelled against Roman expansion in northern Italy but was defeated.
 - 236 BCE: A coalition of Gallic tribes marched south against Rome but dissolved before engaging the Roman army.
 - 228 BCE: Rome defeated the Illyrians after their piracy and established a protectorate in southern Illyria.
-- 228 BCE: Rome established diplomatic relations with Greeks and was accepted as a political equal, partly to counter growing Macedon.
-- 226 BCE: A large Gallic coalition invaded northern Italy, threatening Rome.
-- ~225 BCE: Rome defeated the invading Gauls and cleared Gallic forces from Italy south of the Alps.
-- 219 BCE: Rome demanded [person]Hannibal[/person] ends siege of Saguntum, Carthage rejected; after Saguntum fell, Rome prepared for war.
+- 228 BCE: Rome established relations with Greeks and was accepted as a political equal, partly to counter growing Macedon.
+- 226 BCE: A large Gallic coalition invaded northern Italy; Rome defeated them and cleared Gallic forces south of the Alps.
 
 ### Second Punic war
 
-- 218 BCE: Rome declared war on Carthage after Carthage refused Rome’s demand to withdraw [person]Hannibal[/person] from Saguntum.
-- 218 BCE: [person]Hannibal[/person] launched his invasion of Italy from New Carthage, crossing from Spain through Gaul with 50k men.
-- 218 BCE: [person]Hannibal[/person] crossed the Alps with his army and war elephants, suffering heavy losses (25k men survived).
-- 218 BCE: [person]Hannibal[/person] defeats Romans at Ticinus and Trebia through baits, superior Numidian cavalry and tactics.
-- 218 BCE: [person]Hannibal[/person] gained support and reinforcements from Gallic groups in northern Italy after his victories.
-- 217 BCE: [person]Hannibal[/person] crossed the flooded marshes of Etruria, bypassing Roman-controlled roads.
-- 217 BCE: Battle of Lake Trasimene - Rome's major defeat after [person]Hannibal[/person] ambushed [person]Flaminius[/person]'s army in the narrow terrain.
-- 217 BCE: [person]Hannibal[/person]'s strategy focused also on encouraging Rome's allies to defect.
-- 217 BCE: [person]Quintus Fabius Maximus[/person] was appointed dictator and adopted strategy of avoiding battle and refusing baits.
-- 217 BCE: [person]Hannibal[/person] escaped a Roman trap in Campania by sending oxen carrying torches toward a guarded pass.
-- 217 BCE: [person]Marcus Minucius[/person] appointed co-dictator alongside [person]Fabius[/person], undermining dictatorship as an office.
-- 217 BCE: [person]Minucius[/person] attacked and was nearly destroyed; [person]Fabius[/person] rescued his army; [person]Minucius[/person] accepted [person]Fabius[/person]'s authority.
-- 216 BCE: Battle of Cannae - [person]Hannibal[/person] decisively defeated the much larger Roman army through a double-envelopment maneuver.
-- 216 BCE: Roman Senate assumed greater control, sidelining popular assemblies and pursuing a more consistent military strategy.
-- 216 BCE: Rome raised new legions by changing the minimum/maximum enlistment age and enrolling slaves.
-- 216 BCE: After [person]Hiero II[/person] died his teenage successor [person]Hieronymus[/person] allied with Carthage and began attacking Roman forces in Sicily.
-- 215 BCE: [person]Hieronymus[/person] was assassinated during a campaign, Carthaginian generals take control over the city.
-- 215–212 BCE: [person]Publius Cornelius Scipio[/person] and [person]Gnaeus Cornelius Scipio Calvus[/person] prevented Carthaginian forces in Spain from reinforcing [person]Hannibal[/person] in Italy.
-- 211 BCE: [person]Publius Cornelius Scipio[/person] and [person]Gnaeus Cornelius Scipio Calvus[/person] were defeated in separate engagements in Spain, ending five years of Roman campaigning there.
-- 214–212 BCE: [person]Marcus Claudius Marcellus[/person] besieged Syracuse, whose defenses were strengthened by [person]Archimedes[/person]' inventions.
-- 212 BCE: Rome captured and sacked Syracuse, exploiting a local festival and the defection of pro-Roman nobles.
-- 212 BCE: Rome regained control of most of Sicily, securing an important source of grain.
-- 215–205 BCE: First Macedonian War — [person]Philip V[/person] allied with [person]Hannibal[/person], but Rome supported Greek allies to keep Macedon occupied through raids.
-- 216 BCE: Capua defected to [person]Hannibal[/person], becoming the most important Italian city to join the Carthaginian cause.
-- 212 BCE: [person]Hannibal[/person] captured Tarentum, but the Roman garrison kept control of the coastal citadel, preventing [person]Hannibal[/person] from gaining a secure port.
-- 212–211 BCE: Rome besieged Capua rather than directly confronting [person]Hannibal[/person], shifting the strategic initiative toward the Romans.
-- 211 BCE: [person]Hannibal[/person] marched to within ~3km of Rome to force Rome to abandon siege of Capua, but Rome refused and [person]Hannibal[/person] withdrew.
-- 211 BCE: Capua surrendered to Rome.
-- ~211–207 BCE: Rome gradually recovered cities that had defected to [person]Hannibal[/person], and vice-versa.
-- 210 BCE: [person]Scipio Africanus[/person] volunteered command of Roman forces in Spain.
-- 210 BCE: [person]Scipio Africanus[/person] captured New Carthage in a surprise assault, releasing Spanish hostages to strengthen alliances.
-- 208 BCE: [person]Scipio Africanus[/person] defeated [person]Hasdrubal[/person] in a battle in central Spain, but [person]Hasdrubal[/person] escaped left Spain for Italy.
-- 206 BCE: [person]Scipio Africanus[/person] defeated the newly sent Carthaginian army in Spain in Ilipa, Rome now dominant in Spain.
-- 207 BCE: [person]Hasdrubal[/person] crossed the Alps, hoping to join [person]Hannibal[/person] and create a combined army.
-- 207 BCE: Battle of the Metaurus - the two consuls secretly combined their armies and defeated [person]Hasdrubal[/person] before he could join [person]Hannibal[/person]; [person]Hasdrubal[/person] was killed in the battle.
-- 205 BCE: [person]Scipio Africanus[/person] was authorized to invade North Africa after pitching it to the senate.
-- 205–204 BCE: [person]Scipio Africanus[/person] prepared his invasion force in Sicily and established an alliance with the exiled Numidian prince [person]Massinissa[/person], gaining a crucial source of cavalry.
-- 203 BCE: [person]Scipio Africanus[/person] invaded North Africa with 35,000 troops.
-- 203 BCE: [person]Scipio Africanus[/person] defeated two large Carthaginian armies at two separate battle, leaving Carthage without an effective field army.
-- 202 BCE: Carthage recalled [person]Hannibal[/person] from Italy.
-- 202 BCE: Battle of Zama - [person]Scipio Africanus[/person] defeated [person]Hannibal[/person]. The war ends with Rome victorious.
-- 202 BCE: Carthage accepted harsh peace terms, surrendering its overseas territories, its ability to wage war independently, and much of its political independence; [person]Massinissa[/person] received an expanded Numidian kingdom.
+- 219–218 BCE: Hannibal's capture of Saguntum (Spain) triggered a diplomatic crisis, leading Rome to declare the Second Punic War.
+- 218 BCE: Hannibal marched from Spain through Gaul and crossed the Alps into Italy, suffering heavy losses (50k -> 25k).
+- 218 BCE: Hannibal defeated Roman forces at Ticinus and Trebia (tactics and superior Numidian cavalry), gaining support from Gallic tribes.
+- 217 BCE: Hannibal crossed marshes of Etruria to bypass Roman-controlled roads, then ambushed and destroyed a Roman army at Lake Trasimene.
+- 217 BCE: Dictator Fabius Maximus adopted a strategy of avoiding battle with Hannibal, facing strong opposition. Minucius was granted equal dictatorial authority, undermining the office's traditional supremacy, but was nearly defeated and rescued by Fabius.
+- 216 BCE: Hannibal annihilated a much larger Roman army at Cannae using a double-envelopment maneuver.
+- 216 BCE: Rome raised additional legions by changing age limits and entrolling slaves, while Hannibal encouraged Rome's Italian allies to defect.
+- 216 BCE: Senate assumed greater control, sidelining popular assemblies and pursuing a more consistent military strategy.
+- 216 BCE: Capua defected to Hannibal, becoming his most important Italian ally.
+- 215–205 BCE: Philip V of Macedon allied with Hannibal, prompting Rome to support Greek opponents of Macedon in the First Macedonian War.
+- 215–212 BCE: Roman forces under the Scipio brothers fought Carthaginian armies in Spain, preventing major reinforcements from reaching Hannibal.
+- 215–214 BCE: After the death of Hiero II, his successor allied Syracuse with Carthage; his assassination allowed pro-Carthaginian leaders to gain control.
+- 214–212 BCE: Rome besieged and captured Syracuse despite defenses developed by Archimedes, restoring Roman dominance in Sicily (and grain).
+- 212 BCE: Hannibal captured Tarentum but failed to take its Roman-held citadel.
+- 212–211 BCE: Rome besieged and recaptured Capua despite Hannibal's attempt to divert Roman forces by threatening Rome itself.
+- 211 BCE: Both Scipio brothers were killed in separate defeats in Spain, temporarily reversing Roman gains.
+- ~211–203 BCE: Rome gradually recovered Italian cities that had defected to Hannibal, weakening his position.
+- 210 BCE: Scipio Africanus volunteered command of Roman forces in Spain.
+- 209 BCE: Scipio captured New Carthage, securing a major Carthaginian base in Spain and gaining support from local communities.
+- 208 BCE: Scipio defeated Hasdrubal (Hannibal's brother) at Baecula, but he escaped and marched toward Italy; Rome defeated him before he could reinforce Hannibal.
+- 206 BCE: Scipio defeated Carthaginian forces at Ilipa, establishing Roman dominance in Spain.
+- 205–204 BCE: Scipio prepared for an invasion of North Africa from Sicily and secured the support of the Numidian prince Masinissa (cavalry).
+- 204–203 BCE: Scipio invaded North Africa and defeated Carthaginian and Numidian forces, forcing Carthage to recall Hannibal from Italy.
+- 202 BCE: Scipio defeated Hannibal at the Battle of Zama, ending the Second Punic War.
+- 201 BCE: Carthage accepted peace terms, surrendering its overseas possessions, paying an indemnity, and losing the right to wage war without Roman permission.
 
-### Wars in the east
+### Second Macedonian War
 
-- 201 BCE: Pergamum and Rhodes appealed to Rome for help against [person]Philip V[/person] of Macedon, whose expansion threatened their territories-
-- 200 BCE: Rome issued [person]Philip V[/person] an ultimatum to stop his expansion; after he rejected it, Rome began the Second Macedonian War.
-- 200 BCE: Roman forces crossed the Adriatic into Illyria.
-- 198 BCE: [person]Titus Quinctius Flamininus[/person] took command and framed the war as a defense of Greek liberty against Macedonian domination.
-- 198 BCE: Greek city-states increasingly supported Rome.
-- 197 BCE: Battle of Cynoscephalae - [person]Flamininus[/person] defeated [person]Philip V[/person] (maniple vs phalanx).
-- 196 BCE: [person]Flamininus[/person] proclaimed the freedom of the Greek states, but Rome retained influence and expected cooperation and tribute.
+- 201–200 BCE: Pergamum and Rhodes sought Roman help against Philip V's expansion. Rome issued an ultimatum and began the war when Philip refused.
+- 199 BCE: Roman forces advanced into Macedonia but struggled with mountainous terrain and Macedonian defensive positions.
+- 198 BCE: Flamininus took command of Roman forces, gaining Greek allies by presenting the war as a struggle for Greek freedom.
+- 197 BCE: Rome defeated Philip V at Cynoscephalae, demonstrating the superiority of maniple against the phalanx.
+- 196 BCE: Flamininus proclaimed the freedom of Greek states, but Rome retained influence and expected cooperation and tribute.
+
+### Roman–Seleucid War
+
 - 195 BCE: Tensions grew between Rome and the Aetolian League, which felt excluded from the rewards and hoped to gain greater control over Greece.
-- 195 BCE: Roman envoys warned [person]Antiochus III[/person] (Seleucid Empire) against intervening in Greece.
-- 192 BCE: [person]Antiochus III[/person] landed in Greece with a Seleucid force of about 10,000 troops but failed to secure broad Greek support.
-- 192 BCE: Rome sent two legions to Greece, where they were joined by the Achaean League against Antiochus and his allies.
-- 191 BCE: Battle of Thermopylae - Roman forces defeated [person]Antiochus III[/person]’s army.
-- 190 BCE: Roman forces under [person]Scipio Africanus[/person] and his brother [person]Lucius Cornelius Scipio Asiaticus[/person] crossed the Hellespont into Asia Minor.
-- 190 BCE: [person]Hannibal[/person] defeated by the Rhodian fleet.
-- 190 BCE: Battle of Magnesia - Roman and allied forces defeated [person]Antiochus III[/person]’s much larger army.
-- 188 BCE: Treaty of Apamea - [person]Antiochus III[/person] accepted a large indemnity, surrendered territory in Asia Minor, provided hostages, and agreed to keep his forces north of the Taurus Mountains.
-- 183 BCE: [person]Scipio Africanus[/person] died in retirement at his estate in Campania, embittered by his political treatment in Rome.
-- 179 BCE: [person]Philip V[/person] of Macedon died after a succession crisis involving his sons [person]Perseus[/person] and [person]Demetrius[/person]; [person]Perseus[/person] became king after persuading his father that [person]Demetrius[/person] was conspiring with Rome.
-- 172 BCE: Rome sent troops across the Adriatic following growing concern over [person]Perseus[/person]’s expansion, diplomatic ties, and suspected involvement in unrest in Illyria.
-- 171 BCE: Rome formally declared war on [person]Perseus[/person], beginning the Third Macedonian War; an early Roman defeat encouraged more Greek leaders to support Macedon.
-- 171–169 BCE: Roman forces plundered Greek settlements during the campaign, worsening Greek hostility toward Rome.
-- 168 BCE: [person]Lucius Aemilius Paullus[/person] took command of the Roman army and restored discipline after earlier commanders had allowed extensive pillaging.
-- 168 BCE: Battle of Pydna - [person]Paullus[/person] defeated [person]Perseus[/person], [person]Perseus[/person] captured and taken to Rome, then exiled in Italy.
-- 168 BCE: Rome dissolved the Macedonian kingdom and divided its territory into four republics, restricting their trade and preventing them from rebuilding a unified power.
-- 167 BCE: Roman forces sacked settlements across Epirus and enslaved a large part of the population as collective punishment following the war, despite Epirus not having been a central participant in [person]Perseus[/person]’s conflict.
-- 167 BCE: Rome brought Greek hostages to Italy, including the historian [person]Polybius[/person], who later wrote an influential history of Rome and helped explain Roman institutions and expansion to Greek readers.
+- 192 BCE: Antiochus III of the Seleucid Empire invaded Greece with support from the Aetolian League, prompting Roman intervention.
+- 191 BCE: Rome and Acahean League defeated Antiochus III at Thermopylae, forcing his withdrawal from Greece.
+- 190 BCE: Roman forces (including Scipio Africanus) crossed into Asia Minor and decisively defeated Antiochus III at Magnesia.
+- 190 BCE: Hannibal, serving Antiochus III, commanded a Seleucid fleet but was defeated by a Rhodian fleet.
+- 188 BCE: Treaty of Apamea: Antiochus III has to surrender territories north-west of Taurus Mountains, pay an indemnity, and restrict his military power.
 
-### Mopping up
+### Between the wars
 
-- 149 BCE: [person]Andriscus[/person] led a revolt to reunite Macedon; after initial Roman defeat, [person]Quintus Caecilius Metellus[/person] defeated him and made Macedon a province.
-- 146 BCE: The Achaean League rebelled against Roman authority; Rome defeated them and destroyed Corinth.
-- 151 BCE: Carthage raised an army to defend its territory against Numidian encroachment, violating agreement terms.
-- 149 BCE: Rome declared war on Carthage (Third Punic War), and demanded that the Carthaginians abandon their city and relocate inland.
-- 149–147 BCE: Roman forces struggled to capture Carthage, with disease and ineffective operations prolonging the siege.
-- 146 BCE: Roman forces breached Carthage’s defenses and fought through the city in six days of street fighting before capturing its citadel.
-- 146 BCE: Rome destroyed Carthage after its capture; survivors were enslaved or otherwise displaced, and the city was forbidden from being rebuilt.
+- 183 BCE: Scipio Africanus died in retirement following political disputes and accusations against his family.
+- 179 BCE: Philip V died, leaving the Macedonian throne to Perseus after a succession struggle involving his brother Demetrius (who was Romanized).
+
+### Third Macedonian War
+
+- 171 BCE: Rome declared war against Perseus, due to his suspected involvement in unrests in Illyria.
+- 171–168 BCE: Roman campaigns in Greece were marked by military setbacks and widespread plundering, damaging relations with Greek communities.
+- 168 BCE: Aemilius Paullus restored discipline and defeated Perseus at Pydna, ending the Macedonian monarchy.
+- 167 BCE: Rome divided Macedonia into four separate republics, restricting their economic and political cooperation.
+- 167 BCE: Roman forces devastated Epirus and enslaved large numbers of inhabitants as punishment for supporting Perseus.
+- 167 BCE: Rome deported hundreds of Achaean political figures to Italy, including the historian Polybius who later wrote a history of Rome.
+
+### Fourth Macedonian War and Achaean War
+
+- 149–148 BCE: Andriscus attempted to restore the Macedonian monarchy but was defeated by Metellus; Macedonia became a province.
+- 146 BCE: Rome defeated the Achaean League and destroyed Corinth, consolidating Roman dominance over Greece.
+
+### Third Punic War
+
+- 151 BCE: Carthage fought Numidia over territorial disputes, violating its peace treaty with Rome.
+- 149 BCE: Rome declared war on Carthage and demanded that its inhabitants abandon the city and relocate inland.
+- 149–147 BCE: Roman forces struggled to capture Carthage during a prolonged siege.
+- 146 BCE: Scipio Aemilianus captured and destroyed Carthage after fierce street fighting, enslaving many survivors.
 
 ## Gallery
 
