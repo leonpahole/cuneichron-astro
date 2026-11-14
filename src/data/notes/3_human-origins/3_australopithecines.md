@@ -1,6 +1,10 @@
 ---
 topics: Human origins,Australopithecines
-locations: Africa
+locations:
+  - name: Africa
+people:
+  - name: Lucy
+    id: lucy
 ---
 
 # Australopithecines
@@ -10,7 +14,7 @@ Australopithecines were diverse early hominins that lived mainly in eastern and 
 ## Timeline
 
 - ~3.9–2.9 million BCE: Australopithecus afarensis lives in eastern Africa; habitually bipedal while retaining climbing adaptations.
-- ~3.2 million BCE: [person]Lucy[/person] (~40% complete A. afarensis skeleton) lives in Ethiopia; her pelvis and leg bones provide strong evidence for habitual bipedalism.
+- ~3.2 million BCE: Lucy (~40% complete A. afarensis skeleton) lives in Ethiopia; her pelvis and leg bones provide strong evidence for habitual bipedalism.
 - ~3.5 million BCE: Footprints at Laetoli, Tanzania, preserve evidence of hominins walking upright (probably A. afarensis).
 - ~3.3–2.1 million BCE: Australopithecus africanus lives in southern Africa; more human-like skull and dentition but retains a small brain and ape-like features.
 - ~2.6 million BCE: The earliest widely accepted stone tools appear in East Africa (probably by early Homo members; direct association with australopithecines uncertain).

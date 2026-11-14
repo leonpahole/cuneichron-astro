@@ -1,6 +1,35 @@
 ---
 topics: Roman Empire
-locations: Rome, Etruria
+locations:
+  - name: Rome
+  - name: Etruria
+people:
+  - name: Romulus
+    id: romulus
+  - name: Numa Pompilius
+    id: numa-pompilius
+  - name: Tullus Hostilius
+    id: tullus-hostilius
+  - name: Ancus Marcius
+    id: ancus-marcius
+  - name: Tarquinius Priscus
+    id: tarquinius-priscus
+  - name: Servius Tullius
+    id: servius-tullius
+  - name: Tarquinius Superbus
+    id: tarquinius-superbus
+  - name: Sextus Tarquinius
+    id: sextus-tarquinius
+  - name: Lucretia
+    id: lucretia
+  - name: Lucius Junius Brutus
+    id: lucius-junius-brutus
+  - name: Lucius Tarquinius Collatinus
+    id: lucius-tarquinius-collatinus
+  - name: Brutus
+    id: brutus
+  - name: Collatinus
+    id: collatinus
 ---
 
 # Kingdom of Rome
@@ -13,22 +42,22 @@ Men aged 18-40 formed the legions when needed. Wealth classes were based on how 
 
 ### The early kings
 
-- ~715 BCE: After [person]Romulus[/person]'s disappearance, an interregnum began, with senators ruling one day each until [person]Numa Pompilius[/person], a Sabine, was chosen as king.
-- 715–673 BCE: [person]Numa Pompilius[/person] established Rome's religious institutions, including the Vestal Virgins, Pontifex Maximus, and temple of Janus, bringing peace after [person]Romulus[/person]'s wars.
-- 673–642 BCE: [person]Tullus Hostilius[/person] revived Rome's military tradition, defeated Alba Longa, and incorporated its population into Rome.
-- 642–617 BCE: [person]Ancus Marcius[/person] subdued neighboring Latin communities, settled their populations in Rome, formalized the ritual declaration of war, and founded Ostia (Rome's port).
+- ~715 BCE: After Romulus's disappearance, an interregnum began, with senators ruling one day each until Numa Pompilius, a Sabine, was chosen as king.
+- 715–673 BCE: Numa Pompilius established Rome's religious institutions, including the Vestal Virgins, Pontifex Maximus, and temple of Janus, bringing peace after Romulus's wars.
+- 673–642 BCE: Tullus Hostilius revived Rome's military tradition, defeated Alba Longa, and incorporated its population into Rome.
+- 642–617 BCE: Ancus Marcius subdued neighboring Latin communities, settled their populations in Rome, formalized the ritual declaration of war, and founded Ostia (Rome's port).
 
 ### The Etruscan kings
 
-- 616–579 BCE: [person]Tarquinius Priscus[/person], an Etruscan-born king, expanded the Senate to 300, defeated the Sabines, began the Circus Maximus, and celebrated the first triumph.
-- 578–535 BCE: [person]Servius Tullius[/person] (adopted by Priscus) introduced the first census, divided citizens into wealth-based classes according to their military equipment, and established the Comitia Centuriata.
+- 616–579 BCE: Tarquinius Priscus, an Etruscan-born king, expanded the Senate to 300, defeated the Sabines, began the Circus Maximus, and celebrated the first triumph.
+- 578–535 BCE: Servius Tullius (adopted by Priscus) introduced the first census, divided citizens into wealth-based classes according to their military equipment, and established the Comitia Centuriata.
 - ~550 BCE: Rome adopted the Greek-style phalanx, replacing relatively individualistic fighting with disciplined formations of heavily armed infantry.
-- 535–509 BCE: [person]Tarquinius Superbus[/person] seized power, ruled as a tyrant, suppressed the Senate, and bypassed traditional legal institutions.
+- 535–509 BCE: Tarquinius Superbus seized power, ruled as a tyrant, suppressed the Senate, and bypassed traditional legal institutions.
 
 ### Overthrow of the monarchy
 
-- ~509 BCE: [person]Sextus Tarquinius[/person] raped [person]Lucretia[/person]; her suicide helped trigger a revolt led by [person]Lucius Junius Brutus[/person] and [person]Lucius Tarquinius Collatinus[/person].
-- 509 BCE: [person]Tarquinius Superbus[/person] was expelled and monarchy abolished; [person]Brutus[/person] and [person]Collatinus[/person] became Rome's first consuls (then named praetors until 300 BCE), traditionally marking the beginning of the Republic.
+- ~509 BCE: Sextus Tarquinius raped Lucretia; her suicide helped trigger a revolt led by Lucius Junius Brutus and Lucius Tarquinius Collatinus.
+- 509 BCE: Tarquinius Superbus was expelled and monarchy abolished; Brutus and Collatinus became Rome's first consuls (then named praetors until 300 BCE), traditionally marking the beginning of the Republic.
 
 ## Gallery
 

@@ -1,6 +1,56 @@
 ---
 topics: Roman Empire
-locations: Rome, Etruria
+people:
+  - name: Agathocles
+  - name: Marcus Valerius Corvus
+    id: marcus-valerius-corvus
+    aliases:
+      - Corvus
+  - name: Appius Claudius
+  - name: Pyrrhus
+  - name: Hiero II
+  - name: Hamilcar Barca
+    id: hamilcar-barca
+    aliases:
+      - Hamilcar
+  - name: Hannibal
+  - name: Hasdrubal
+  - name: Quintus Fabius Maximus
+    id: quintus-fabius-maximus
+    aliases:
+      - Fabius Maximus
+      - Fabius
+  - name: Marcus Minucius
+    id: marcus-minucius
+    aliases:
+      - Minucius
+  - name: Titus Quinctius Flamininus
+    id: titus-quinctius-flamininus
+    aliases:
+      - Flamininus
+  - name: Scipio Aemilianus
+  - name: Scipio Africanus
+  - name: Masinissa
+    id: massinissa
+    aliases:
+      - Massinissa
+  - name: Philip V
+  - name: Antiochus III
+  - name: Perseus
+  - name: Demetrius
+  - name: Lucius Aemilius Paullus
+    id: lucius-aemilius-paullus
+    aliases:
+      - Aemilius Paullus
+      - Paullus
+  - name: Polybius
+  - name: Andriscus
+  - name: Quintus Caecilius Metellus
+    id: quintus-caecilius-metellus
+    aliases:
+      - Metellus
+  - name: Xanthippus
+  - name: Archimedes
 ---
 
 # Middle Roman republic
@@ -54,7 +104,7 @@ At the end of this period, Rome’s overseas territories included Sicily, parts 
 - 264 BCE: War began after Rome intervened in Messana against Carthage and Syracuse. Hiero II subsequently became a Roman ally.
 - 262 BCE: Rome captured Agrigentum, strengthening its position in Sicily.
 - ~261 BCE: Rome built a large war fleet to challenge Carthaginian naval dominance, adapting Carthaginian designs.
-- 260 BCE: After an initial naval defeat, Rome won its first major naval victory at Mylae using the corvus.
+- 260 BCE: After an initial naval defeat, Rome won its first major naval victory at Mylae using the `corvus`.
 - ~260–256 BCE: The war settled into indecisive fighting on land and sea. Carthage harrassed Italian coast from Sardinia and Corsica.
 - 256 BCE: Rome defeated the Carthaginian fleet at Ecnomus and invaded North Africa.
 - 255 BCE: Carthage under Xanthippus defeated the Roman invasion at Tunis; a storm subsequently destroyed much of Rome's returning fleet.
