@@ -70,7 +70,7 @@ people:
 
 ### Transfer of power
 
-- 4 CE: Augustus adopted Tiberius as his heir, requiring him to adopt Germanicus.
+- 4 CE: Augustus adopted stepson Tiberius as his heir, requiring him to adopt Germanicus.
 - 7–8 CE: Augustus exiled his grandson Agrippa Postumus and granddaughter Julia the Younger, amid accusations of misconduct.
 - ~7–9 CE: Rome expanded military presence east of the Rhine, establishing forts and alliances with Germanic communities.
 - September 9 CE: Battle of the Teutoburg Forest: a coalition of Germanic warriors led by Arminius ambushed and destroyed three Roman legions.
@@ -97,5 +97,26 @@ people:
 - 23 CE: Drusus died unexpectedly, possibly by poisoning from Sejanus and Drusus's wife Livilla.
 - ~23–27 CE: Tiberius increasingly relied on Sejanus to manage affairs, while he eventually withdrew from Rome.
 - 25-31 CE: Sejanus built power as Livia (mother of Tiberius) died, persecuting Agrippina and her sons and using accusations of treason to eliminate opponents and becoming consul. He was denied marrying Livilla, hoping to strengthen his position within the dynasty.
-- 18 October 31 CE: Tiberius turned against Sejanus, arranging his arrest and execution. His downfall triggered prosecutions of his associates.
+- 18 October 31 CE: Tiberius turned against Sejanus, arranging his arrest and execution.
 - 33 CE: Agrippina and her son died in captivity, eliminating two prominent members of Germanicus's family from the imperial succession.
+- ~31–37 CE: Tiberius intensified treason trials following Sejanus's downfall, persecuting political opponents; he remained on Capri.
+- 35 CE: Tiberius named Caligula and his grandson Tiberius Gemellus as joint heirs.
+- 16 March 37 CE: Tiberius died; accounts disagree whether naturally or murdered. Caligula succeded him with Praetorian support, executing Gemellus.
+
+### Caligula
+
+- ~14–16 CE: Germanicus's young son Gaius earned the nickname Caligula ("Little Boots") from soldiers along the Rhine.
+- ~31–37 CE: Caligula lived with Tiberius on Capri, surviving persecutions.
+- 33 CE: Caligula received an honorary quaestorship.
+- 37 CE: Caligula ended prosecutions, recalled exiles, reduced taxes, increased military pay, restored some client rulers, organized public games, earning popularity.
+- October 37 CE: Caligula suffered a serious illness but recovered, possibly changing his behavior.
+- 38 CE: Caligula's favorite sister Drusilla died and was deified.
+- ~38–40 CE: Caligula's behavior turned: he routinely humiliated the Senate, persecuted aristocrats, confiscated property, spent extravagantly and promoted his own divinity; installation of his statue in Temple of Jerusalem provoked strong Jewish opposition.
+- ~38–40 CE: Caligula sponsored public works, including improvements to grain ports and the construction of aqueducts.
+- 39 CE: Caligula led meaningless expeditions to the Rhine frontier and next to English Channel.
+- 39 CE: A conspiracy involving the governor of Upper Germania was uncovered, leading to executions and the exile of Caligula's sisters.
+- 24 January 41 CE: Caligula was assassinated by Praetorian officers, his wife and infant daughter were subsequently killed.
+
+### Claudius
+
+- 41 CE: Praetorian Guard proclaimed Claudius (Germanicus' brother) emperor despite some senators considering a Republic restoration, demonstrating the Guard's growing influence.
