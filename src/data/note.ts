@@ -498,13 +498,16 @@ const parseTimeString = (time: string): NoteEventTime => {
     ? Math.pow(10, 9)
     : time.includes("million")
       ? Math.pow(10, 6)
-      : 1;
+      : time.includes("thousand")
+        ? Math.pow(10, 3)
+        : 1;
 
   const cleaned = time
     .replaceAll("~", "")
     .replaceAll("BCE", "")
     .replace("billion", "")
     .replace("million", "")
+    .replace("thousand", "")
     .replaceAll(",", "")
     .replace("–", "-");
 

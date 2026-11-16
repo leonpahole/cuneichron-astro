@@ -119,4 +119,17 @@ people:
 
 ### Claudius
 
-- 41 CE: Praetorian Guard proclaimed Claudius (Germanicus' brother) emperor despite some senators considering a Republic restoration, demonstrating the Guard's growing influence.
+- ~10 BCE–37 CE: Claudius (brother of Germanicus) was excluded from political life due to his speech and physical difficulties but became a respected scholar of Etruscan and Carthaginian history.
+- 37 CE: Caligula appointed his uncle Claudius as co-consul, giving him his first major political office.
+- 41 CE: Following Caligula's assassination, the Praetorian Guard proclaimed Claudius emperor, forcing a divided Senate to accept his succession. Claudius rewarded the Guard to secure loyalty, and executed leading assassin of Caligula (clemency to others).
+- 42 CE: A rebellion led by the governor of Dalmatia collapsed when his legions refused to support him.
+- ~41–54 CE: Claudius took more active role in governing, strenghetning administration, expanding bureacracy, employing freedmen as advisers, and reforming.
+- 43 CE: Claudius launched invasion of Britain under Plautius, partially to boost his legitimacy. Roman forces defeated resistance near Medway and Thames rivers; Claudius briefly visited and accepted the submission of several local rulers. Camulodunum (Colchester) became an important center.
+- ~43–47 CE: Rome consolidated its conquest of southeastern Britain through administration, taxation, and veteran settlements; Vespasian led campaigns west.
+- 44 CE: Britain became a Roman province.
+- 50 CE: Rome defeated fugitive king Caratacus in western Britain; his life was spared after his public appearance in Rome.
+- ~9–38 CE: Claudius's first and second (adoptive sister of Sejanus) ended in divorce, third was to Messalina, whose connections to Caligula helped protect Claudius.
+- ~41–48 CE: Messalina and imperial freedmen, including Narcissus, used accusations of conspiracy to eliminate political rivals.
+- 47 CE: At Secular Games, Agrippina the Younger and her son (Nero) received greater public acclaim than Messalina and Britannicus, highlighting competing succession interests.
+- 48 CE: Messalina had numerous affairs and married the senator Silius as part of a scheme to replace the emperor. They were executed after being exposed.
+- 49 CE: Claudius married Agrippina, strengthening dynastic ties while bringing Nero into the imperial household.
