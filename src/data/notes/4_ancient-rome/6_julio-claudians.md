@@ -28,7 +28,7 @@ people:
   - Agrippina
 ---
 
-# Early Roman Empire
+# Juilo-Claudians
 
 ## Timeline
 
@@ -173,3 +173,16 @@ Popular among ordinary Romans for his public games, entertainment, and generosit
 - 62 CE: Praetorian prefect Burrus died, Seneca withdrew from politics, and Tigellinus gained influence, weakening moderating influence of Nero's advisers.
 - 64 CE: The Great Fire of Rome devastated much of the city; Nero organized relief but was suspected of starting the fire as he later built Domus Aurea on land cleared partly by the fire. Christians were blamed and prosecuted (St. Peter); cruelty provoked sympathy even among non-Christians.
 - 65 CE: The Pisonian conspiracy, involving prominent Romans, attempted to overthrow Nero but was exposed; Nero ordered executions, including Seneca.
+- 65 CE: Nero's wife Poppaea Sabina died while pregnant.
+- 67 CE: Nero competed in the Olympic Games in Greece, receiving victories in musical and athletic competitions.
+- 67 CE: Nero ordered the suicide of Corbulo.
+- March 68 CE: Vindex, governor in Gaul, rebelled against Nero's taxation and rule, supporting Galba as a successor. His rebellion was defeated by Verginius who was offered emperor by his legions, but he refused.
+- ~June 68 CE: Galba emerged as a rival claimant, while Praetorian prefect Sabinus helped turn the imperial guard against Nero by promising payouts.
+- 9 June 68 CE: Abandoned by the Praetorian Guard and declared a public enemy by the Senate, Nero committed suicide.
+
+## First Jewish–Roman War (part 1)
+
+- ~63–66 CE: Discontent in Judaea intensified over taxation, provincial corruption, religious grievances, and unemploymnet after Temple extension was done.
+- 66 CE: Roman governor seized funds from the Temple treasury, helping trigger rebellion. Rebels captured the Mesada fortress, overwhelmed Roman garrison in Jerusalem, killed Roman associates and defeated a small Roman army at Beth Horon. Nero appointed Vespasian to suppress the revolt.
+- 67 CE: Vespasian and Titus started reconquering with a large army; internal divisons weakened resistance, rival factions concentrated in Jerusalem.
+- 68 CE: Vespasian secured much of north and advanced south, but suspended operations after learning of Nero's death.
