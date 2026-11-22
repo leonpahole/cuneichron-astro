@@ -42,22 +42,22 @@ Men aged 18-40 formed the legions when needed. Wealth classes were based on how 
 
 ### The early kings
 
-- ~715 BCE: After Romulus's death senators ruled one day each until Numa Pompilius, a Sabine, was chosen as king.
-- 715–673 BCE: Numa Pompilius established Rome's religious institutions, including the Vestal Virgins, Pontifex Maximus, and temple of Janus, bringing peace after Romulus's wars.
-- 673–642 BCE: Tullus Hostilius revived Rome's military tradition, defeated Alba Longa, and incorporated its population into Rome.
-- 642–617 BCE: Ancus Marcius subdued neighboring Latin communities, settled their populations in Rome, formalized the ritual declaration of war, and founded Ostia (Rome's port).
+- ~715 BCE: After Romulus's death senators ruled one day each until Numa Pompilius, a Sabine, was chosen as king. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- 715–673 BCE: Numa Pompilius established Rome's religious institutions, including the Vestal Virgins, Pontifex Maximus, and temple of Janus, bringing peace after Romulus's wars. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- 673–642 BCE: Tullus Hostilius revived Rome's military tradition, defeated Alba Longa, and incorporated its population into Rome. `geo:{"type":"Point","coordinates":[12.651,41.748]}`
+- 642–617 BCE: Ancus Marcius subdued neighboring Latin communities, settled their populations in Rome, formalized the ritual declaration of war, and founded Ostia (Rome's port). `geo:{"type":"Point","coordinates":[12.292,41.755]}`
 
 ### The Etruscan kings
 
-- 616–579 BCE: Tarquinius Priscus, an Etruscan-born king, expanded the Senate to 300, defeated the Sabines, built the Circus Maximus, and celebrated the first triumph.
-- 578–535 BCE: Servius Tullius (adopted by Priscus) introduced the first census, divided citizens into wealth-based classes according to their military equipment, establishing the Comitia Centuriata.
-- ~550 BCE: Rome adopted the Greek-style phalanx.
-- 535–509 BCE: Tarquinius Superbus seized power, ruled as a tyrant, suppressed the Senate, and bypassed traditional legal institutions.
+- 616–579 BCE: Tarquinius Priscus, an Etruscan-born king, expanded the Senate to 300, defeated the Sabines, built the Circus Maximus, and celebrated the first triumph. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- 578–535 BCE: Servius Tullius (adopted by Priscus) introduced the first census, divided citizens into wealth-based classes according to their military equipment, establishing the Comitia Centuriata. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- ~550 BCE: Rome adopted the Greek-style phalanx. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- 535–509 BCE: Tarquinius Superbus seized power, ruled as a tyrant, suppressed the Senate, and bypassed traditional legal institutions. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
 
 ### Overthrow of the monarchy
 
-- ~509 BCE: Sextus Tarquinius (son of Superbus) raped Lucretia; her suicide triggered a revolt led by Lucius Junius Brutus and Lucius Tarquinius Collatinus.
-- 509 BCE: Tarquinius Superbus was expelled and monarchy was abolished.
+- ~509 BCE: Sextus Tarquinius (son of Superbus) raped Lucretia; her suicide triggered a revolt led by Lucius Junius Brutus and Lucius Tarquinius Collatinus. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
+- 509 BCE: Tarquinius Superbus was expelled and monarchy was abolished. `geo:{"type":"Point","coordinates":[12.4964,41.9028]}`
 
 ## Gallery
 

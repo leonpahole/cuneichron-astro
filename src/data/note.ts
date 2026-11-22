@@ -674,6 +674,12 @@ export const getNoteTimeSpan = (note: Note): [number, number] => {
   return [min, max];
 };
 
+export const eventHasMapGeometry = (event: NoteEvent): boolean =>
+  event.location != null;
+
+export const noteHasMap = (note: Note): boolean =>
+  note.events.some(eventHasMapGeometry);
+
 const eventTimePoints = (event: NoteEvent): number[] => {
   if (event.time.type === "single") {
     return [historicalDateToNumber(event.time.date)];

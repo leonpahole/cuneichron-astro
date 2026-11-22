@@ -40,7 +40,9 @@ people:
 - 27 BCE: Octavian restored Senate authority but received 10 years of provincial control with most Roman legions and honorific title Augustus. He called himself princeps (first citizen), maintaining republican traditions while having authority.
 - ~29–19 BCE: Virgil composed the Aeneid, connecting Rome's mythical origins and the Julian family to Aeneas, helping legitimize Augustus's rule.
 
-### Reforms and succession crisis
+### Augustus
+
+Transformed the Republic into an imperial system while preserving the appearance of republican government. His reign established the Principate and began the Pax Romana.
 
 - 27–19 BCE: Augustus pursued the conquest of northern Hispania (Cantabrian Wars).
 - 25 BCE: Augustus arranged the marriage of his daughter Julia to his nephew Marcellus, whom he favored as a successor.
@@ -85,6 +87,8 @@ people:
 
 ### Tiberius
 
+An experienced general and capable administrator who consolidated Augustus's imperial system. His later reign became associated with treason trials, political repression, and withdrawal from public life.
+
 - ~14–23 CE: Generally pursued a cautious foreign policy, avoiding major wars and emphasizing fiscal restraint and provincial administration.
 - 14 CE: Legions in Pannonia and along the Rhine mutinied, demanding better benefits. Drusus the Younger (son of Tiberius) suppressed the Pannonian mutiny, Germanicus (nephew of Tiberius) supressed the Rhine one and rejected soldiers' suggestions that he challenge Tiberius.
 - 15 CE: Lucius Aelius Sejanus became sole prefect of the Praetorian Guard.
@@ -105,6 +109,8 @@ people:
 
 ### Caligula
 
+Initially popular, but remembered for increasingly autocratic rule, extravagant spending, and hostility toward the Senate.
+
 - ~14–16 CE: Germanicus's young son Gaius earned the nickname Caligula ("Little Boots") from soldiers along the Rhine.
 - ~31–37 CE: Caligula lived with Tiberius on Capri, surviving persecutions.
 - 33 CE: Caligula received an honorary quaestorship.
@@ -119,6 +125,8 @@ people:
 
 ### Claudius
 
+An underestimated scholar who proved an effective administrator, expanding Roman territory, notably into Britain, and strengthening imperial bureaucracy. His reign was also marked by palace intrigue and succession struggles.
+
 - ~10 BCE–37 CE: Claudius (brother of Germanicus) was excluded from political life due to his speech and physical difficulties but became a respected scholar of Etruscan and Carthaginian history.
 - 37 CE: Caligula appointed his uncle Claudius as co-consul, giving him his first major political office.
 - 41 CE: Following Caligula's assassination, the Praetorian Guard proclaimed Claudius emperor, forcing a divided Senate to accept his succession. Claudius rewarded the Guard to secure loyalty, and executed leading assassin of Caligula (clemency to others).
@@ -129,7 +137,39 @@ people:
 - 44 CE: Britain became a Roman province.
 - 50 CE: Rome defeated fugitive king Caratacus in western Britain; his life was spared after his public appearance in Rome.
 - ~9–38 CE: Claudius's first and second (adoptive sister of Sejanus) ended in divorce, third was to Messalina, whose connections to Caligula helped protect Claudius.
+- ~41–46 CE: Claudius annexed client territories, including Noricum, Lycia, Pamphylia, and Thrace.
 - ~41–48 CE: Messalina and imperial freedmen, including Narcissus, used accusations of conspiracy to eliminate political rivals.
 - 47 CE: At Secular Games, Agrippina the Younger and her son (Nero) received greater public acclaim than Messalina and Britannicus, highlighting competing succession interests.
 - 48 CE: Messalina had numerous affairs and married the senator Silius as part of a scheme to replace the emperor. They were executed after being exposed.
-- 49 CE: Claudius married Agrippina, strengthening dynastic ties while bringing Nero into the imperial household.
+- 47 CE: Claudius revived the censorship, removing political opponents and admitted provinicals from Gaul into the Senate.
+- ~41–52 CE: Claudius undertook a project to drain Lake Fucinus and reclaim agricultural land, but it had limited success.
+- ~41–44 CE: Rome suppressed resistance in Mauretania following Caligula's execution of its king, dividing the territory into two provinces.
+- 41–48 CE: Claudius restored Herod Agrippa I's rule over Judaea (41–44), then returned it to direct Roman administration after his death, while granting other territories to his son Agrippa II.
+- 49 CE: Claudius married his niece Agrippina, strengthening ties between the Julian and Claudian branches and bringing Nero into the family.
+- 50 CE: Under Agrippina's influence, Claudius gave her title Augusta and adopted Nero, placing him ahead of Britannicus in the succession.
+- 53 CE: Nero married Claudius's daughter Octavia, further securing his position within the imperial dynasty.
+- 13 October 54 CE: Claudius died aged 63; ancient historians accused Agrippina of poisoning him, but the allegation remains unproven.
+
+### Nero
+
+Popular among ordinary Romans for his public games, entertainment, and generosity, but increasingly disliked by the aristocracy for his unconventional behavior and political repression.
+
+- 13 October 54 CE: Praetorian Guard proclaimed 16-year-old Nero emperor, and the Senate confirmed his accession, bypassing Claudius's son Britannicus.
+- 54 CE: Claudius was deified, while Agrippina gained considerable political influence as his widow and Nero's mother.
+- ~54–55 CE: Nero initially governed under the influence of Agrippina, the philosopher Seneca, Praetorian prefect Burrus, and imperial freedman Pallas.
+- 55 CE: Nero's relationship with a freedwoman intensified his conflict with Agrippina, while Seneca and Burrus increasingly displaced her as his advisers.
+- 55 CE: Agrippina threatened to support Britannicus's claim to the throne; Britannicus died suddenly, allegedly poisoned on Nero's orders.
+- ~55–57 CE: Nero dismissed Pallas and increasingly excluded Agrippina from government, eventually forcing her to leave the imperial palace.
+- ~54–59 CE: Nero's enthusiasm for music, chariot racing, and theatrical performance challenged traditional Roman aristocratic expectations of conduct.
+- 59 CE: Nero arranged the murder of Agrippina.
+- ~55–57 CE: Nero appointed Corbulo to prepare a campaign against Parthian influence in Armenia after negotiations failed.
+- 58-60 CE: Corbulo invaded Armenia, forced Tiridates to abandon his stronholds and installed the Roman-backed Tigranes VI as king.
+- 61-62 CE: Tigranes VI raided Parthian territory, provoking Vologases I to intervene; Roman commander Paetus suffered a humiliating defeat.
+- 63 CE: Corbulo negotiated a treaty allowing Parthia to nominate Armenia's king but it had to be approven by Roman emperor; Tiridates was crowned by Nero.
+- 60–61 CE: Following the death of Iceni king, Roman authorities refused to accept his will to his widow Boudica and annexed his kingdom, provoking rebelion.
+- 60–61 CE: Boudica's forces destroyed several settlements: Camulodunum (Colchester), Londinium (London) and Verulamium (St Albans).
+- 60–61 CE: Suetonius Paulinus defeated Boudica's larger army at the Battle of Watling Street, ending the revolt.
+- 62 CE: Nero divorced his popular wife Claudia Octavia, married Poppaea Sabina, and ordered Octavia's execution following public protests.
+- 62 CE: Praetorian prefect Burrus died, Seneca withdrew from politics, and Tigellinus gained influence, weakening moderating influence of Nero's advisers.
+- 64 CE: The Great Fire of Rome devastated much of the city; Nero organized relief but was suspected of starting the fire as he later built Domus Aurea on land cleared partly by the fire. Christians were blamed and prosecuted (St. Peter); cruelty provoked sympathy even among non-Christians.
+- 65 CE: The Pisonian conspiracy, involving prominent Romans, attempted to overthrow Nero but was exposed; Nero ordered executions, including Seneca.

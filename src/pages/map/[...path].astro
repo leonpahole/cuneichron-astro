@@ -1,0 +1,560 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import NoteContent from "../../components/NoteContent.astro";
+import NoteMap from "../../components/NoteMap";
+import { historicalDateToNumber, noteEventTimeToString, noteHasMap, parseMarkdownIntoNote, type Note } from "../../data/note";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("notes");
+  const notes = entries
+    .map((entry) => parseMarkdownIntoNote(entry.filePath, entry.body, entry.data.locations, entry.data.people))
+    .filter((note): note is Note => note != null && noteHasMap(note));
+
+  return notes.map((note) => ({ params: { path: note.path }, props: { note } }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { note } = Astro.props as Props;
+const eventHeadings = note.timeline.flatMap((section) => section.events.map(() => section.title ?? note.name));
+const timelineEntries = note.events
+  .map((event, eventIndex) => {
+    const start = event.time.type === "single" ? event.time.date : event.time.from;
+    const end = event.time.type === "single" ? event.time.date : event.time.to;
+    return {
+      eventIndex,
+      start: historicalDateToNumber(start),
+      end: historicalDateToNumber(end),
+      label: noteEventTimeToString(event.time),
+      startLabel: noteEventTimeToString({ type: "single", date: start }),
+      endLabel: noteEventTimeToString({ type: "single", date: end }),
+      heading: eventHeadings[eventIndex],
+      hasGeometry: event.location != null,
+      fromDate: start,
+      toDate: end,
+    };
+  })
+  .filter((entry) => entry.hasGeometry)
+  .sort((a, b) => a.start - b.start || a.eventIndex - b.eventIndex);
+const timelineTickIndices = timelineEntries.flatMap((entry, index) =>
+  index === 0 || index % 10 === 0 || entry.heading !== timelineEntries[index - 1]?.heading ? [index] : [],
+);
+---
+
+<Layout title={`${note.name} map`} fullWidth>
+  <div class="map-page-layout h-full min-h-0">
+    <section class="map-timeline-controls" aria-label="Timeline controls">
+      <div class="map-timeline-header">
+        <strong>Timeline</strong>
+        <output id="map-timeline-current">{timelineEntries[0]?.label} · {timelineEntries[0]?.heading}</output>
+        <span>From <output id="map-timeline-from-label">{timelineEntries[0]?.startLabel}</output></span>
+        <span>To <output id="map-timeline-to-label">{timelineEntries[timelineEntries.length - 1]?.endLabel}</output></span>
+      </div>
+      <div class="map-timeline-slider-row" id="map-timeline-track">
+        <div class="map-timeline-track">
+          <div id="map-timeline-range-fill" class="map-timeline-range-fill"></div>
+          <input id="map-timeline-from" class="map-timeline-range-handle map-timeline-from-handle" type="range" min="0" max={Math.max(timelineEntries.length - 1, 0)} value="0" step="1" list="map-timeline-ticks" aria-label="Filter from event" />
+          <input id="map-timeline-to" class="map-timeline-range-handle map-timeline-to-handle" type="range" min="0" max={Math.max(timelineEntries.length - 1, 0)} value={Math.max(timelineEntries.length - 1, 0)} step="1" list="map-timeline-ticks" aria-label="Filter to event" />
+          <input
+            id="map-timeline-current-slider"
+            class="map-timeline-range-handle map-timeline-current-handle"
+            type="range"
+            min="0"
+            max={Math.max(timelineEntries.length - 1, 0)}
+            value="0"
+            step="1"
+            list="map-timeline-ticks"
+            data-timeline-events={JSON.stringify(timelineEntries.map(({ eventIndex, start, end, label, heading, startLabel }) => ({ eventIndex, start, end, label, heading, startLabel })))}
+            aria-label="Current event"
+          />
+        </div>
+      </div>
+      <datalist id="map-timeline-ticks">{timelineTickIndices.map((index) => <option value={index} />)}</datalist>
+    </section>
+
+  <div id="map-split" class="map-split-layout min-h-0">
+    <aside id="note-pane" class="map-split-pane min-h-0 overflow-y-auto rounded border border-gray-300 p-3">
+      <div class="mb-3 py-2">
+        <a id="open-full-note" href={`/note/${note.path}`} class="underline">← Open full note</a>
+      </div>
+      <NoteContent note={note} focusMappedEvents />
+    </aside>
+
+    <section id="map-pane" class="map-split-pane min-h-0 overflow-hidden rounded border border-gray-300">
+      <NoteMap
+        events={note.events}
+        eventHeadings={eventHeadings}
+        showLocations={false}
+        containerClassName="h-full w-full"
+        mapClassName="h-full w-full"
+        showTitle={false}
+        baseLayer="satellite"
+        showLayerControl={true}
+        showSubchapterLegend={true}
+        client:only="react"
+      />
+    </section>
+  </div>
+  </div>
+</Layout>
+
+<script>
+  import Split from "split.js";
+
+  const notePane = document.querySelector<HTMLElement>("#note-pane");
+  const mapPane = document.querySelector<HTMLElement>("#map-pane");
+  const eventList = document.querySelector<HTMLElement>("#note-pane");
+  const desktopLayout = window.matchMedia("(min-width: 768px)");
+  let split: Split.Instance | undefined;
+
+  const updateSplit = () => {
+    if (!notePane || !mapPane) return;
+
+    if (desktopLayout.matches && !split) {
+      let separator: HTMLElement | undefined;
+      split = Split([notePane, mapPane], {
+        sizes: [45, 55],
+        minSize: [280, 320],
+        gutterSize: 14,
+        snapOffset: 0,
+        direction: "horizontal",
+        cursor: "col-resize",
+        onDrag: (sizes) => separator?.setAttribute("aria-valuenow", String(Math.round(sizes[0]))),
+        gutter: (_index, direction) => {
+          const gutter = document.createElement("div");
+          gutter.className = `map-split-gutter map-split-gutter-${direction}`;
+          gutter.setAttribute("role", "separator");
+          gutter.setAttribute("aria-orientation", "vertical");
+          gutter.setAttribute("aria-label", "Resize note and map panels");
+          gutter.setAttribute("aria-valuemin", "0");
+          gutter.setAttribute("aria-valuemax", "100");
+          gutter.setAttribute("aria-valuenow", "45");
+          gutter.tabIndex = 0;
+          gutter.addEventListener("keydown", (event) => {
+            if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+            event.preventDefault();
+            const sizes = split?.getSizes();
+            if (!sizes) return;
+            const change = event.key === "ArrowRight" ? 2 : -2;
+            split?.setSizes([sizes[0] + change, sizes[1] - change]);
+          });
+          separator = gutter;
+          return gutter;
+        },
+      });
+    } else if (!desktopLayout.matches && split) {
+      split.destroy();
+      split = undefined;
+    }
+  };
+
+  updateSplit();
+  desktopLayout.addEventListener("change", updateSplit);
+
+  interface TimelineEvent {
+    eventIndex: number;
+    start: number;
+    end: number;
+    label: string;
+    startLabel: string;
+    heading: string;
+  }
+
+  const timelineSlider = document.querySelector<HTMLInputElement>("#map-timeline-current-slider");
+  const timelineTrack = document.querySelector<HTMLElement>("#map-timeline-track");
+  const timelineFrom = document.querySelector<HTMLInputElement>("#map-timeline-from");
+  const timelineTo = document.querySelector<HTMLInputElement>("#map-timeline-to");
+  const timelineOutput = document.querySelector<HTMLOutputElement>("#map-timeline-current");
+  const timelineFromLabel = document.querySelector<HTMLOutputElement>("#map-timeline-from-label");
+  const timelineToLabel = document.querySelector<HTMLOutputElement>("#map-timeline-to-label");
+  const timelineRangeFill = document.querySelector<HTMLElement>("#map-timeline-range-fill");
+  const timelineEvents = JSON.parse(timelineSlider?.dataset.timelineEvents ?? "[]") as TimelineEvent[];
+  let filteredTimelinePositions = timelineEvents.map((_, index) => index);
+  const initialParams = new URLSearchParams(window.location.search);
+  if (timelineFrom && timelineTo && timelineEvents.length > 0) {
+    const maxPosition = timelineEvents.length - 1;
+    const fromValue = initialParams.get("from");
+    const toValue = initialParams.get("to");
+    const requestedFrom = fromValue == null || fromValue.trim() === "" ? NaN : Number(fromValue);
+    const requestedTo = toValue == null || toValue.trim() === "" ? NaN : Number(toValue);
+    const staleEmptyDefault = initialParams.get("range") !== "1" && requestedFrom === 0 && requestedTo === 0;
+    const fromPosition = !staleEmptyDefault && Number.isInteger(requestedFrom) ? Math.max(0, Math.min(maxPosition, requestedFrom)) : 0;
+    const toPosition = !staleEmptyDefault && Number.isInteger(requestedTo) ? Math.max(fromPosition, Math.min(maxPosition, requestedTo)) : maxPosition;
+    timelineFrom.value = String(fromPosition);
+    timelineTo.value = String(toPosition);
+  }
+  const initialEventValue = initialParams.get("event");
+  const initialEventIndex = initialEventValue == null ? NaN : Number(initialEventValue);
+  if (timelineSlider && Number.isInteger(initialEventIndex)) {
+    const position = timelineEvents.findIndex((entry) => entry.eventIndex === initialEventIndex);
+    if (position >= 0) timelineSlider.value = String(position);
+  }
+
+  const updateTimelineQuery = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("range", "1");
+    if (timelineFrom) url.searchParams.set("from", timelineFrom.value);
+    if (timelineTo) url.searchParams.set("to", timelineTo.value);
+    const selected = timelineEvents[Number(timelineSlider?.value)];
+    if (selected) url.searchParams.set("event", String(selected.eventIndex));
+    window.history.replaceState(window.history.state, "", url);
+  };
+
+  const renderTimelinePosition = (focus = false) => {
+    if (!timelineSlider) return;
+    const position = Number(timelineSlider.value);
+    const selected = timelineEvents[position];
+    const visiblePosition = filteredTimelinePositions.indexOf(position);
+    if (!selected || visiblePosition === -1) {
+      if (timelineOutput) timelineOutput.textContent = "No mapped events in this range";
+      return;
+    }
+
+    if (timelineOutput) timelineOutput.textContent = `${selected.label} · ${selected.heading}`;
+    updateTimelineQuery();
+    if (focus) {
+      window.dispatchEvent(new CustomEvent("note-map-focus-event", { detail: { eventIndex: selected.eventIndex } }));
+    }
+  };
+
+  const selectTimelineEvent = (eventIndex: number, focus = false) => {
+    if (!timelineSlider) return;
+    const position = timelineEvents.findIndex((entry) => entry.eventIndex === eventIndex);
+    if (position < 0) return;
+    timelineSlider.value = String(position);
+    renderTimelinePosition(focus);
+  };
+
+  const applyTimelineFilter = () => {
+    if (!timelineFrom || !timelineTo || !timelineSlider) return;
+    const fromPosition = Number(timelineFrom.value);
+    const toPosition = Number(timelineTo.value);
+    const fromEvent = timelineEvents[fromPosition];
+    const toEvent = timelineEvents[toPosition];
+    if (!fromEvent || !toEvent) return;
+    const from = fromEvent.start;
+    const to = toEvent.end;
+    if (timelineFromLabel) timelineFromLabel.textContent = fromEvent.startLabel;
+    if (timelineToLabel) timelineToLabel.textContent = toEvent.endLabel;
+    if (timelineRangeFill && timelineEvents.length > 1) {
+      timelineRangeFill.style.left = `${(fromPosition / (timelineEvents.length - 1)) * 100}%`;
+      timelineRangeFill.style.width = `${((toPosition - fromPosition) / (timelineEvents.length - 1)) * 100}%`;
+    }
+    updateTimelineQuery();
+
+    window.dispatchEvent(new CustomEvent("map-timeline-filter", { detail: { from, to } }));
+
+    const noteEvents = [...(eventList?.querySelectorAll<HTMLElement>("[data-note-event-index]") ?? [])];
+    for (const item of noteEvents) {
+      const start = Number(item.dataset.noteEventStart);
+      const end = Number(item.dataset.noteEventEnd);
+      item.hidden = start > to || end < from;
+    }
+    for (const section of eventList?.querySelectorAll<HTMLElement>("[data-note-timeline-section]") ?? []) {
+      const sectionEvents = [...section.querySelectorAll<HTMLElement>("[data-note-event-index]")];
+      section.hidden = sectionEvents.length > 0 && sectionEvents.every((item) => item.hidden);
+    }
+
+    filteredTimelinePositions = timelineEvents.flatMap((entry, index) => entry.start <= to && entry.end >= from ? [index] : []);
+    timelineSlider.disabled = filteredTimelinePositions.length === 0;
+    const currentPosition = Number(timelineSlider.value);
+    if (!filteredTimelinePositions.includes(currentPosition) && filteredTimelinePositions.length > 0) {
+      const nearestPosition = filteredTimelinePositions.reduce((best, candidate) =>
+        Math.abs(candidate - currentPosition) < Math.abs(best - currentPosition) ? candidate : best,
+      );
+      timelineSlider.value = String(nearestPosition);
+      renderTimelinePosition(true);
+      return;
+    }
+    renderTimelinePosition();
+  };
+
+  timelineFrom?.addEventListener("input", () => {
+    if (timelineTo && Number(timelineFrom.value) > Number(timelineTo.value)) timelineTo.value = timelineFrom.value;
+    applyTimelineFilter();
+  });
+  timelineTo?.addEventListener("input", () => {
+    if (timelineFrom && Number(timelineTo.value) < Number(timelineFrom.value)) timelineFrom.value = timelineTo.value;
+    applyTimelineFilter();
+  });
+  window.addEventListener("map-subchapters-selected", (event) => {
+    const headings = (event as CustomEvent<{ headings?: string[] }>).detail?.headings ?? [];
+    if (!headings.length || !timelineFrom || !timelineTo) return;
+    const selectedPositions = timelineEvents.flatMap((entry, index) => headings.includes(entry.heading) ? [index] : []);
+    if (!selectedPositions.length) return;
+    timelineFrom.value = String(selectedPositions[0]);
+    timelineTo.value = String(selectedPositions[selectedPositions.length - 1]);
+    applyTimelineFilter();
+  });
+  window.addEventListener("note-map-ready", () => applyTimelineFilter());
+  timelineSlider?.addEventListener("input", () => {
+    const position = Number(timelineSlider.value);
+    if (!filteredTimelinePositions.includes(position) && filteredTimelinePositions.length > 0) {
+      const nearestPosition = filteredTimelinePositions.reduce((best, candidate) =>
+        Math.abs(candidate - position) < Math.abs(best - position) ? candidate : best,
+      );
+      timelineSlider.value = String(nearestPosition);
+    }
+    renderTimelinePosition(true);
+  });
+  timelineTrack?.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element) || event.target === timelineSlider || event.target.closest("input")) return;
+    const track = timelineTrack.querySelector<HTMLElement>(".map-timeline-track");
+    if (!track || timelineEvents.length === 0) return;
+    const bounds = track.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+    const position = Math.round(ratio * (timelineEvents.length - 1));
+    const nearestPosition = filteredTimelinePositions.reduce((best, candidate) =>
+      Math.abs(candidate - position) < Math.abs(best - position) ? candidate : best,
+      filteredTimelinePositions[0] ?? 0,
+    );
+    if (!filteredTimelinePositions.length) return;
+    timelineSlider!.value = String(nearestPosition);
+    renderTimelinePosition(true);
+  });
+  applyTimelineFilter();
+
+  const focusMapEvent = (element: Element) => {
+    const eventIndex = Number(element.getAttribute("data-map-event-index"));
+    if (Number.isInteger(eventIndex)) {
+      selectTimelineEvent(eventIndex);
+      window.dispatchEvent(new CustomEvent("note-map-focus-event", { detail: { eventIndex } }));
+    }
+  };
+
+  eventList?.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element) || event.target.closest("a, button")) return;
+    const item = event.target.closest<HTMLElement>("[data-map-event-index]");
+    if (item) focusMapEvent(item);
+  });
+
+  eventList?.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || !target.matches("[data-map-event-index]")) return;
+    event.preventDefault();
+    focusMapEvent(target);
+  });
+
+  let highlightedEventIndex: number | undefined;
+  window.addEventListener("note-map-event-selected", (event) => {
+    const eventIndex = Number((event as CustomEvent<{ eventIndex?: number }>).detail?.eventIndex);
+    if (!Number.isInteger(eventIndex)) return;
+    selectTimelineEvent(eventIndex);
+    const item = eventList?.querySelector<HTMLElement>(`[data-map-event-index="${eventIndex}"]`);
+    if (!item) return;
+
+    if (highlightedEventIndex != null && highlightedEventIndex !== eventIndex) {
+      eventList?.querySelector<HTMLElement>(`[data-map-event-index="${highlightedEventIndex}"]`)?.classList.remove("map-event-highlight");
+    }
+    highlightedEventIndex = eventIndex;
+    item.scrollIntoView({ behavior: "smooth", block: "center" });
+    item.classList.add("map-event-highlight");
+  });
+
+  window.addEventListener("note-map-event-deselected", (event) => {
+    const eventIndex = Number((event as CustomEvent<{ eventIndex?: number }>).detail?.eventIndex);
+    if (highlightedEventIndex !== eventIndex) return;
+    eventList?.querySelector<HTMLElement>(`[data-map-event-index="${eventIndex}"]`)?.classList.remove("map-event-highlight");
+    highlightedEventIndex = undefined;
+  });
+
+  const fullNoteLink = document.querySelector<HTMLAnchorElement>("#open-full-note");
+  fullNoteLink?.addEventListener("click", () => {
+    const url = new URL(fullNoteLink.href);
+    url.search = window.location.search;
+    fullNoteLink.href = url.toString();
+  });
+</script>
+
+<style is:global>
+  .map-page-layout {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .map-timeline-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.4rem 0.75rem;
+    background: white;
+    font-size: 0.9rem;
+  }
+
+  .map-timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 1rem;
+  }
+
+  #map-timeline-current {
+    flex: 1 1 auto;
+    font-weight: 600;
+  }
+
+  .map-timeline-header label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .map-timeline-slider-row {
+    display: flex;
+    align-items: center;
+    min-height: 2rem;
+    cursor: pointer;
+  }
+
+  .map-timeline-track {
+    position: relative;
+    flex: 1;
+    height: 1.5rem;
+    margin: 0 0.4rem;
+  }
+
+  .map-timeline-track::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 0.3rem;
+    border-radius: 9999px;
+    background: #d1d5db;
+    content: "";
+    transform: translateY(-50%);
+  }
+
+  .map-timeline-range-fill {
+    position: absolute;
+    top: 50%;
+    height: 0.3rem;
+    border-radius: 9999px;
+    background: #3b82f6;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .map-timeline-range-handle {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 1.5rem;
+    margin: 0;
+    appearance: none;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .map-timeline-to-handle {
+    z-index: 3;
+  }
+
+  .map-timeline-current-handle {
+    z-index: 4;
+  }
+
+  .map-timeline-range-handle:focus {
+    z-index: 5;
+    outline: none;
+  }
+
+  .map-timeline-range-handle::-webkit-slider-runnable-track {
+    height: 1.5rem;
+    background: transparent;
+  }
+
+  .map-timeline-range-handle::-moz-range-track {
+    height: 1.5rem;
+    background: transparent;
+  }
+
+  .map-timeline-range-handle::-webkit-slider-thumb {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-top: 0.225rem;
+    appearance: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #2563eb;
+    box-shadow: 0 0 0 1px #1e3a8a;
+    pointer-events: auto;
+  }
+
+  .map-timeline-range-handle::-moz-range-thumb {
+    width: 0.85rem;
+    height: 0.85rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #2563eb;
+    box-shadow: 0 0 0 1px #1e3a8a;
+    pointer-events: auto;
+  }
+
+  .map-timeline-current-handle::-webkit-slider-thumb {
+    background: #b91c1c;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #7f1d1d;
+  }
+
+  .map-timeline-current-handle::-moz-range-thumb {
+    background: #b91c1c;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #7f1d1d;
+  }
+
+  .map-split-layout {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(16rem, 0.7fr);
+    gap: 0.75rem;
+  }
+
+  .map-split-pane {
+    min-width: 0;
+  }
+
+  .map-split-gutter-horizontal {
+    position: relative;
+    flex: 0 0 14px;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  .map-split-gutter-horizontal::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 42px;
+    border-radius: 9999px;
+    background: #9ca3af;
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+
+  .map-split-gutter-horizontal:hover::after {
+    background: #4b5563;
+  }
+
+  .map-event-highlight {
+    border-radius: 0.2rem;
+    background: #fef08a;
+    box-shadow: 0 0 0 3px #f59e0b;
+  }
+
+  @media (min-width: 768px) {
+    .map-split-layout {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+    }
+
+    .map-split-pane {
+      height: 100%;
+    }
+  }
+</style>

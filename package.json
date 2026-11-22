@@ -24,6 +24,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "remark-parse": "^11.0.0",
+    "split.js": "^1.6.5",
     "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
