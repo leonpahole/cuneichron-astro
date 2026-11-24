@@ -46,3 +46,31 @@ An aristocrat and former provincial governor known for his sociability, extravag
 - ~68 CE: Refused to pay the Praetorian Guard the bribe promised by Sabinus. Sabinus attempted to become emperor but was killed by his soldiers.
 - 10 January 69 CE: Adopted Piso as heir, rejecting Otho despite his expectations.
 - 15 January 69 CE: Galba and Piso were assassinated by Praetorian soldiers supporting Otho.
+
+## Otho ascends to the throne
+
+- 2 January 69 CE: Rhine legions proclaimed Vitellius emperor after refusing allegiance to Galba.
+- 15 January 69 CE: Otho became emperor but faced an immediate challenge from Vitellius.
+- ~January–March 69 CE: Failed negotiations with Vitellius led to civil war. Otho mobilized the Praetorian Guard and summoned Balkan reinforcements.
+- March 69 CE: Vitellius's armies invaded northern Italy under Valens and Caecina, but Otho's forces successfully defended Placentia.
+- 14 April 69 CE: Otho's army was defeated at the First Battle of Bedriacum, before all his reinforcements had arrived.
+- 16 April 69 CE: Otho committed suicide to avoid prolonging the civil war.
+
+## Vitellius ascends to the throne
+
+- April 69 CE: Following Otho's death, Vitellius became the uncontested emperor.
+- ~April–July 69 CE: Vitellius travelled to Rome, with his undisciplined army causing considerable damage along the way.
+- ~69 CE: Vitellius left much of the administration to his generals Valens and Caecina, whose rivalry undermined the stability of his government.
+- ~69 CE: Replaced the Praetorian Guard with soldiers from the Rhine legions, weakening his field armies and driving former Praetorians towards Vespasian.
+
+## Vespasian's rebellion
+
+- ~June 68–June 69 CE: Vespasian suspended operations against the Jewish revolt and remained neutral during the struggle between Galba, Otho and Vitellius.
+- 1 July 69 CE: Prefect of Egypt proclaimed Vespasian emperor, followed shortly afterwards by the legions of Judaea, Syria and the Balkans.
+- ~July–August 69 CE: Vespasian secured Egypt and its vital grain supply, while the governor of Syria, Mucianus, prepared an invasion of Italy.
+- ~August–October 69 CE: Antonius Primus led the Danubian legions into Italy without waiting for Mucianus, while Caecina unsuccessfully attempted to defect and was imprisoned by his own troops.
+- 24–25 October 69 CE: Flavian forces defeated the Vitellian army at the Second Battle of Bedriacum and sacked Cremona.
+- ~November–December 69 CE: Provincial governors increasingly defected to Vespasian, while Valens was captured and executed.
+- 18–19 December 69 CE: Vitellius attempted to abdicate but was prevented by his supporters. Fighting erupted in Rome, resulting in the destruction of the Temple of Jupiter on the Capitoline Hill and the execution of Vespasian's brother Sabinus.
+- 20 December 69 CE: Flavian forces captured Rome and killed Vitellius.
+- 21 December 69 CE: The Senate recognized Vespasian as emperor.
